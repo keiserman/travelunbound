@@ -12,11 +12,11 @@
 
     <header class="bg-transparent text-white py-2 absolute top-0 w-full">
         <div class="container flex gap-4 items-center justify-between">
-            <h1 class="text-xl font-bold">
+            <div class="text-xl">
                 <a href="<?php echo esc_url(home_url('/')); ?>">
                     <?php bloginfo('name'); ?>
                 </a>
-            </h1>
+            </div>
             <nav class="md:flex gap-4 items-center hidden">
                 <?php
                 wp_nav_menu([

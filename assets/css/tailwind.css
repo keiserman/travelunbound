@@ -15,6 +15,14 @@ Tags: responsive, blog, travel, minimalist
 @tailwind components;
 @tailwind utilities;
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  @apply font-serif font-light;
+}
+
 .container {
   @apply max-w-full mx-auto px-6;
 }
