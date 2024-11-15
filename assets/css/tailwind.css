@@ -1,3 +1,28 @@
+/*
+Theme Name: Travel/Unbound
+Theme URI: https://example.com/travel-unbound
+Author: Your Name
+Author URI: https://example.com
+Description: A lightweight and responsive WordPress theme built with TailwindCSS, perfect for travel bloggers and enthusiasts.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: travel-unbound
+Tags: responsive, blog, travel, minimalist
+*/
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.container {
+  @apply max-w-full mx-auto px-6;
+}
+
+.button {
+  @apply lowercase py-4 px-16 bg-white text-black rounded-full border border-white;
+}
+
+.button.ghost {
+  @apply bg-transparent text-white rounded-none;
+}
