@@ -7,8 +7,8 @@ Template Name: Home Page
 <?php get_header(); ?>
 
 <main>
-    <section class="bg-black text-white">
-        <div class="container h-screen flex gap-6 items-end py-6">
+    <section class="bg-black text-white relative">
+        <div class="container h-screen flex gap-6 items-end py-6 relative z-10">
             <h1 class="md:text-6xl text-2xl">
                 Enriching experiences for the <span class="font-sans">modern traveller.</span>
             </h1>
@@ -17,6 +17,12 @@ Template Name: Home Page
                 <a href="/" class="button">Learn more</a>
             </div>
         </div>
+        <?php
+        // Get the hero image for the home page
+        $home_hero_image = get_theme_mod('home_hero_image');
+        if ($home_hero_image) : ?>
+            <img src="<?php echo esc_url($home_hero_image); ?>" alt="Hero Background" class="absolute w-full h-full z-0 top-0 object-cover">
+        <?php endif; ?>
     </section>
     <section class="bg-white text-primary">
         <div class="container py-6 grid grid-cols-1 gap-6">
