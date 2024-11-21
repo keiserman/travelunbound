@@ -7,6 +7,10 @@ module.exports = {
         primary: "#254B9A",
         secondary: "#DF6737",
       },
+      fontFamily: {
+        sans: ["Neue Montreal", "sans-serif"],
+        serif: ["Canela", "serif"],
+      },
     },
   },
   plugins: [],

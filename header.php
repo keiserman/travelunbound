@@ -10,7 +10,7 @@
 
 <body <?php body_class(); ?>>
 
-    <header class="bg-transparent text-white py-2 absolute top-0 w-full">
+    <header class="bg-transparent text-white py-2 absolute top-0 w-full z-40">
         <div class="container flex gap-4 items-center justify-between">
             <div class="text-xl">
                 <a href="<?php echo esc_url(home_url('/')); ?>">

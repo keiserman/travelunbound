@@ -15,6 +15,24 @@ Tags: responsive, blog, travel, minimalist
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Canela";
+  src: url("../travelunbound/assets/fonts/Canela-Light.woff2") format("woff2"),
+    url("../travelunbound/assets/fonts/Canela-Light.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("../travelunbound/assets/fonts/NeueMontreal-Regular.woff2")
+      format("woff2"),
+    url("../travelunbound/assets/fonts/NeueMontreal-Regular.woff")
+      format("woff");
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
 h1,
 h2,
 h3,
