@@ -9,7 +9,7 @@ Template Name: Home Page
 <main class="text-primary">
     <section class="bg-black text-white relative">
         <div class="container h-screen flex gap-6 items-end py-6 relative z-10">
-            <h1 class="md:text-6xl text-2xl">
+            <h1>
                 <?php echo esc_html(get_theme_mod('home_heading_main', 'Enriching experiences for the')); ?>
                 <span class="font-sans">
                     <?php echo esc_html(get_theme_mod('home_heading_span', 'modern traveller.')); ?>
@@ -30,7 +30,7 @@ Template Name: Home Page
     <section class="bg-white">
         <div class="container py-6">
             <div class="text-2xl max-w-xl">tailor-made luxury travel, crafted to match your lifestyle, perfectly attuned to your tastes and needs.</div>
-            <h2 class="m-auto max-w-3xl text-8xl mt-44 mb-12">introducing travel/<span class="font-sans">unbound</span></h2>
+            <h2 class="m-auto max-w-3xl mt-44 mb-12">introducing travel/<span class="font-sans">unbound</span></h2>
             <img src="#" alt="" class="m-auto max-w-5xl w-full aspect-video bg-gray-200 mb-20">
             <div class="m-auto max-w-3xl grid gap-8">
                 <h3 class="text-4xl">a fresh take on luxury travel, unlocking a world of remarkable and memorable journeys.</h3>
@@ -41,33 +41,7 @@ Template Name: Home Page
     </section>
     <section class="bg-white">
         <div class="m-auto max-w-3xl text-lg mb-4">Our approach</div>
-        <div class="grid">
-            <div class="border-b text-6xl py-10 bg-secondary text-white">
-                <div class="m-auto max-w-3xl">
-                    <span class="font-serif">individual</span>/bespoke
-                </div>
-            </div>
-            <div class="border-b text-6xl py-10">
-                <div class="m-auto max-w-3xl">
-                    <span class="font-serif">insider</span>/insight
-                </div>
-            </div>
-            <div class="border-b text-6xl py-10">
-                <div class="m-auto max-w-3xl">
-                    <span class="font-serif">exclusive</span>/access
-                </div>
-            </div>
-            <div class="border-b text-6xl py-10">
-                <div class="m-auto max-w-3xl">
-                    <span class="font-serif">seamless</span>/journeys
-                </div>
-            </div>
-            <div class="border-b text-6xl py-10">
-                <div class="m-auto max-w-3xl">
-                    <span class="font-serif">responsible</span>/tourism
-                </div>
-            </div>
-        </div>
+        <?php get_template_part('template-parts/faq'); ?>
     </section>
     <section>
         <div class="container py-40">
