@@ -10,7 +10,10 @@ Template Name: Home Page
     <section class="bg-black text-white relative">
         <div class="container h-screen flex gap-6 items-end py-6 relative z-10">
             <h1 class="md:text-6xl text-2xl">
-                Enriching experiences for the <span class="font-sans">modern traveller.</span>
+                <?php echo esc_html(get_theme_mod('home_heading_main', 'Enriching experiences for the')); ?>
+                <span class="font-sans">
+                    <?php echo esc_html(get_theme_mod('home_heading_span', 'modern traveller.')); ?>
+                </span>
             </h1>
             <div class="flex gap-4 justify-end shrink-0">
                 <a href="/" class="button ghost">Enquire</a>
