@@ -746,10 +746,6 @@ video {
   border-radius: 0.5rem;
 }
 
-.border-b {
-  border-bottom-width: 1px;
-}
-
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
@@ -783,11 +779,6 @@ video {
   padding: 1rem;
 }
 
-.py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-}
-
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -811,10 +802,6 @@ video {
   font-family: Neue Montreal, sans-serif;
 }
 
-.font-serif {
-  font-family: Canela, serif;
-}
-
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -823,11 +810,6 @@ video {
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
-}
-
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1;
 }
 
 .text-8xl {
@@ -876,6 +858,10 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.opacity-10 {
+  opacity: 0.1;
 }
 
 .shadow-md {
@@ -975,6 +961,47 @@ h6 {
   background-color: transparent;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.faq-item {
+  position: relative;
+  overflow: hidden;
+  border-bottom-width: 1px;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.faq-item.active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(223 103 55 / var(--tw-bg-opacity, 1));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.faq-title {
+  position: relative;
+  z-index: 10;
+  margin: auto;
+  max-width: 48rem;
+}
+
+.faq-content {
+  position: relative;
+  z-index: 10;
+  margin: auto;
+  display: none;
+  max-width: 48rem;
+}
+
+.faq-content.active {
+  display: flex;
+  height: 20rem;
+  align-items: flex-end;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .hover\:underline:hover {

@@ -68,3 +68,23 @@ h6 {
 .button.ghost {
   @apply bg-transparent text-white rounded-none;
 }
+
+.faq-item {
+  @apply border-b py-10 relative overflow-hidden;
+}
+
+.faq-item.active {
+  @apply bg-secondary text-white;
+}
+
+.faq-title {
+  @apply m-auto max-w-3xl z-10 relative;
+}
+
+.faq-content {
+  @apply m-auto max-w-3xl z-10 relative hidden;
+}
+
+.faq-content.active {
+  @apply h-80 flex items-end transition;
+}
