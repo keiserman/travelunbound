@@ -13,10 +13,12 @@ function setupFAQ() {
 
   faqs.forEach((faq) => {
     const content = faq.querySelector(".faq-content");
+    const image = faq.querySelector(".faq-image");
 
     faq.addEventListener("click", () => {
       faq.classList.toggle("active");
       content.classList.toggle("active");
+      image.classList.toggle("hidden");
     });
   });
 }

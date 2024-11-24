@@ -88,3 +88,7 @@ h6 {
 .faq-content.active {
   @apply h-80 flex items-end transition;
 }
+
+.faq-image {
+  @apply w-full h-full object-cover opacity-10 absolute top-0;
+}

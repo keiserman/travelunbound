@@ -46,7 +46,9 @@ Template Name: Home Page
     <section>
         <div class="container py-40">
             <h2 class="m-auto max-w-4xl text-8xl mb-12">transformative<br><span class="font-sans">travel experiences</span></h2>
-            <p class="m-auto max-w-4xl text-2xl">no matter where inspiration takes you, we will create a unique journey that immerses you in the genuine spirit of each destination.</p>
+            <p class="m-auto max-w-4xl text-2xl mb-28">no matter where inspiration takes you, we will create a unique journey that immerses you in the genuine spirit of each destination.</p>
+
+            <?php get_template_part('template-parts/experiences'); ?>
         </div>
     </section>
 </main>
