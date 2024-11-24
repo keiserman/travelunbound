@@ -1,6 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
   setupFAQ();
+  setupFadeAnimation();
 });
+
+function setupFadeAnimation() {
+  const targets = document.querySelectorAll("[data-animate='fade");
+
+  targets.forEach((target) => {
+    gsap.from(target, {
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: target,
+    });
+  });
+}
 
 function setupFAQ() {
   const faqs = document.querySelectorAll(".faq-item");
@@ -9,6 +23,9 @@ function setupFAQ() {
     opacity: 0,
     duration: 0.5,
     stagger: 0.2,
+    scrollTrigger: {
+      trigger: ".faq-item",
+    },
   });
 
   faqs.forEach((faq) => {
