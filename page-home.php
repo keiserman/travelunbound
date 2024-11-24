@@ -22,9 +22,10 @@ Template Name: Home Page
         </div>
         <?php
         // Get the hero image for the home page
-        $home_hero_image = get_theme_mod('home_hero_image');
-        if ($home_hero_image) : ?>
-            <img src="<?php echo esc_url($home_hero_image); ?>" alt="Hero Background" class="absolute w-full h-full z-0 top-0 object-cover">
+
+        $hero_image = get_theme_mod('hero_image');
+        if ($hero_image) : ?>
+            <img src="<?php echo esc_url($hero_image); ?>" alt="Hero Background" class="absolute w-full h-full z-0 top-0 object-cover">
         <?php endif; ?>
     </section>
     <section class="bg-white">
