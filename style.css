@@ -625,48 +625,24 @@ video {
   z-index: 40;
 }
 
-.col-span-2 {
-  grid-column: span 2 / span 2;
-}
-
-.col-span-12 {
-  grid-column: span 12 / span 12;
-}
-
 .col-span-10 {
   grid-column: span 10 / span 10;
-}
-
-.col-span-4 {
-  grid-column: span 4 / span 4;
 }
 
 .col-span-6 {
   grid-column: span 6 / span 6;
 }
 
-.col-span-5 {
-  grid-column: span 5 / span 5;
-}
-
 .col-span-9 {
   grid-column: span 9 / span 9;
-}
-
-.col-start-2 {
-  grid-column-start: 2;
 }
 
 .col-start-1 {
   grid-column-start: 1;
 }
 
-.col-start-6 {
-  grid-column-start: 6;
-}
-
-.col-start-7 {
-  grid-column-start: 7;
+.col-start-2 {
+  grid-column-start: 2;
 }
 
 .col-start-3 {
@@ -690,6 +666,10 @@ video {
   margin-bottom: 5rem;
 }
 
+.mb-28 {
+  margin-bottom: 7rem;
+}
+
 .mb-32 {
   margin-bottom: 8rem;
 }
@@ -700,10 +680,6 @@ video {
 
 .mt-44 {
   margin-top: 11rem;
-}
-
-.mb-28 {
-  margin-bottom: 7rem;
 }
 
 .flex {
@@ -720,14 +696,6 @@ video {
 
 .aspect-video {
   aspect-ratio: 16 / 9;
-}
-
-.aspect-\[3\/2\] {
-  aspect-ratio: 3/2;
-}
-
-.aspect-\[2\/3\] {
-  aspect-ratio: 2/3;
 }
 
 .h-full {
@@ -794,6 +762,10 @@ video {
   gap: 0.25rem;
 }
 
+.gap-20 {
+  gap: 5rem;
+}
+
 .gap-4 {
   gap: 1rem;
 }
@@ -804,10 +776,6 @@ video {
 
 .gap-8 {
   gap: 2rem;
-}
-
-.gap-20 {
-  gap: 5rem;
 }
 
 .rounded-lg {
@@ -838,11 +806,6 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
-.bg-zinc-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(244 244 245 / var(--tw-bg-opacity, 1));
-}
-
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -857,6 +820,11 @@ video {
   padding-bottom: 0.5rem;
 }
 
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
 .py-40 {
   padding-top: 10rem;
   padding-bottom: 10rem;
@@ -865,11 +833,6 @@ video {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}
-
-.py-20 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
 }
 
 .text-center {
@@ -976,9 +939,23 @@ video {
 
 h1 {
   font-family: Canela, serif;
-  font-size: 6rem;
-  line-height: 1;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   font-weight: 300;
+}
+
+@media (min-width: 640px) {
+  h1 {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 6rem;
+    line-height: 1;
+  }
 }
 
 h2 {
@@ -1103,6 +1080,10 @@ h6 {
 
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
   }
 }
 

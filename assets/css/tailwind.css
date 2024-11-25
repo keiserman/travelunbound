@@ -34,7 +34,7 @@ Tags: responsive, blog, travel, minimalist
 }
 
 h1 {
-  @apply text-8xl font-serif font-light;
+  @apply md:text-8xl sm:text-6xl text-4xl font-serif font-light;
 }
 
 h2 {

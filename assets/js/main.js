@@ -2,7 +2,20 @@ document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
   setupFAQ();
   setupFadeAnimation();
+  setupBackgroundColorAnimation();
 });
+
+function setupBackgroundColorAnimation() {
+  gsap.to("body", {
+    backgroundColor: "#DF6737",
+    scrollTrigger: {
+      trigger: "body",
+      start: "50% center",
+      end: "55% center",
+      scrub: 1,
+    },
+  });
+}
 
 function setupFadeAnimation() {
   const targets = document.querySelectorAll("[data-animate='fade");
