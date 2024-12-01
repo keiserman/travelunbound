@@ -33,6 +33,12 @@ Tags: responsive, blog, travel, minimalist
   font-style: normal;
 }
 
+@layer utilities {
+  .vertical-text {
+    writing-mode: vertical-rl;
+  }
+}
+
 h1 {
   @apply md:text-8xl sm:text-6xl text-4xl font-serif font-light;
 }
@@ -67,6 +73,10 @@ h6 {
 
 .button.ghost {
   @apply bg-transparent text-white rounded-none;
+}
+
+.button.primary {
+  @apply bg-primary text-secondary border-primary rounded-none;
 }
 
 .faq-item {

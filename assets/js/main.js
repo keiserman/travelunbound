@@ -10,9 +10,9 @@ function setupBackgroundColorAnimation() {
     backgroundColor: "#DF6737",
     scrollTrigger: {
       trigger: "body",
-      start: "50% center",
-      end: "55% center",
-      scrub: 1,
+      start: "60% center",
+      end: "65% center",
+      scrub: 0.5,
     },
   });
 }
