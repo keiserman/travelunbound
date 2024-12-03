@@ -1,6 +1,6 @@
 <section class="bg-black text-white relative">
     <div class="container h-screen flex md:flex-row flex-col gap-6 items-end py-6 relative z-10">
-        <h1 data-animate="fade">
+        <h1 data-animate="fade" class="heading-h1">
             <?php echo esc_html(get_theme_mod('home_heading_main', 'Enriching experiences for the')); ?>
             <span class="font-sans">
                 <?php echo esc_html(get_theme_mod('home_heading_span', 'modern traveller.')); ?>

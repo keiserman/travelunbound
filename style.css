@@ -609,28 +609,20 @@ video {
   position: relative;
 }
 
-.top-0 {
-  top: 0px;
+.-right-6 {
+  right: -1.5rem;
 }
 
 .bottom-0 {
   bottom: 0px;
 }
 
+.top-0 {
+  top: 0px;
+}
+
 .right-0 {
   right: 0px;
-}
-
-.-right-2 {
-  right: -0.5rem;
-}
-
-.-right-10 {
-  right: -2.5rem;
-}
-
-.-right-6 {
-  right: -1.5rem;
 }
 
 .z-0 {
@@ -647,6 +639,10 @@ video {
 
 .col-span-10 {
   grid-column: span 10 / span 10;
+}
+
+.col-span-5 {
+  grid-column: span 5 / span 5;
 }
 
 .col-span-6 {
@@ -667,14 +663,6 @@ video {
 
 .col-start-3 {
   grid-column-start: 3;
-}
-
-.row-span-2 {
-  grid-row: span 2 / span 2;
-}
-
-.row-span-1 {
-  grid-row: span 1 / span 1;
 }
 
 .m-auto {
@@ -738,8 +726,20 @@ video {
   height: 100vh;
 }
 
+.w-1\/2 {
+  width: 50%;
+}
+
+.w-14 {
+  width: 3.5rem;
+}
+
 .w-full {
   width: 100%;
+}
+
+.w-2\/3 {
+  width: 66.666667%;
 }
 
 .max-w-3xl {
@@ -762,14 +762,6 @@ video {
   flex-shrink: 0;
 }
 
-.grow {
-  flex-grow: 1;
-}
-
-.grow-0 {
-  flex-grow: 0;
-}
-
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
@@ -782,24 +774,16 @@ video {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.flex-row {
-  flex-direction: row;
+.grid-cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 .flex-col {
   flex-direction: column;
 }
 
-.content-start {
-  align-content: flex-start;
-}
-
-.content-stretch {
-  align-content: stretch;
-}
-
-.items-start {
-  align-items: flex-start;
+.place-content-center {
+  place-content: center;
 }
 
 .items-end {
@@ -830,12 +814,24 @@ video {
   gap: 0.25rem;
 }
 
+.gap-10 {
+  gap: 2.5rem;
+}
+
+.gap-16 {
+  gap: 4rem;
+}
+
 .gap-2 {
   gap: 0.5rem;
 }
 
 .gap-20 {
   gap: 5rem;
+}
+
+.gap-24 {
+  gap: 6rem;
 }
 
 .gap-4 {
@@ -858,10 +854,6 @@ video {
   border-radius: 0.5rem;
 }
 
-.border {
-  border-width: 1px;
-}
-
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
@@ -872,11 +864,6 @@ video {
   background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1));
 }
 
-.bg-secondary {
-  --tw-bg-opacity: 1;
-  background-color: rgb(223 103 55 / var(--tw-bg-opacity, 1));
-}
-
 .bg-transparent {
   background-color: transparent;
 }
@@ -884,6 +871,11 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
+.bg-zinc-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(161 161 170 / var(--tw-bg-opacity, 1));
 }
 
 .object-cover {
@@ -915,10 +907,6 @@ video {
   padding-bottom: 1.5rem;
 }
 
-.pl-6 {
-  padding-left: 1.5rem;
-}
-
 .pl-20 {
   padding-left: 5rem;
 }
@@ -927,12 +915,20 @@ video {
   text-align: center;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .align-middle {
   vertical-align: middle;
 }
 
 .font-sans {
   font-family: Neue Montreal, sans-serif;
+}
+
+.font-serif {
+  font-family: Canela, serif;
 }
 
 .text-2xl {
@@ -948,6 +944,11 @@ video {
 .text-8xl {
   font-size: 6rem;
   line-height: 1;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .text-lg {
@@ -1033,7 +1034,7 @@ video {
   font-style: normal;
 }
 
-h1 {
+.heading-h1 {
   font-family: Canela, serif;
   font-size: 2.25rem;
   line-height: 2.5rem;
@@ -1041,44 +1042,44 @@ h1 {
 }
 
 @media (min-width: 640px) {
-  h1 {
+  .heading-h1 {
     font-size: 3.75rem;
     line-height: 1;
   }
 }
 
 @media (min-width: 768px) {
-  h1 {
+  .heading-h1 {
     font-size: 6rem;
     line-height: 1;
   }
 }
 
-h2 {
+.heading-h2 {
   font-family: Canela, serif;
   font-size: 4.5rem;
   line-height: 1;
   font-weight: 300;
 }
 
-h3 {
+.heading-h3 {
   font-family: Canela, serif;
   font-size: 2.25rem;
   line-height: 2.5rem;
   font-weight: 300;
 }
 
-h4 {
+.heading-h4 {
   font-size: 1.5rem;
   line-height: 2rem;
 }
 
-h5 {
+.heading-h5 {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
-h6 {
+.heading-h6 {
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
@@ -1173,6 +1174,16 @@ h6 {
   -o-object-fit: cover;
      object-fit: cover;
   opacity: 0.1;
+}
+
+.footer-logo {
+  height: 6rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.clip-path-custom {
+  clip-path: polygon(40% 0, 100% 0, 100% 100%, 0% 100%);
 }
 
 .hover\:underline:hover {

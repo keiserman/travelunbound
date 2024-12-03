@@ -12,7 +12,7 @@
         while ($faq_query->have_posts()) {
             $faq_query->the_post();
             echo '<div class="faq-item">';
-            echo '<h3 class="faq-title">' . get_the_title() . '</h3>';
+            echo '<h3 class="heading-h3 faq-title">' . get_the_title() . '</h3>';
             echo '<div class="faq-content">' . get_the_content() . '</div>';
             $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
             if ($thumbnail_url) {

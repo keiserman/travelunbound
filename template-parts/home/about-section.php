@@ -1,8 +1,16 @@
 <section class="bg-white">
     <div class="container py-6">
         <div class="text-2xl max-w-xl">tailor-made luxury travel, crafted to match your lifestyle, perfectly attuned to your tastes and needs.</div>
-        <h2 class="m-auto max-w-3xl mt-44 mb-12">introducing travel/<span class="font-sans">unbound</span></h2>
-        <img src="#" alt="" class="m-auto max-w-5xl w-full aspect-video bg-gray-200 mb-20">
+        <h2 class="heading-h2 m-auto max-w-3xl mt-44 mb-12">introducing travel/<span class="font-sans">unbound</span></h2>
+
+        <div class="mb-20 m-auto max-w-5xl">
+            <div class="relative">
+                <video src="" class="bg-zinc-400 aspect-video w-full"></video>
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/mandarina-mexico.jpeg" alt="" class="absolute top-0 right-0 h-full w-2/3 bg-gray-200 object-cover clip-path-custom">
+            </div>
+            <div class="text-base text-right py-2">One & Only, Mandarina Mexico</div>
+        </div>
+
         <div class="m-auto max-w-3xl grid gap-8">
             <h3 class="text-4xl">a fresh take on luxury travel, unlocking a world of remarkable and memorable journeys.</h3>
             <p class="text-2xl">with over 40 years of industry experience, we combine connections, insight, and creativity to redefine travel design with a personal and modern touch.</p>
