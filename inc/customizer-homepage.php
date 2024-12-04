@@ -37,12 +37,42 @@ function add_homepage_customizer_settings($wp_customize)
         'section' => 'hero_section',
     )));
 
+    $wp_customize->add_setting('hero_video', array(
+        'default'           => '', // Default value
+        'sanitize_callback' => 'absint', // Sanitize as an integer (attachment ID)
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'hero_video', array(
+        'label'      => __('Hero Video', 'mytheme'),
+        'section'    => 'hero_section', // Add this control to the desired section
+        'mime_type'  => 'video', // Restrict to video uploads
+    )));
+
+    // **About Section**
+    $wp_customize->add_section('about_section', array(
+        'title' => __('About Section', 'mytheme'),
+        'description' => __('Settings for the about section on the homepage.'),
+        'panel' => 'homepage_panel',
+        'priority' => 20,
+    ));
+
+    $wp_customize->add_setting('about_video', array(
+        'default'           => '', // Default value
+        'sanitize_callback' => 'absint', // Sanitize as an integer (attachment ID)
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'about_video', array(
+        'label'      => __('About Video', 'mytheme'),
+        'section'    => 'about_section', // Add this control to the desired section
+        'mime_type'  => 'video', // Restrict to video uploads
+    )));
+
     // **Experiences Section**
     $wp_customize->add_section('experiences_section', array(
         'title' => __('Experiences Section', 'mytheme'),
         'description' => __('Settings for the experiences section on the homepage.'),
         'panel' => 'homepage_panel',
-        'priority' => 20,
+        'priority' => 30,
     ));
 
     // Define the fields for each experience

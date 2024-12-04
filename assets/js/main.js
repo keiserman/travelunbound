@@ -8,11 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
 function setupBackgroundColorAnimation() {
   gsap.to("body", {
     backgroundColor: "#DF6737",
+    duration: 1,
     scrollTrigger: {
       trigger: "body",
-      start: "60% center",
-      end: "65% center",
-      scrub: 0.5,
+      start: "75% center",
+      toggleActions: "play reverse play reverse",
     },
   });
 }
@@ -32,23 +32,19 @@ function setupFadeAnimation() {
 function setupFAQ() {
   const faqs = document.querySelectorAll(".faq-item");
 
-  gsap.from(".faq-item", {
-    opacity: 0,
-    duration: 0.5,
-    stagger: 0.2,
-    scrollTrigger: {
-      trigger: ".faq-item",
-    },
-  });
-
   faqs.forEach((faq) => {
     const content = faq.querySelector(".faq-content");
     const image = faq.querySelector(".faq-image");
 
     faq.addEventListener("click", () => {
-      faq.classList.toggle("active");
-      content.classList.toggle("active");
-      image.classList.toggle("hidden");
+      faqs.forEach((faq) => {
+        faq.classList.remove("active");
+        faq.querySelector(".faq-content").classList.remove("active");
+        faq.querySelector(".faq-image").classList.remove("active");
+      });
+      faq.classList.add("active");
+      content.classList.add("active");
+      image.classList.add("active");
     });
   });
 }

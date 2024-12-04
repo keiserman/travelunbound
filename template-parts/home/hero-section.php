@@ -12,8 +12,20 @@
         </div>
     </div>
     <?php
-    $hero_image = get_theme_mod('hero_image');
-    if ($hero_image) : ?>
+    $hero_video_id = get_theme_mod('hero_video'); // Get the attachment ID for the video
+    $hero_video_url = $hero_video_id ? wp_get_attachment_url($hero_video_id) : ''; // Convert ID to URL
+    $hero_image = get_theme_mod('hero_image'); // Get the fallback image URL
+
+    if ($hero_video_url) : ?>
+        <video autoplay muted loop class="absolute w-full h-full z-0 top-0 object-cover">
+            <source src="<?php echo esc_url($hero_video_url); ?>" type="video/mp4">
+            <!-- Fallback image for browsers that don't support videos -->
+            <?php if ($hero_image) : ?>
+                <img src="<?php echo esc_url($hero_image); ?>" alt="Fallback Hero Background">
+            <?php endif; ?>
+        </video>
+    <?php elseif ($hero_image) : ?>
         <img src="<?php echo esc_url($hero_image); ?>" alt="Hero Background" class="absolute w-full h-full z-0 top-0 object-cover">
     <?php endif; ?>
+
 </section>

@@ -16,7 +16,7 @@
             echo '<div class="faq-content">' . get_the_content() . '</div>';
             $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
             if ($thumbnail_url) {
-                echo '<img class="faq-image hidden" src="' . esc_url($thumbnail_url) . '" alt="' . esc_attr(get_the_title()) . '">';
+                echo '<img class="faq-image opacity-0" src="' . esc_url($thumbnail_url) . '" alt="' . esc_attr(get_the_title()) . '">';
             }
             echo '</div>';
         }

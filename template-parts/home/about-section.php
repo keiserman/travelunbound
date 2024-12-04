@@ -5,8 +5,17 @@
 
         <div class="mb-20 m-auto max-w-5xl">
             <div class="relative">
-                <video src="" class="bg-zinc-400 aspect-video w-full"></video>
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/mandarina-mexico.jpeg" alt="" class="absolute top-0 right-0 h-full w-2/3 bg-gray-200 object-cover clip-path-custom">
+
+                <?php
+                $about_video_id = get_theme_mod('about_video');
+                $about_video_url = $about_video_id ? wp_get_attachment_url($about_video_id) : '';
+                ?>
+
+                <video autoplay muted loop class="aspect-video w-full">
+                    <source src="<?php echo esc_url($about_video_url); ?>" type="video/mp4">
+                </video>
+
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/mandarina-mexico.jpeg" alt="" class="absolute top-0 right-0 h-full w-2/3 object-cover clip-path-custom">
             </div>
             <div class="text-base text-right py-2">One & Only, Mandarina Mexico</div>
         </div>

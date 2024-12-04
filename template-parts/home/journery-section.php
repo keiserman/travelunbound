@@ -1,6 +1,6 @@
 <section>
     <div class="container grid gap-2">
-        <h3 class="heading-h3">in today's socially connected world, the nonstop online chatter, and constant state of flux can be overwhelming. we navigate the fast-changing landscape giving you</h3>
+        <h2 class="font-serif text-6xl">in today's socially connected world, the nonstop online chatter, and constant state of flux can be overwhelming. we navigate the fast-changing landscape giving you</h2>
         <div class="grid grid-cols-2 gap-4 items-stretch">
             <div class="relative">
                 <img src="" alt="" class="aspect-[4/5] bg-white">
@@ -8,7 +8,7 @@
             </div>
             <div class="flex flex-col justify-between">
                 <div class="flex flex-col justify-start gap-2">
-                    <h3 class="heading-h3">the time and the space to fully immerse yourself in your travel experience.</h3>
+                    <h2 class="font-serif text-6xl">the time and the space to fully immerse yourself in your travel experience.</h2>
                     <a href="/" class="button primary self-start	">enquire</a>
                 </div>
                 <div class="flex gap-2 flex-col pl-20">
