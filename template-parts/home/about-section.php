@@ -1,5 +1,5 @@
 <section class="bg-white">
-    <div class="container py-6">
+    <div class="padding-global py-6">
         <div class="text-2xl max-w-xl">tailor-made luxury travel, crafted to match your lifestyle, perfectly attuned to your tastes and needs.</div>
         <h2 class="heading-h2 m-auto max-w-3xl mt-44 mb-12">introducing travel/<span class="font-sans">unbound</span></h2>
 

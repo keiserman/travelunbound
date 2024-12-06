@@ -37,10 +37,18 @@ Tags: responsive, blog, travel, minimalist
   .vertical-text {
     writing-mode: vertical-rl;
   }
+
+  .clip-path-polygon {
+    clip-path: polygon(0 0, 100% 100%, 100% 0);
+  }
+
+  .clip-path-none {
+    clip-path: none;
+  }
 }
 
 .heading-h1 {
-  @apply md:text-8xl sm:text-6xl text-4xl font-serif font-light;
+  @apply lg:text-8xl md:text-6xl text-4xl font-serif font-light;
 }
 
 .heading-h2 {
@@ -64,11 +72,15 @@ Tags: responsive, blog, travel, minimalist
 }
 
 .container {
-  @apply max-w-screen-xl mx-auto px-6;
+  @apply max-w-screen-2xl mx-auto;
+}
+
+.padding-global {
+  @apply lg:px-6 px-4;
 }
 
 .button {
-  @apply lowercase py-4 px-16 bg-white text-black rounded-full border border-white;
+  @apply flex items-center gap-2 lowercase py-4 px-16 bg-white text-black rounded-full border border-white;
 }
 
 .button.ghost {
@@ -113,4 +125,27 @@ Tags: responsive, blog, travel, minimalist
 
 .clip-path-custom {
   clip-path: polygon(40% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.nav-menu {
+  @apply clip-path-polygon lg:clip-path-none lg:flex lg:bg-transparent lg:relative lg:h-full lg:translate-x-0 lg:p-0 py-14 pl-28 pr-6 translate-x-full bg-primary h-screen gap-4 top-0 right-0 fixed items-center;
+}
+
+.menu-item {
+  @apply relative lg:font-sans font-serif text-5xl lg:text-base;
+}
+
+.menu-item:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: white;
+  transition: width 0.2s;
+}
+
+.menu-item:hover:after {
+  width: 100%;
 }

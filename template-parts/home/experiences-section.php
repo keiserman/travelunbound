@@ -1,5 +1,5 @@
 <section>
-    <div class="container py-40">
+    <div class="container padding-global py-40">
         <h2 class="heading-h2 m-auto max-w-4xl text-8xl mb-12">transformative<br><span class="font-sans">travel experiences</span></h2>
         <p class="m-auto max-w-4xl text-2xl mb-28">no matter where inspiration takes you, we will create a unique journey that immerses you in the genuine spirit of each destination.</p>
 
