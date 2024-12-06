@@ -641,32 +641,16 @@ video {
   z-index: 50;
 }
 
-.col-span-10 {
-  grid-column: span 10 / span 10;
+.col-span-1 {
+  grid-column: span 1 / span 1;
+}
+
+.col-span-2 {
+  grid-column: span 2 / span 2;
 }
 
 .col-span-5 {
   grid-column: span 5 / span 5;
-}
-
-.col-span-6 {
-  grid-column: span 6 / span 6;
-}
-
-.col-span-9 {
-  grid-column: span 9 / span 9;
-}
-
-.col-start-1 {
-  grid-column-start: 1;
-}
-
-.col-start-2 {
-  grid-column-start: 2;
-}
-
-.col-start-3 {
-  grid-column-start: 3;
 }
 
 .m-auto {
@@ -708,6 +692,10 @@ video {
 
 .grid {
   display: grid;
+}
+
+.hidden {
+  display: none;
 }
 
 .aspect-\[4\/5\] {
@@ -762,12 +750,12 @@ video {
   max-width: 56rem;
 }
 
-.max-w-5xl {
-  max-width: 64rem;
-}
-
 .max-w-xl {
   max-width: 36rem;
+}
+
+.max-w-2xl {
+  max-width: 42rem;
 }
 
 .shrink-0 {
@@ -780,10 +768,6 @@ video {
 
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
-}
-
-.grid-cols-12 {
-  grid-template-columns: repeat(12, minmax(0, 1fr));
 }
 
 .grid-cols-2 {
@@ -826,6 +810,10 @@ video {
   justify-content: space-between;
 }
 
+.justify-items-center {
+  justify-items: center;
+}
+
 .gap-1 {
   gap: 0.25rem;
 }
@@ -842,10 +830,6 @@ video {
   gap: 0.5rem;
 }
 
-.gap-20 {
-  gap: 5rem;
-}
-
 .gap-24 {
   gap: 6rem;
 }
@@ -860,6 +844,15 @@ video {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-x-40 {
+  -moz-column-gap: 10rem;
+       column-gap: 10rem;
+}
+
+.gap-y-24 {
+  row-gap: 6rem;
 }
 
 .self-start {
@@ -898,11 +891,6 @@ video {
   padding-bottom: 0.5rem;
 }
 
-.py-20 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -918,6 +906,26 @@ video {
   padding-bottom: 1.5rem;
 }
 
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.py-48 {
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+}
+
+.py-44 {
+  padding-top: 11rem;
+  padding-bottom: 11rem;
+}
+
 .pl-20 {
   padding-left: 5rem;
 }
@@ -930,16 +938,12 @@ video {
   text-align: right;
 }
 
-.align-middle {
-  vertical-align: middle;
-}
-
 .font-sans {
   font-family: Neue Montreal, sans-serif;
 }
 
 .font-serif {
-  font-family: Canela, serif;
+  font-family: OGG Roman, serif;
 }
 
 .text-2xl {
@@ -1029,10 +1033,10 @@ video {
 }
 
 @font-face {
-  font-family: "Canela";
+  font-family: "OGG Roman";
 
-  src: url("../travelunbound/assets/fonts/Canela-Light.woff2") format("woff2"),
-    url("../travelunbound/assets/fonts/Canela-Light.woff") format("woff");
+  src: url("../travelunbound/assets/fonts/Ogg-Regular.woff2") format("woff2"),
+    url("../travelunbound/assets/fonts/Ogg-Regular.woff") format("woff");
 
   font-weight: 400;
 
@@ -1055,7 +1059,7 @@ video {
 }
 
 .heading-h1 {
-  font-family: Canela, serif;
+  font-family: OGG Roman, serif;
   font-size: 2.25rem;
   line-height: 2.5rem;
   font-weight: 300;
@@ -1076,14 +1080,14 @@ video {
 }
 
 .heading-h2 {
-  font-family: Canela, serif;
+  font-family: OGG Roman, serif;
   font-size: 4.5rem;
   line-height: 1;
   font-weight: 300;
 }
 
 .heading-h3 {
-  font-family: Canela, serif;
+  font-family: OGG Roman, serif;
   font-size: 2.25rem;
   line-height: 2.5rem;
   font-weight: 300;
@@ -1160,15 +1164,11 @@ video {
 
 .faq-item {
   position: relative;
+  cursor: pointer;
   overflow: hidden;
   border-bottom-width: 1px;
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
 }
 
 .faq-item.active {
@@ -1268,7 +1268,7 @@ video {
 
 .menu-item {
   position: relative;
-  font-family: Canela, serif;
+  font-family: OGG Roman, serif;
   font-size: 3rem;
   line-height: 1;
 }
@@ -1294,6 +1294,13 @@ video {
 
 .menu-item:hover:after {
   width: 100%;
+}
+
+.experiences-card {
+  display: grid;
+  width: 100%;
+  max-width: 72rem;
+  gap: 1rem;
 }
 
 .hover\:underline:hover {

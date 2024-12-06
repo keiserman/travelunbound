@@ -9,7 +9,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Neue Montreal", "sans-serif"],
-        serif: ["Canela", "serif"],
+        serif: ["OGG Roman", "serif"],
       },
     },
   },
