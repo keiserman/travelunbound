@@ -47,6 +47,10 @@ Tags: responsive, blog, travel, minimalist
   }
 }
 
+body {
+  @apply text-primary;
+}
+
 .heading-h1 {
   @apply lg:text-8xl md:text-6xl text-4xl font-serif font-light;
 }
@@ -89,6 +93,10 @@ Tags: responsive, blog, travel, minimalist
 
 .button.primary {
   @apply bg-primary text-secondary border-primary rounded-none;
+}
+
+.button.is-text {
+  @apply bg-transparent p-0 border-transparent;
 }
 
 .faq-item {

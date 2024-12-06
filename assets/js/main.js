@@ -100,12 +100,13 @@ function initMenuAnimation() {
 function setupBackgroundColorAnimation() {
   gsap.to("body", {
     backgroundColor: "#DF6737",
+    color: "#FFFFFF",
     duration: 1,
     scrollTrigger: {
       trigger: "body",
       start: "75% center",
       end: "76% center",
-      scrub: 0.5,
+      scrub: 1,
     },
   });
 }

@@ -750,12 +750,16 @@ video {
   max-width: 56rem;
 }
 
-.max-w-xl {
-  max-width: 36rem;
+.max-w-lg {
+  max-width: 32rem;
 }
 
-.max-w-2xl {
-  max-width: 42rem;
+.max-w-md {
+  max-width: 28rem;
+}
+
+.max-w-xl {
+  max-width: 36rem;
 }
 
 .shrink-0 {
@@ -778,12 +782,20 @@ video {
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
+.flex-row {
+  flex-direction: row;
+}
+
 .flex-col {
   flex-direction: column;
 }
 
 .place-content-center {
   place-content: center;
+}
+
+.items-start {
+  align-items: flex-start;
 }
 
 .items-end {
@@ -804,6 +816,10 @@ video {
 
 .justify-end {
   justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .justify-between {
@@ -838,21 +854,16 @@ video {
   gap: 1rem;
 }
 
+.gap-40 {
+  gap: 10rem;
+}
+
 .gap-6 {
   gap: 1.5rem;
 }
 
 .gap-8 {
   gap: 2rem;
-}
-
-.gap-x-40 {
-  -moz-column-gap: 10rem;
-       column-gap: 10rem;
-}
-
-.gap-y-24 {
-  row-gap: 6rem;
 }
 
 .self-start {
@@ -891,6 +902,11 @@ video {
   padding-bottom: 0.5rem;
 }
 
+.py-32 {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -906,24 +922,13 @@ video {
   padding-bottom: 1.5rem;
 }
 
-.py-16 {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+.py-64 {
+  padding-top: 16rem;
+  padding-bottom: 16rem;
 }
 
-.py-20 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-
-.py-48 {
-  padding-top: 12rem;
-  padding-bottom: 12rem;
-}
-
-.py-44 {
-  padding-top: 11rem;
-  padding-bottom: 11rem;
+.pb-52 {
+  padding-bottom: 13rem;
 }
 
 .pl-20 {
@@ -1058,6 +1063,11 @@ video {
   font-style: normal;
 }
 
+body {
+  --tw-text-opacity: 1;
+  color: rgb(37 75 154 / var(--tw-text-opacity, 1));
+}
+
 .heading-h1 {
   font-family: OGG Roman, serif;
   font-size: 2.25rem;
@@ -1160,6 +1170,12 @@ video {
   background-color: rgb(37 75 154 / var(--tw-bg-opacity, 1));
   --tw-text-opacity: 1;
   color: rgb(223 103 55 / var(--tw-text-opacity, 1));
+}
+
+.button.is-text {
+  border-color: transparent;
+  background-color: transparent;
+  padding: 0px;
 }
 
 .faq-item {
@@ -1308,6 +1324,10 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:grid {
+    display: grid;
+  }
+
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1323,11 +1343,19 @@ video {
   .md\:justify-end {
     justify-content: flex-end;
   }
+
+  .md\:gap-40 {
+    gap: 10rem;
+  }
 }
 
 @media (min-width: 1024px) {
   .lg\:absolute {
     position: absolute;
+  }
+
+  .lg\:grid {
+    display: grid;
   }
 
   .lg\:hidden {
@@ -1340,6 +1368,10 @@ video {
 
   .lg\:justify-center {
     justify-content: center;
+  }
+
+  .lg\:gap-40 {
+    gap: 10rem;
   }
 
   .lg\:px-6 {

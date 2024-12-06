@@ -6,7 +6,7 @@ Template Name: Home Page
 
 <?php get_header(); ?>
 
-<main class="text-primary">
+<main>
     <?php get_template_part('template-parts/home/hero-section'); ?>
     <?php get_template_part('template-parts/home/about-section'); ?>
     <?php get_template_part('template-parts/home/approach-section'); ?>
