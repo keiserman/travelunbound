@@ -105,6 +105,10 @@ body {
   @apply bg-secondary text-white;
 }
 
+.faq-item.hovered {
+  @apply bg-secondary text-white;
+}
+
 .faq-title {
   @apply m-auto max-w-3xl z-10 relative;
 }

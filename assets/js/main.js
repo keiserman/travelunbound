@@ -124,18 +124,32 @@ function setupFadeAnimation() {
 }
 
 function setupFAQ() {
-  const faqs = document.querySelectorAll(".faq-item");
+  const faqs = document.querySelectorAll("[data-faq='faq']");
 
   faqs.forEach((faq) => {
     const content = faq.querySelector(".faq-content");
     const image = faq.querySelector(".faq-image");
 
+    faq.addEventListener("mouseenter", () => {
+      if (faq.classList.contains("active")) return;
+      faq.classList.add("hovered");
+    });
+
+    faq.addEventListener("mouseleave", () => {
+      faq.classList.remove("hovered");
+    });
+
     faq.addEventListener("click", () => {
+      if (faq.classList.contains("hovered")) {
+        faq.classList.remove("hovered");
+      }
+
       faqs.forEach((faq) => {
         faq.classList.remove("active");
         faq.querySelector(".faq-content").classList.remove("active");
         faq.querySelector(".faq-image").classList.remove("active");
       });
+
       faq.classList.add("active");
       content.classList.add("active");
       image.classList.add("active");

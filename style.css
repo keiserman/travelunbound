@@ -1184,6 +1184,13 @@ body {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
+.faq-item.hovered {
+  --tw-bg-opacity: 1;
+  background-color: rgb(223 103 55 / var(--tw-bg-opacity, 1));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
 .faq-title {
   position: relative;
   z-index: 10;
