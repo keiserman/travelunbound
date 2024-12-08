@@ -47,6 +47,35 @@ function add_homepage_customizer_settings($wp_customize)
         'section'    => 'hero_section', // Add this control to the desired section
         'mime_type'  => 'video', // Restrict to video uploads
     )));
+
+    // **Journey Section**
+    $wp_customize->add_section('journey_section', array(
+        'title' => __('Journey Section', 'mytheme'),
+        'description' => __('Settings for the journey section on the homepage.'),
+        'panel' => 'homepage_panel',
+        'priority' => 20,
+    ));
+
+    // Journey Image
+    $wp_customize->add_setting('journey_image', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'journey_image', array(
+        'label' => __('Image', 'mytheme'),
+        'section' => 'journey_section',
+    )));
+
+    // Journey Photo Credit
+    $wp_customize->add_setting('journey_photo_credit', array(
+        'default' => __('photo credit:', 'mytheme'),
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('journey_photo_credit', array(
+        'label' => __('Photo Credit', 'mytheme'),
+        'section' => 'journey_section',
+        'type' => 'text',
+    ));
 }
 
 add_action('customize_register', 'add_homepage_customizer_settings');

@@ -3,8 +3,8 @@
         <h2 class="font-serif text-6xl">in today's socially connected world, the nonstop online chatter, and constant state of flux can be overwhelming. we navigate the fast-changing landscape giving you</h2>
         <div class="grid grid-cols-2 gap-4 items-stretch">
             <div class="relative">
-                <img src="" alt="" class="aspect-[4/5] bg-white">
-                <div class="text-sm vertical-text absolute bottom-0 -right-6">photo credit: daniela federici</div>
+                <img src="<?php echo esc_url(get_theme_mod('journey_image')); ?>" alt="" class="aspect-[4/5] object-cover">
+                <div class="text-sm vertical-text absolute bottom-0 -right-6"> <?php echo esc_html(get_theme_mod('journey_photo_credit')); ?></div>
             </div>
             <div class="flex flex-col justify-between">
                 <div class="flex flex-col justify-start gap-2">
