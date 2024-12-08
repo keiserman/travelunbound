@@ -782,10 +782,6 @@ video {
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
-.flex-row {
-  flex-direction: row;
-}
-
 .flex-col {
   flex-direction: column;
 }
@@ -852,10 +848,6 @@ video {
 
 .gap-4 {
   gap: 1rem;
-}
-
-.gap-40 {
-  gap: 10rem;
 }
 
 .gap-6 {
@@ -1324,10 +1316,6 @@ body {
 }
 
 @media (min-width: 768px) {
-  .md\:grid {
-    display: grid;
-  }
-
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1342,10 +1330,6 @@ body {
 
   .md\:justify-end {
     justify-content: flex-end;
-  }
-
-  .md\:gap-40 {
-    gap: 10rem;
   }
 }
 
