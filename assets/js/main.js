@@ -126,33 +126,49 @@ function setupFadeAnimation() {
 function setupFAQ() {
   const faqs = document.querySelectorAll("[data-faq='faq']");
 
+  // Initialize each FAQ with its timeline
   faqs.forEach((faq) => {
-    const content = faq.querySelector(".faq-content");
-    const image = faq.querySelector(".faq-image");
+    const content = faq.querySelector("[data-faq='content'");
+    const image = faq.querySelector("[data-faq='image'");
+    const title = faq.querySelector("[data-faq='title'");
 
-    faq.addEventListener("mouseenter", () => {
-      if (faq.classList.contains("active")) return;
-      faq.classList.add("hovered");
+    // Attach a GSAP timeline to the FAQ element
+    const tl = gsap.timeline({ paused: true });
+    tl.to(content, {
+      height: "30vh",
+      opacity: "100%",
+      color: "#FFFFFF",
+      duration: 0.2,
+      ease: "linear",
     });
-
-    faq.addEventListener("mouseleave", () => {
-      faq.classList.remove("hovered");
-    });
+    tl.to(image, { opacity: 0.2, duration: 0.2 }, "<");
+    tl.to(title, { color: "#FFFFFF", duration: 0.2 }, "<");
+    tl.to(faq, { backgroundColor: "#DF6737", duration: 0.2 }, "<");
+    faq._timeline = tl;
 
     faq.addEventListener("click", () => {
-      if (faq.classList.contains("hovered")) {
-        faq.classList.remove("hovered");
-      }
-
-      faqs.forEach((faq) => {
-        faq.classList.remove("active");
-        faq.querySelector(".faq-content").classList.remove("active");
-        faq.querySelector(".faq-image").classList.remove("active");
-      });
-
-      faq.classList.add("active");
-      content.classList.add("active");
-      image.classList.add("active");
+      toggleFAQ(faq, faqs);
     });
   });
+
+  // Function to toggle FAQ
+  function toggleFAQ(activeFAQ, allFAQs) {
+    allFAQs.forEach((faq) => {
+      if (faq === activeFAQ) {
+        if (faq.classList.contains("active")) {
+          // If already active, close it
+          faq.classList.remove("active");
+          faq._timeline.reverse();
+        } else {
+          // Otherwise, activate it
+          faq.classList.add("active");
+          faq._timeline.play();
+        }
+      } else {
+        // Reset all other FAQs
+        faq.classList.remove("active");
+        faq._timeline.reverse();
+      }
+    });
+  }
 }

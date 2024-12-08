@@ -97,38 +97,6 @@ body {
   @apply bg-transparent p-0 border-transparent;
 }
 
-.faq-item {
-  @apply border-b py-10 relative cursor-pointer overflow-hidden;
-}
-
-.faq-item.active {
-  @apply bg-secondary text-white;
-}
-
-.faq-item.hovered {
-  @apply bg-secondary text-white;
-}
-
-.faq-title {
-  @apply m-auto max-w-3xl z-10 relative;
-}
-
-.faq-content {
-  @apply m-auto max-w-3xl h-0 flex items-end z-10 opacity-0 relative transition;
-}
-
-.faq-content.active {
-  @apply h-80 opacity-100;
-}
-
-.faq-image {
-  @apply w-full h-full object-cover opacity-0 absolute top-0 transition;
-}
-
-.faq-image.active {
-  @apply opacity-10;
-}
-
 .footer-logo {
   @apply h-24 object-contain;
 }

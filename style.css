@@ -706,6 +706,10 @@ video {
   aspect-ratio: 16 / 9;
 }
 
+.h-0 {
+  height: 0px;
+}
+
 .h-4 {
   height: 1rem;
 }
@@ -862,8 +866,16 @@ video {
   align-self: flex-start;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .rounded-lg {
   border-radius: 0.5rem;
+}
+
+.border-b {
+  border-bottom-width: 1px;
 }
 
 .bg-black {
@@ -887,6 +899,11 @@ video {
 
 .p-4 {
   padding: 1rem;
+}
+
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .py-2 {
@@ -1166,76 +1183,6 @@ body {
   border-color: transparent;
   background-color: transparent;
   padding: 0px;
-}
-
-.faq-item {
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-  border-bottom-width: 1px;
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-}
-
-.faq-item.active {
-  --tw-bg-opacity: 1;
-  background-color: rgb(223 103 55 / var(--tw-bg-opacity, 1));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
-.faq-item.hovered {
-  --tw-bg-opacity: 1;
-  background-color: rgb(223 103 55 / var(--tw-bg-opacity, 1));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
-.faq-title {
-  position: relative;
-  z-index: 10;
-  margin: auto;
-  max-width: 48rem;
-}
-
-.faq-content {
-  position: relative;
-  z-index: 10;
-  margin: auto;
-  display: flex;
-  height: 0px;
-  max-width: 48rem;
-  align-items: flex-end;
-  opacity: 0;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.faq-content.active {
-  height: 20rem;
-  opacity: 1;
-}
-
-.faq-image {
-  position: absolute;
-  top: 0px;
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  opacity: 0;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.faq-image.active {
-  opacity: 0.1;
 }
 
 .footer-logo {
