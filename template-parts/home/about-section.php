@@ -15,7 +15,7 @@
                     <source src="<?php echo esc_url($about_video_url); ?>" type="video/mp4">
                 </video>
 
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/mandarina-mexico.jpeg" alt="" class="absolute top-0 right-0 h-full w-2/3 object-cover clip-path-custom">
+                <img src="<?php echo esc_url(get_theme_mod('about_image')); ?>" alt="" class="absolute top-0 right-0 h-full w-2/3 object-cover clip-path-custom">
             </div>
             <div class="text-base text-right py-2">One & Only, Mandarina Mexico</div>
         </div>
