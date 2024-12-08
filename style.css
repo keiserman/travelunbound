@@ -1032,8 +1032,8 @@ video {
 @font-face {
   font-family: "OGG Roman";
 
-  src: url("../travelunbound/assets/fonts/Ogg-Regular.woff2") format("woff2"),
-    url("../travelunbound/assets/fonts/Ogg-Regular.woff") format("woff");
+  src: url("./assets/fonts/Ogg-Regular.woff2") format("woff2"),
+    url("./assets/fonts/Ogg-Regular.woff") format("woff");
 
   font-weight: 400;
 
@@ -1043,10 +1043,8 @@ video {
 @font-face {
   font-family: "Neue Montreal";
 
-  src: url("../travelunbound/assets/fonts/NeueMontreal-Regular.woff2")
-      format("woff2"),
-    url("../travelunbound/assets/fonts/NeueMontreal-Regular.woff")
-      format("woff");
+  src: url("./assets/fonts/NeueMontreal-Regular.woff2") format("woff2"),
+    url("./assets/fonts/NeueMontreal-Regular.woff") format("woff");
 
   font-weight: 700;
 
