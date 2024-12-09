@@ -43,6 +43,10 @@ Tags: responsive, blog, travel, minimalist
   .clip-path-none {
     clip-path: none;
   }
+
+  .clip-path-footer {
+    clip-path: polygon(100% 22%, 0% 100%, 100% 100%);
+  }
 }
 
 body {
@@ -133,5 +137,5 @@ body {
 }
 
 .goverlay {
-  @apply bg-primary!important;
+  @apply bg-primary;
 }
