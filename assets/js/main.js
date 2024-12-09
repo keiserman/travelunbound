@@ -128,26 +128,47 @@ function setupFAQ() {
 
   // Initialize each FAQ with its timeline
   faqs.forEach((faq) => {
-    const content = faq.querySelector("[data-faq='content'");
-    const image = faq.querySelector("[data-faq='image'");
-    const title = faq.querySelector("[data-faq='title'");
+    const content = faq.querySelector("[data-faq='content']");
+    const image = faq.querySelector("[data-faq='image']");
+    const title = faq.querySelector("[data-faq='title']");
 
     // Attach a GSAP timeline to the FAQ element
     const tl = gsap.timeline({ paused: true });
     tl.to(content, {
       height: "30vh",
-      opacity: "100%",
+      opacity: 1,
       color: "#FFFFFF",
-      duration: 0.2,
+      duration: 0.3,
       ease: "linear",
     });
-    tl.to(image, { opacity: 0.2, duration: 0.2 }, "<");
-    tl.to(title, { color: "#FFFFFF", duration: 0.2 }, "<");
-    tl.to(faq, { backgroundColor: "#DF6737", duration: 0.2 }, "<");
+    tl.to(image, { opacity: 0.2, duration: 0.3 }, "<");
+    tl.to(title, { color: "#FFFFFF", duration: 0.3 }, "<");
+    tl.to(faq, { backgroundColor: "#DF6737", duration: 0.3 }, "<");
     faq._timeline = tl;
 
+    // Hover animation
+    const tlHovered = gsap.timeline({ paused: true });
+    tlHovered.to(image, { opacity: 0.2, duration: 0.3 }); // Slightly different opacity for hover
+    tlHovered.to(title, { color: "#FFFFFF", duration: 0.3 }, "<");
+    tlHovered.to(faq, { backgroundColor: "#DF6737", duration: 0.3 }, "<");
+    faq._hoverTimeline = tlHovered; // Attach hover timeline to the FAQ element
+
+    // Click event
     faq.addEventListener("click", () => {
       toggleFAQ(faq, faqs);
+    });
+
+    // Hover events
+    faq.addEventListener("mouseenter", () => {
+      if (!faq.classList.contains("active")) {
+        tlHovered.play();
+      }
+    });
+
+    faq.addEventListener("mouseleave", () => {
+      if (!faq.classList.contains("active")) {
+        tlHovered.reverse();
+      }
     });
   });
 
@@ -162,11 +183,13 @@ function setupFAQ() {
         } else {
           // Otherwise, activate it
           faq.classList.add("active");
+          faq._hoverTimeline.pause(0); // Reset hover timeline
           faq._timeline.play();
         }
       } else {
         // Reset all other FAQs
         faq.classList.remove("active");
+        faq._hoverTimeline.pause(0); // Reset hover timeline
         faq._timeline.reverse();
       }
     });
