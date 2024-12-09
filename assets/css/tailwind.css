@@ -47,6 +47,14 @@ Tags: responsive, blog, travel, minimalist
   .clip-path-footer {
     clip-path: polygon(100% 22%, 0% 100%, 100% 100%);
   }
+
+  .clip-path-about-video {
+    clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
+  }
+
+  .clip-path-about-image {
+    clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%);
+  }
 }
 
 body {
@@ -103,10 +111,6 @@ body {
 
 .footer-logo {
   @apply h-24 object-contain;
-}
-
-.clip-path-custom {
-  clip-path: polygon(40% 0, 100% 0, 100% 100%, 0% 100%);
 }
 
 .nav-menu {
