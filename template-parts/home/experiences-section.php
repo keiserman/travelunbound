@@ -26,7 +26,11 @@
                 $location = get_post_meta($post->ID, '_experience_location', true);
             ?>
                 <div data-animate="fade" class="experiences-card col-span-2">
-                    <img class="w-full" src="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>" alt="<?php echo esc_attr(get_the_title($post)); ?>">
+                    <a href="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
+                        data-glightbox="title: My title; description: this is the slide description">
+                        <img class="w-full" src="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
+                            alt="<?php echo esc_attr(get_the_title($post)); ?>">
+                    </a>
                     <div class="flex justify-between">
                         <h4 class="heading-h4"><?php echo esc_html(get_the_title($post)); ?></h4>
                         <?php if (!empty($location)): ?>
@@ -34,6 +38,7 @@
                         <?php endif; ?>
                     </div>
                 </div>
+
             <?php
                 wp_reset_postdata();
             }

@@ -18,6 +18,17 @@ function enqueue_travel_unbound_assets()
     // Enqueue Tailwind CSS
     wp_enqueue_style('tailwind', get_template_directory_uri() . '/style.css', [], '1.0.0');
 
+    // Enqueque Glightbox CSS
+    wp_enqueue_style('glightbox', get_template_directory_uri() . '/assets/css/glightbox.min.css', []);
+
+    // Register and enqueue Glightbox core
+    wp_enqueue_script(
+        'glightbox',
+        get_template_directory_uri() . '/assets/js/glightbox.min.js',
+        [],
+        true
+    );
+
     // Register and enqueue GSAP core
     wp_enqueue_script(
         'gsap',
@@ -40,7 +51,7 @@ function enqueue_travel_unbound_assets()
     wp_enqueue_script(
         'main-script',
         get_template_directory_uri() . '/assets/js/main.js',
-        ['gsap', 'gsap-scrolltrigger'],
+        ['gsap', 'gsap-scrolltrigger', 'glightbox'],
         '1.0.0',
         true
     );

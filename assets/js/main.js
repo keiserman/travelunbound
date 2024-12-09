@@ -6,7 +6,14 @@ document.addEventListener("DOMContentLoaded", () => {
   initMenuAnimation();
   setupButtonHoverAnimation();
   setupExperienceCardAnimations();
+  setupLightboxes();
 });
+
+function setupLightboxes() {
+  const lightbox = GLightbox({
+    selector: "[data-glightbox]",
+  });
+}
 
 function setupExperienceCardAnimations() {
   const exps = document.querySelectorAll(".home-exp_card");
