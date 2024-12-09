@@ -131,3 +131,7 @@ body {
 .experiences-card {
   @apply grid gap-4 max-w-6xl w-full;
 }
+
+.goverlay {
+  @apply bg-primary!important;
+}

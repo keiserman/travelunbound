@@ -1267,6 +1267,11 @@ body {
   gap: 1rem;
 }
 
+.goverlay {
+  --tw-bg-opacity: 1;
+  background-color: rgb(37 75 154 / var(--tw-bg-opacity, 1));
+}
+
 .hover\:underline:hover {
   text-decoration-line: underline;
 }

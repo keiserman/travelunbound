@@ -15,11 +15,11 @@ add_action('after_setup_theme', 'travel_unbound_setup');
 // Enqueue styles and scripts
 function enqueue_travel_unbound_assets()
 {
+    // Enqueque Glightbox CSS
+    wp_enqueue_style('glightbox', get_template_directory_uri() . '/assets/css/glightbox.min.css', [], '1.0.0');
+
     // Enqueue Tailwind CSS
     wp_enqueue_style('tailwind', get_template_directory_uri() . '/style.css', [], '1.0.0');
-
-    // Enqueque Glightbox CSS
-    wp_enqueue_style('glightbox', get_template_directory_uri() . '/assets/css/glightbox.min.css', []);
 
     // Register and enqueue Glightbox core
     wp_enqueue_script(
