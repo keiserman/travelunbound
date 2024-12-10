@@ -1,8 +1,8 @@
 /*
 Theme Name: Travel/Unbound
-Theme URI: https://example.com/travel-unbound
-Author: Your Name
-Author URI: https://example.com
+Theme URI: https://github.com/keiserman/travelunbound
+Author: keiserman
+Author URI: https://github.com/keiserman/
 Description: A lightweight and responsive WordPress theme built with TailwindCSS, perfect for travel bloggers and enthusiasts.
 Version: 1.0
 License: GNU General Public License v2 or later
@@ -666,6 +666,14 @@ video {
   margin-right: auto;
 }
 
+.-ml-\[12\%\] {
+  margin-left: -12%;
+}
+
+.-mr-\[12\%\] {
+  margin-right: -12%;
+}
+
 .mb-12 {
   margin-bottom: 3rem;
 }
@@ -690,42 +698,6 @@ video {
   margin-top: 11rem;
 }
 
-.-mr-24 {
-  margin-right: -6rem;
-}
-
-.-mr-8 {
-  margin-right: -2rem;
-}
-
-.-ml-8 {
-  margin-left: -2rem;
-}
-
-.-ml-10 {
-  margin-left: -2.5rem;
-}
-
-.-mr-10 {
-  margin-right: -2.5rem;
-}
-
-.-mr-\[10\%\] {
-  margin-right: -10%;
-}
-
-.-ml-\[10\%\] {
-  margin-left: -10%;
-}
-
-.-ml-\[12\%\] {
-  margin-left: -12%;
-}
-
-.-mr-\[12\%\] {
-  margin-right: -12%;
-}
-
 .flex {
   display: flex;
 }
@@ -746,10 +718,6 @@ video {
   aspect-ratio: 16 / 9;
 }
 
-.aspect-square {
-  aspect-ratio: 1 / 1;
-}
-
 .h-0 {
   height: 0px;
 }
@@ -768,26 +736,6 @@ video {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-\[70vh\] {
-  height: 70vh;
-}
-
-.h-\[50vh\] {
-  height: 50vh;
-}
-
-.h-32 {
-  height: 8rem;
-}
-
-.h-80 {
-  height: 20rem;
-}
-
-.h-\[40vw\] {
-  height: 40vw;
 }
 
 .w-14 {
@@ -1320,7 +1268,14 @@ body {
   }
 }
 
-.menu-item {
+.nav-menu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.nav-menu li {
   position: relative;
   font-family: OGG Roman, serif;
   font-size: 3rem;
@@ -1328,14 +1283,14 @@ body {
 }
 
 @media (min-width: 1024px) {
-  .menu-item {
+  .nav-menu li {
     font-family: Neue Montreal, sans-serif;
     font-size: 1rem;
     line-height: 1.5rem;
   }
 }
 
-.menu-item:after {
+.nav-menu li:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -1346,7 +1301,7 @@ body {
   transition: width 0.2s;
 }
 
-.menu-item:hover:after {
+.nav-menu li:hover:after {
   width: 100%;
 }
 
@@ -1367,6 +1322,10 @@ body {
 }
 
 @media (min-width: 768px) {
+  .md\:grid {
+    display: grid;
+  }
+
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1387,10 +1346,6 @@ body {
 @media (min-width: 1024px) {
   .lg\:absolute {
     position: absolute;
-  }
-
-  .lg\:grid {
-    display: grid;
   }
 
   .lg\:hidden {

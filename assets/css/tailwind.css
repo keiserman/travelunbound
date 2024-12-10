@@ -117,11 +117,15 @@ body {
   @apply clip-path-polygon lg:clip-path-none lg:flex lg:bg-transparent lg:relative lg:h-full lg:translate-x-0 lg:p-0 py-14 pl-28 pr-6 translate-x-full bg-primary h-screen gap-4 top-0 right-0 fixed items-center;
 }
 
-.menu-item {
+.nav-menu ul {
+  @apply flex flex-col items-end text-right;
+}
+
+.nav-menu li {
   @apply relative lg:font-sans font-serif text-5xl lg:text-base;
 }
 
-.menu-item:after {
+.nav-menu li:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -132,7 +136,7 @@ body {
   transition: width 0.2s;
 }
 
-.menu-item:hover:after {
+.nav-menu li:hover:after {
   width: 100%;
 }
 

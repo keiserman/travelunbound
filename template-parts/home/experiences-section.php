@@ -4,7 +4,7 @@
         <p class="m-auto max-w-4xl text-2xl mb-28">no matter where inspiration takes you, we will create a unique journey that immerses you in the genuine spirit of each destination.</p>
 
 
-        <div class="lg:grid flex flex-col grid-cols-2 justify-items-center items-center lg:gap-40 gap-24">
+        <div class="md:grid flex flex-col grid-cols-2 justify-items-center items-center lg:gap-40 gap-24">
 
             <?php
             $experience_query = new WP_Query(array(
@@ -25,17 +25,19 @@
 
                 $location = get_post_meta($post->ID, '_experience_location', true);
             ?>
-                <div data-animate="fade" class="experiences-card col-span-2">
-                    <a href="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
-                        data-glightbox="title: My title; description: this is the slide description">
-                        <img class="w-full" src="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
-                            alt="<?php echo esc_attr(get_the_title($post)); ?>">
-                    </a>
-                    <div class="flex justify-between">
-                        <h4 class="heading-h4"><?php echo esc_html(get_the_title($post)); ?></h4>
-                        <?php if (!empty($location)): ?>
-                            <p class="text-sm"><?php echo esc_html($location); ?></p>
-                        <?php endif; ?>
+                <div data-animate="fade" class="col-span-2">
+                    <div class="experiences-card">
+                        <a href="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
+                            data-glightbox="title: <?php echo esc_html(get_the_title($post)); ?>; description: this is the slide description">
+                            <img class="w-full" src="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
+                                alt="<?php echo esc_attr(get_the_title($post)); ?>">
+                        </a>
+                        <div class="flex justify-between">
+                            <h4 class="heading-h4"><?php echo esc_html(get_the_title($post)); ?></h4>
+                            <?php if (!empty($location)): ?>
+                                <p class="text-sm"><?php echo esc_html($location); ?></p>
+                            <?php endif; ?>
+                        </div>
                     </div>
                 </div>
 
@@ -49,13 +51,19 @@
 
                 $location = get_post_meta($post->ID, '_experience_location', true);
             ?>
-                <div data-animate="fade" class="experiences-card col-span-1">
-                    <img class="w-full" src="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>" alt="<?php echo esc_attr(get_the_title($post)); ?>">
-                    <div class="flex justify-between">
-                        <h4 class="heading-h4"><?php echo esc_html(get_the_title($post)); ?></h4>
-                        <?php if (!empty($location)): ?>
-                            <p class="text-sm"><?php echo esc_html($location); ?></p>
-                        <?php endif; ?>
+                <div data-animate="fade" class="col-span-1">
+                    <div class="experiences-card">
+                        <a href="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
+                            data-glightbox="title: <?php echo esc_html(get_the_title($post)); ?>; description: this is the slide description">
+                            <img class="w-full" src="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
+                                alt="<?php echo esc_attr(get_the_title($post)); ?>">
+                        </a>
+                        <div class="flex justify-between">
+                            <h4 class="heading-h4"><?php echo esc_html(get_the_title($post)); ?></h4>
+                            <?php if (!empty($location)): ?>
+                                <p class="text-sm"><?php echo esc_html($location); ?></p>
+                            <?php endif; ?>
+                        </div>
                     </div>
                 </div>
             <?php
@@ -68,13 +76,19 @@
 
                 $location = get_post_meta($post->ID, '_experience_location', true);
             ?>
-                <div data-animate="fade" class="experiences-card col-span-1">
-                    <img class="w-full" src="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>" alt="<?php echo esc_attr(get_the_title($post)); ?>">
-                    <div class="flex justify-between">
-                        <h4 class="heading-h4"><?php echo esc_html(get_the_title($post)); ?></h4>
-                        <?php if (!empty($location)): ?>
-                            <p class="text-sm"><?php echo esc_html($location); ?></p>
-                        <?php endif; ?>
+                <div data-animate="fade" class="col-span-1">
+                    <div class="experiences-card">
+                        <a href="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
+                            data-glightbox="title: <?php echo esc_html(get_the_title($post)); ?>; description: this is the slide description">
+                            <img class="w-full" src="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
+                                alt="<?php echo esc_attr(get_the_title($post)); ?>">
+                        </a>
+                        <div class="flex justify-between">
+                            <h4 class="heading-h4"><?php echo esc_html(get_the_title($post)); ?></h4>
+                            <?php if (!empty($location)): ?>
+                                <p class="text-sm"><?php echo esc_html($location); ?></p>
+                            <?php endif; ?>
+                        </div>
                     </div>
                 </div>
             <?php
@@ -93,13 +107,19 @@
 
                 $location = get_post_meta($post->ID, '_experience_location', true);
             ?>
-                <div data-animate="fade" class="experiences-card col-span-2">
-                    <img class="w-full" src="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>" alt="<?php echo esc_attr(get_the_title($post)); ?>">
-                    <div class="flex justify-between">
-                        <h4 class="heading-h4"><?php echo esc_html(get_the_title($post)); ?></h4>
-                        <?php if (!empty($location)): ?>
-                            <p class="text-sm"><?php echo esc_html($location); ?></p>
-                        <?php endif; ?>
+                <div data-animate="fade" class="col-span-2">
+                    <div class="experiences-card">
+                        <a href="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
+                            data-glightbox="title: <?php echo esc_html(get_the_title($post)); ?>; description: this is the slide description">
+                            <img class="w-full" src="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
+                                alt="<?php echo esc_attr(get_the_title($post)); ?>">
+                        </a>
+                        <div class="flex justify-between">
+                            <h4 class="heading-h4"><?php echo esc_html(get_the_title($post)); ?></h4>
+                            <?php if (!empty($location)): ?>
+                                <p class="text-sm"><?php echo esc_html($location); ?></p>
+                            <?php endif; ?>
+                        </div>
                     </div>
                 </div>
             <?php
@@ -115,7 +135,11 @@
                 <div class="flex flex-col items-end col-span-1">
                     <p class="text-xl pb-52 max-w-md">We give you the inside track on the hottest openings, latest happenings and the under-the-radar hidden gems from around the globe.</p>
                     <div data-animate="fade" class="experiences-card">
-                        <img class="w-full" src="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>" alt="<?php echo esc_attr(get_the_title($post)); ?>">
+                        <a href="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
+                            data-glightbox="title: <?php echo esc_html(get_the_title($post)); ?>; description: this is the slide description">
+                            <img class="w-full" src="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
+                                alt="<?php echo esc_attr(get_the_title($post)); ?>">
+                        </a>
                         <div class="flex justify-between">
                             <h4 class="heading-h4"><?php echo esc_html(get_the_title($post)); ?></h4>
                             <?php if (!empty($location)): ?>
@@ -134,13 +158,19 @@
 
                 $location = get_post_meta($post->ID, '_experience_location', true);
             ?>
-                <div data-animate="fade" class="experiences-card col-span-1">
-                    <img class="w-full" src="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>" alt="<?php echo esc_attr(get_the_title($post)); ?>">
-                    <div class="flex justify-between">
-                        <h4 class="heading-h4"><?php echo esc_html(get_the_title($post)); ?></h4>
-                        <?php if (!empty($location)): ?>
-                            <p class="text-sm"><?php echo esc_html($location); ?></p>
-                        <?php endif; ?>
+                <div data-animate="fade" class="col-span-1">
+                    <div class="experiences-card">
+                        <a href="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
+                            data-glightbox="title: <?php echo esc_html(get_the_title($post)); ?>; description: this is the slide description">
+                            <img class="w-full" src="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
+                                alt="<?php echo esc_attr(get_the_title($post)); ?>">
+                        </a>
+                        <div class="flex justify-between">
+                            <h4 class="heading-h4"><?php echo esc_html(get_the_title($post)); ?></h4>
+                            <?php if (!empty($location)): ?>
+                                <p class="text-sm"><?php echo esc_html($location); ?></p>
+                            <?php endif; ?>
+                        </div>
                     </div>
                 </div>
 
@@ -165,7 +195,11 @@
                     </div>
 
                     <div data-animate="fade" class="experiences-card">
-                        <img class="w-full" src="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>" alt="<?php echo esc_attr(get_the_title($post)); ?>">
+                        <a href="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
+                            data-glightbox="title: <?php echo esc_html(get_the_title($post)); ?>; description: this is the slide description">
+                            <img class="w-full" src="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
+                                alt="<?php echo esc_attr(get_the_title($post)); ?>">
+                        </a>
                         <div class="flex justify-between">
                             <h4 class="heading-h4"><?php echo esc_html(get_the_title($post)); ?></h4>
                             <?php if (!empty($location)): ?>
@@ -184,13 +218,19 @@
 
                 $location = get_post_meta($post->ID, '_experience_location', true);
             ?>
-                <div data-animate="fade" class="experiences-card">
-                    <img class="w-full" src="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>" alt="<?php echo esc_attr(get_the_title($post)); ?>">
-                    <div class="flex justify-between">
-                        <h4 class="heading-h4"><?php echo esc_html(get_the_title($post)); ?></h4>
-                        <?php if (!empty($location)): ?>
-                            <p class="text-sm"><?php echo esc_html($location); ?></p>
-                        <?php endif; ?>
+                <div class="col-span-1">
+                    <div data-animate="fade" class="experiences-card">
+                        <a href="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
+                            data-glightbox="title: <?php echo esc_html(get_the_title($post)); ?>; description: this is the slide description">
+                            <img class="w-full" src="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
+                                alt="<?php echo esc_attr(get_the_title($post)); ?>">
+                        </a>
+                        <div class="flex justify-between">
+                            <h4 class="heading-h4"><?php echo esc_html(get_the_title($post)); ?></h4>
+                            <?php if (!empty($location)): ?>
+                                <p class="text-sm"><?php echo esc_html($location); ?></p>
+                            <?php endif; ?>
+                        </div>
                     </div>
                 </div>
             <?php
