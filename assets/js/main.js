@@ -7,7 +7,19 @@ document.addEventListener("DOMContentLoaded", () => {
   setupButtonHoverAnimation();
   setupExperienceCardAnimations();
   setupLightboxes();
+  setupMarqueeAnimation();
 });
+
+function setupMarqueeAnimation() {
+  const marquee = document.querySelector("[data-marquee='marquee'");
+
+  gsap.to(marquee.querySelectorAll("[data-marquee='wrapper'"), {
+    x: "-100%",
+    duration: 20,
+    ease: "linear",
+    repeat: -1,
+  });
+}
 
 function setupLightboxes() {
   const lightbox = GLightbox({
