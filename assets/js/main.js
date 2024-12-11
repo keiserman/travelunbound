@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
   setupFAQ();
   setupFadeAnimation();
-  setupBackgroundColorAnimation();
+  // setupBackgroundColorAnimation();
   initMenuAnimation();
   setupButtonHoverAnimation();
   setupExperienceCardAnimations();
