@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupFAQ();
   setupAboutFAQs();
   setupFadeAnimation();
-  // setupBackgroundColorAnimation();
+  setupBackgroundColorAnimation();
   initMenuAnimation();
   setupButtonHoverAnimation();
   setupExperienceCardAnimations();

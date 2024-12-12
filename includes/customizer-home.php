@@ -33,6 +33,7 @@ function add_homepage_customizer_settings($wp_customize)
         'default' => '',
         'sanitize_callback' => 'esc_url_raw',
     ));
+
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_image', array(
         'label' => __('Hero Image', 'mytheme'),
         'section' => 'hero_section',

@@ -89,6 +89,10 @@ body {
   @apply max-w-screen-2xl mx-auto;
 }
 
+.container-medium {
+  @apply max-w-screen-xl mx-auto;
+}
+
 .container-small {
   @apply max-w-screen-md mx-auto;
 }

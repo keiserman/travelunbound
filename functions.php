@@ -59,10 +59,11 @@ function enqueue_travel_unbound_assets()
 add_action('wp_enqueue_scripts', 'enqueue_travel_unbound_assets');
 
 // Add customizer options
-require get_template_directory() . '/includes/customizer-homepage.php';
-require get_template_directory() . '/includes/customizer-about-page.php';
+require get_template_directory() . '/includes/customizer-home.php';
+require get_template_directory() . '/includes/customizer-about.php';
 
 
 // Register custom post types
 require_once get_template_directory() . '/includes/register-faqs.php';
 require_once get_template_directory() . '/includes/register-experiences.php';
+require_once get_template_directory() . '/includes/register-team-members.php';
