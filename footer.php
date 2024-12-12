@@ -1,7 +1,7 @@
 <footer class="py-8 bg-white text-primary relative">
     <div class="padding-global">
         <div class="flex flex-col gap-24">
-            <div class="flex gap-24">
+            <div class="grid sm:grid-cols-2 md:grid-cols-[max-content_max-content_1fr] gap-24">
                 <div class="flex flex-col gap-4">
                     <div class="text-xl font-serif">find out more</div>
                     <div class="flex flex-col gap-1">
@@ -19,7 +19,7 @@
                         <a href="" class="text-md">linkedin</a>
                     </div>
                 </div>
-                <div class="flex items-end justify-end grow"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/travel-unbound-footer-logo.png" alt="" class="w-full max-w-md pt-16 pr-6"></div>
+                <div class="col-span-2 md:col-span-1 flex items-end justify-end grow"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/travel-unbound-footer-logo.png" alt="" class="w-full max-w-md pt-16 pr-6"></div>
             </div>
             <div class="flex gap-16 col-span-5">
                 <img class="footer-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/360-private-travel.png" alt="">

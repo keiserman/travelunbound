@@ -2,7 +2,7 @@
     <div class="padding-global py-6">
         <div class="container">
             <div class="text-xl">our travel partners</div>
-            <div class="grid grid-cols-2 gap-20 pt-36 pb-56 items-center">
+            <div class="grid md:grid-cols-2 gap-20 pt-36 pb-56 items-center">
                 <div class="grid grid-cols-3 gap-10 items-center">
                     <img class="w-full" src="<?php echo get_template_directory_uri(); ?>/assets/images/360-private-travel.png" alt="">
                     <img class="w-full" src="<?php echo get_template_directory_uri(); ?>/assets/images/forbes-travel-guide.png" alt="">
