@@ -60,6 +60,8 @@ add_action('wp_enqueue_scripts', 'enqueue_travel_unbound_assets');
 
 // Add customizer options
 require get_template_directory() . '/includes/customizer-homepage.php';
+require get_template_directory() . '/includes/customizer-about-page.php';
+
 
 // Register custom post types
 require_once get_template_directory() . '/includes/register-faqs.php';

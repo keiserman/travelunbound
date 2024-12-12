@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
   setupFAQ();
+  setupAboutFAQs();
   setupFadeAnimation();
   // setupBackgroundColorAnimation();
   initMenuAnimation();
@@ -9,6 +10,47 @@ document.addEventListener("DOMContentLoaded", () => {
   setupLightboxes();
   setupMarqueeAnimation();
 });
+
+function setupAboutFAQs() {
+  const faqs = document.querySelectorAll("[faq]");
+
+  if (!faqs.length) return;
+
+  faqs.forEach((faq) => {
+    const trigger = faq.querySelector("[faq-trigger]");
+    const content = faq.querySelector("[faq-content]");
+    const iconLine = faq.querySelector("[faq-icon-line]");
+
+    let tl = gsap.timeline({ paused: true });
+
+    tl.to(content, {
+      height: "auto",
+      opacity: 1,
+      duration: 0.3,
+    });
+
+    tl.to(
+      iconLine,
+      {
+        rotate: "0deg",
+        duration: 0.3,
+      },
+      "<"
+    );
+
+    let clicked = false;
+
+    trigger.addEventListener("click", () => {
+      clicked = !clicked;
+      console.log(clicked);
+      if (clicked) {
+        tl.play();
+      } else {
+        tl.reverse();
+      }
+    });
+  });
+}
 
 function setupMarqueeAnimation() {
   const marquee = document.querySelector("[data-marquee='marquee'");

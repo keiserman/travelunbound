@@ -105,6 +105,10 @@ body {
   @apply bg-transparent text-white rounded-none;
 }
 
+.button.is-outline {
+  @apply bg-transparent text-primary border-primary rounded-none;
+}
+
 .button.primary {
   @apply bg-primary text-secondary border-primary rounded-none;
 }

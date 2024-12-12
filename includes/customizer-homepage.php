@@ -21,6 +21,7 @@ function add_homepage_customizer_settings($wp_customize)
         'default' => __('Welcome to Our Site', 'mytheme'),
         'sanitize_callback' => 'sanitize_text_field',
     ));
+
     $wp_customize->add_control('hero_heading', array(
         'label' => __('Hero Heading', 'mytheme'),
         'section' => 'hero_section',
