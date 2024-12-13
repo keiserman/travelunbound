@@ -7,6 +7,7 @@ module.exports = {
         primary: "var(--color-primary)",
         secondary: "#DF6737",
         lightgray: "#F2F3F7",
+        footer: "#254b9a",
       },
       fontFamily: {
         sans: ["Neue Montreal", "sans-serif"],

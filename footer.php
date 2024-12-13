@@ -1,4 +1,4 @@
-<footer class="py-8 bg-white text-primary relative">
+<footer class="py-8 bg-white text-footer relative">
     <div class="padding-global">
         <div class="flex flex-col gap-24">
             <div class="grid sm:grid-cols-2 md:grid-cols-[max-content_max-content_1fr] gap-24">
@@ -32,7 +32,7 @@
             </div>
         </div>
     </div>
-    <div class="absolute top-0 right-0 w-32 h-full clip-path-footer bg-primary"></div>
+    <div class="absolute top-0 right-0 w-32 h-full clip-path-footer bg-footer"></div>
 </footer>
 
 <?php wp_footer(); ?>
