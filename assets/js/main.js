@@ -9,7 +9,22 @@ document.addEventListener("DOMContentLoaded", () => {
   setupExperienceCardAnimations();
   setupLightboxes();
   setupMarqueeAnimation();
+  setupReadMoreToggle();
 });
+
+function setupReadMoreToggle() {
+  const bios = document.querySelectorAll("[data-bio='bio']");
+
+  bios.forEach((bio) => {
+    const text = bio.querySelector("[data-bio='text']");
+    const button = bio.querySelector("[data-bio='button']");
+
+    button.addEventListener("click", () => {
+      const isCollapsed = text.classList.toggle("line-clamp-2");
+      button.textContent = isCollapsed ? "read more" : "read less";
+    });
+  });
+}
 
 function setupAboutFAQs() {
   const faqs = document.querySelectorAll("[faq]");

@@ -3,19 +3,38 @@
         <div class="container">
             <div class="text-xl mb-32">our preferred hotel partners</div>
             <div data-marquee="marquee" class="flex mb-32">
-                <div data-marquee="wrapper" class="flex">
-                    <img src="" alt="" class="aspect-video w-[20vw] bg-white mr-8">
-                    <img src="" alt="" class="aspect-video w-[20vw] bg-white mr-8">
-                    <img src="" alt="" class="aspect-video w-[20vw] bg-white mr-8">
-                    <img src="" alt="" class="aspect-video w-[20vw] bg-white mr-8">
-                    <img src="" alt="" class="aspect-video w-[20vw] bg-white mr-8">
+                <div data-marquee="wrapper" class="flex grow-0 shrink-0">
+                    <?php
+                    $team_query = new WP_Query([
+                        'post_type' => 'hotel-partner',
+                        'posts_per_page' => -1,
+                    ]);
+
+                    if ($team_query->have_posts()) : ?>
+                        <?php while ($team_query->have_posts()) : $team_query->the_post();
+                            $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>
+                            <?php if ($thumbnail_url) : ?>
+                                <img class="aspect-video object-contain w-[20vw] mr-12" src="<?= esc_url($thumbnail_url); ?>" alt="<?= esc_attr(get_the_title()); ?>">
+                            <?php endif; ?>
+                        <?php endwhile; ?>
+                    <?php endif;
+
+                    wp_reset_postdata();
+                    ?>
                 </div>
-                <div data-marquee="wrapper" class="flex">
-                    <img src="" alt="" class="aspect-video w-[20vw] bg-white mr-8">
-                    <img src="" alt="" class="aspect-video w-[20vw] bg-white mr-8">
-                    <img src="" alt="" class="aspect-video w-[20vw] bg-white mr-8">
-                    <img src="" alt="" class="aspect-video w-[20vw] bg-white mr-8">
-                    <img src="" alt="" class="aspect-video w-[20vw] bg-white mr-8">
+                <div data-marquee="wrapper" class="flex grow-0 shrink-0">
+                    <?php
+                    if ($team_query->have_posts()) : ?>
+                        <?php while ($team_query->have_posts()) : $team_query->the_post();
+                            $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>
+                            <?php if ($thumbnail_url) : ?>
+                                <img class="aspect-video object-contain w-[20vw] mr-12" src="<?= esc_url($thumbnail_url); ?>" alt="<?= esc_attr(get_the_title()); ?>">
+                            <?php endif; ?>
+                        <?php endwhile; ?>
+                    <?php endif;
+
+                    wp_reset_postdata();
+                    ?>
                 </div>
             </div>
             <div class="flex justify-end w-full mb-44">

@@ -29,10 +29,12 @@
                             <h3 class="heading-h3"><?= esc_html(get_the_title()); ?></h3>
                             <div class="text-base">co/founder</div>
                         </div>
-                        <p class="text-xl mb-4">
-                            <?= esc_html(get_the_content()); ?>
-                        </p>
-                        <a href="<?= esc_url(get_permalink()); ?>" class="text-secondary text-xl">read more</a>
+                        <div data-bio="bio" class="w-full">
+                            <p data-bio="text" class="text-ellipsis overflow-hidden whitespace-normal text-xl mb-4 line-clamp-2">
+                                <?= esc_html(get_the_content()); ?>
+                            </p>
+                            <button data-bio="button" class="text-secondary text-xl">read more</button>
+                        </div>
                     </div>
 
                 <?php endwhile; ?>

@@ -67,3 +67,4 @@ require get_template_directory() . '/includes/customizer-about.php';
 require_once get_template_directory() . '/includes/register-faqs.php';
 require_once get_template_directory() . '/includes/register-experiences.php';
 require_once get_template_directory() . '/includes/register-team-members.php';
+require_once get_template_directory() . '/includes/register-hotel-partners.php';
