@@ -726,27 +726,12 @@ video {
   margin-bottom: 2.25rem;
 }
 
-.mr-8 {
-  margin-right: 2rem;
-}
-
-.mt-44 {
-  margin-top: 11rem;
-}
-
 .mr-12 {
   margin-right: 3rem;
 }
 
-.mt-2 {
-  margin-top: 0.5rem;
-}
-
-.line-clamp-3 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+.mt-44 {
+  margin-top: 11rem;
 }
 
 .line-clamp-2 {
@@ -800,14 +785,6 @@ video {
   height: 100vh;
 }
 
-.max-h-\[1\.2em\] {
-  max-height: 1.2em;
-}
-
-.max-h-\[3em\] {
-  max-height: 3em;
-}
-
 .w-14 {
   width: 3.5rem;
 }
@@ -830,10 +807,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-72 {
-  width: 18rem;
 }
 
 .max-w-3xl {
@@ -1005,16 +978,8 @@ video {
   white-space: normal;
 }
 
-.whitespace-nowrap {
-  white-space: nowrap;
-}
-
 .rounded-lg {
   border-radius: 0.5rem;
-}
-
-.rounded {
-  border-radius: 0.25rem;
 }
 
 .border-b {
@@ -1022,8 +987,7 @@ video {
 }
 
 .border-primary {
-  --tw-border-opacity: 1;
-  border-color: rgb(37 75 154 / var(--tw-border-opacity, 1));
+  border-color: var(--color-primary);
 }
 
 .bg-black {
@@ -1042,8 +1006,7 @@ video {
 }
 
 .bg-primary {
-  --tw-bg-opacity: 1;
-  background-color: rgb(37 75 154 / var(--tw-bg-opacity, 1));
+  background-color: var(--color-primary);
 }
 
 .bg-transparent {
@@ -1053,11 +1016,6 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
-
-.bg-blue-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity, 1));
 }
 
 .object-contain {
@@ -1122,11 +1080,6 @@ video {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
 .pb-4 {
@@ -1240,8 +1193,7 @@ video {
 }
 
 .text-primary {
-  --tw-text-opacity: 1;
-  color: rgb(37 75 154 / var(--tw-text-opacity, 1));
+  color: var(--color-primary);
 }
 
 .text-secondary {
@@ -1267,16 +1219,6 @@ video {
 .grayscale {
   --tw-grayscale: grayscale(100%);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
-.transition-all {
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.duration-300 {
-  transition-duration: 300ms;
 }
 
 .vertical-text {
@@ -1319,9 +1261,12 @@ video {
   font-style: normal;
 }
 
+:root {
+  --color-primary: #254b9a;
+}
+
 body {
-  --tw-text-opacity: 1;
-  color: rgb(37 75 154 / var(--tw-text-opacity, 1));
+  color: var(--color-primary);
 }
 
 .heading-h1 {
@@ -1432,19 +1377,15 @@ body {
 
 .button.is-outline {
   border-radius: 0px;
-  --tw-border-opacity: 1;
-  border-color: rgb(37 75 154 / var(--tw-border-opacity, 1));
+  border-color: var(--color-primary);
   background-color: transparent;
-  --tw-text-opacity: 1;
-  color: rgb(37 75 154 / var(--tw-text-opacity, 1));
+  color: var(--color-primary);
 }
 
 .button.primary {
   border-radius: 0px;
-  --tw-border-opacity: 1;
-  border-color: rgb(37 75 154 / var(--tw-border-opacity, 1));
-  --tw-bg-opacity: 1;
-  background-color: rgb(37 75 154 / var(--tw-bg-opacity, 1));
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
   --tw-text-opacity: 1;
   color: rgb(223 103 55 / var(--tw-text-opacity, 1));
 }
@@ -1470,8 +1411,7 @@ body {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   align-items: center;
   gap: 1rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(37 75 154 / var(--tw-bg-opacity, 1));
+  background-color: var(--color-primary);
   padding-top: 3.5rem;
   padding-bottom: 3.5rem;
   padding-left: 7rem;
@@ -1537,13 +1477,7 @@ body {
 }
 
 .goverlay {
-  --tw-bg-opacity: 1;
-  background-color: rgb(37 75 154 / var(--tw-bg-opacity, 1));
-}
-
-.hover\:bg-blue-600:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(37 99 235 / var(--tw-bg-opacity, 1));
+  background-color: var(--color-primary);
 }
 
 .hover\:underline:hover {

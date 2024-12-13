@@ -57,6 +57,10 @@ Tags: responsive, blog, travel, minimalist
   }
 }
 
+:root {
+  --color-primary: #254b9a;
+}
+
 body {
   @apply text-primary;
 }

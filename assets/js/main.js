@@ -174,9 +174,20 @@ function initMenuAnimation() {
 }
 
 function setupBackgroundColorAnimation() {
+  gsap.to(":root", {
+    "--color-primary": "#FFFFFF",
+    duration: 1,
+    scrollTrigger: {
+      trigger: "body",
+      start: "75% center",
+      end: "76% center",
+      scrub: 1,
+    },
+  });
+
   gsap.to("body", {
     backgroundColor: "#DF6737",
-    color: "#FFFFFF",
+    color: "var(--color-primary)",
     duration: 1,
     scrollTrigger: {
       trigger: "body",
