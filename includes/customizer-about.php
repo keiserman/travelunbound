@@ -4,7 +4,6 @@ function add_aboutpage_customizer_settings($wp_customize)
     $wp_customize->add_panel('about_page_panel', array(
         'title' => __('About Page', 'mytheme'),
         'description' => __('Settings for the About Page'),
-        'priority' => 20,
     ));
 
     $wp_customize->add_section('about_hero_section', array(
@@ -13,18 +12,6 @@ function add_aboutpage_customizer_settings($wp_customize)
         'panel' => 'about_page_panel',
         'priority' => 10,
     ));
-
-    // Hero Heading
-    // $wp_customize->add_setting('about_hero_heading', array(
-    //     'default' => __('Welcome to Our Site', 'mytheme'),
-    //     'sanitize_callback' => 'sanitize_text_field',
-    // ));
-
-    // $wp_customize->add_control('about_hero_heading', array(
-    //     'label' => __('Hero Heading', 'mytheme'),
-    //     'section' => 'about_hero_section',
-    //     'type' => 'text',
-    // ));
 
     $wp_customize->add_setting('about_hero_video', array(
         'default' => '',
@@ -69,6 +56,7 @@ function add_aboutpage_customizer_settings($wp_customize)
         'default' => '',
         'sanitize_callback' => 'esc_url_raw',
     ));
+
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'about_made_image', array(
         'label' => __('Made Image', 'mytheme'),
         'section' => 'about_made_section',
@@ -79,6 +67,7 @@ function add_aboutpage_customizer_settings($wp_customize)
         'default' => __('photo credit:', 'mytheme'),
         'sanitize_callback' => 'sanitize_text_field',
     ));
+
     $wp_customize->add_control('about_made_photo_credit', array(
         'label' => __('Photo Credit', 'mytheme'),
         'section' => 'about_made_section',

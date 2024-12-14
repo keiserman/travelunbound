@@ -61,7 +61,7 @@ add_action('wp_enqueue_scripts', 'enqueue_travel_unbound_assets');
 // Add customizer options
 require get_template_directory() . '/includes/customizer-home.php';
 require get_template_directory() . '/includes/customizer-about.php';
-
+require get_template_directory() . '/includes/customizer-contact.php';
 
 // Register custom post types
 require_once get_template_directory() . '/includes/register-faqs.php';

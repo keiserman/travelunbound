@@ -85,22 +85,23 @@ function setupLightboxes() {
 }
 
 function setupExperienceCardAnimations() {
-  const exps = document.querySelectorAll(".home-exp_card");
+  const cards = document.querySelectorAll(".experiences-card");
 
-  if (!exps.length) return;
+  if (!cards.length) return;
 
-  exps.forEach((exp) => {
-    const image = exp.querySelector(".home-exp_image");
+  cards.forEach((card) => {
+    const image = card.querySelector("img");
 
     if (!image) return;
 
-    gsap.from(image, {
-      y: "20%",
-      duration: 1,
-      scrollTrigger: {
-        trigger: exp,
-      },
+    let tween = gsap.to(image, {
+      scale: 1.05,
+      duration: 0.2,
+      paused: true,
     });
+
+    card.addEventListener("mouseenter", () => tween.play());
+    card.addEventListener("mouseleave", () => tween.reverse());
   });
 }
 

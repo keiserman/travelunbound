@@ -27,7 +27,7 @@
             ?>
                 <div data-animate="fade" class="col-span-2">
                     <div class="experiences-card">
-                        <a href="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
+                        <a class="overflow-hidden" href="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
                             data-glightbox="title: <?php echo esc_html(get_the_title($post)); ?>; description: this is the slide description">
                             <img class="w-full" src="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
                                 alt="<?php echo esc_attr(get_the_title($post)); ?>">
@@ -53,7 +53,7 @@
             ?>
                 <div data-animate="fade" class="col-span-1">
                     <div class="experiences-card">
-                        <a href="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
+                        <a class="overflow-hidden" href="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
                             data-glightbox="title: <?php echo esc_html(get_the_title($post)); ?>; description: this is the slide description">
                             <img class="w-full" src="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
                                 alt="<?php echo esc_attr(get_the_title($post)); ?>">
@@ -78,7 +78,7 @@
             ?>
                 <div data-animate="fade" class="col-span-1">
                     <div class="experiences-card">
-                        <a href="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
+                        <a class="overflow-hidden" href="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
                             data-glightbox="title: <?php echo esc_html(get_the_title($post)); ?>; description: this is the slide description">
                             <img class="w-full" src="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
                                 alt="<?php echo esc_attr(get_the_title($post)); ?>">
@@ -109,7 +109,7 @@
             ?>
                 <div data-animate="fade" class="col-span-2">
                     <div class="experiences-card">
-                        <a href="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
+                        <a class="overflow-hidden" href="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
                             data-glightbox="title: <?php echo esc_html(get_the_title($post)); ?>; description: this is the slide description">
                             <img class="w-full" src="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
                                 alt="<?php echo esc_attr(get_the_title($post)); ?>">
@@ -135,7 +135,7 @@
                 <div class="flex flex-col items-end col-span-1">
                     <p class="text-xl pb-52 max-w-md">We give you the inside track on the hottest openings, latest happenings and the under-the-radar hidden gems from around the globe.</p>
                     <div data-animate="fade" class="experiences-card">
-                        <a href="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
+                        <a class="overflow-hidden" href="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
                             data-glightbox="title: <?php echo esc_html(get_the_title($post)); ?>; description: this is the slide description">
                             <img class="w-full" src="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
                                 alt="<?php echo esc_attr(get_the_title($post)); ?>">
@@ -160,7 +160,7 @@
             ?>
                 <div data-animate="fade" class="col-span-1">
                     <div class="experiences-card">
-                        <a href="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
+                        <a class="overflow-hidden" href="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
                             data-glightbox="title: <?php echo esc_html(get_the_title($post)); ?>; description: this is the slide description">
                             <img class="w-full" src="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
                                 alt="<?php echo esc_attr(get_the_title($post)); ?>">
@@ -195,7 +195,7 @@
                     </div>
 
                     <div data-animate="fade" class="experiences-card">
-                        <a href="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
+                        <a class="overflow-hidden" href="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
                             data-glightbox="title: <?php echo esc_html(get_the_title($post)); ?>; description: this is the slide description">
                             <img class="w-full" src="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
                                 alt="<?php echo esc_attr(get_the_title($post)); ?>">
@@ -220,7 +220,7 @@
             ?>
                 <div class="col-span-1">
                     <div data-animate="fade" class="experiences-card">
-                        <a href="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
+                        <a class="overflow-hidden" href="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
                             data-glightbox="title: <?php echo esc_html(get_the_title($post)); ?>; description: this is the slide description">
                             <img class="w-full" src="<?php echo esc_url(get_the_post_thumbnail_url($post->ID, 'large')); ?>"
                                 alt="<?php echo esc_attr(get_the_title($post)); ?>">

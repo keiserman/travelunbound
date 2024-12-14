@@ -145,6 +145,10 @@ body {
   @apply relative hover:after:w-full after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-footer after:transition-all;
 }
 
+.contact-link {
+  @apply relative hover:after:w-full after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-primary after:transition-all;
+}
+
 .experiences-card {
   @apply grid gap-4 max-w-6xl w-full;
 }

@@ -5,7 +5,6 @@ function add_homepage_customizer_settings($wp_customize)
     $wp_customize->add_panel('homepage_panel', array(
         'title' => __('Home Page', 'mytheme'),
         'description' => __('Settings for the Home Page'),
-        'priority' => 10,
     ));
 
     // **Hero Section**
