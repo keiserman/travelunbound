@@ -7,12 +7,12 @@
             </span>
         </h1>
         <div class="flex gap-4 md:justify-end shrink-0">
-            <a href="/" class="button button-ghost" data-button="button">Enquire
+            <a href="/" class="btn-outline-white" data-button="button">Enquire
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 256 256" data-button="icon">
                     <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
                 </svg>
             </a>
-            <a href="/" class="button">Learn more</a>
+            <a href="/" class="btn-white rounded-full">Learn more</a>
         </div>
     </div>
     <?php

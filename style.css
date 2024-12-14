@@ -982,6 +982,10 @@ video {
   white-space: normal;
 }
 
+.rounded-full {
+  border-radius: 9999px;
+}
+
 .rounded-lg {
   border-radius: 0.5rem;
 }
@@ -1363,71 +1367,108 @@ body {
   }
 }
 
-/* .button {
-  @apply flex items-center gap-2 lowercase py-4 px-16 rounded-full border;
-}
-
-.button-primary {
-  @apply bg-primary text-white border-primary;
-}
-
-.button-outline {
-  @apply bg-transparent text-primary border-primary rounded-none;
-}
-
-.button-ghost {
-  @apply bg-transparent text-white;
-}
-
-.button-text {
-  @apply bg-transparent border-transparent p-0;
-} */
-
-.button {
+.btn {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  border-radius: 9999px;
   border-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: 4rem;
   padding-right: 4rem;
   text-transform: lowercase;
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
-.button.ghost {
-  border-radius: 0px;
+.btn-primary {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-width: 1px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  text-transform: lowercase;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.btn-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-width: 1px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  text-transform: lowercase;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.btn-outline {
+  border-color: var(--color-primary);
   background-color: transparent;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-width: 1px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  text-transform: lowercase;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
-.button.is-outline {
-  border-radius: 0px;
-  border-color: var(--color-primary);
+.btn-outline-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
   background-color: transparent;
-  color: var(--color-primary);
-}
-
-.button.primary {
-  border-radius: 0px;
-  border-color: var(--color-primary);
-  background-color: var(--color-primary);
   --tw-text-opacity: 1;
-  color: rgb(223 103 55 / var(--tw-text-opacity, 1));
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-width: 1px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  text-transform: lowercase;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
-.button.is-text {
-  border-color: transparent;
-  background-color: transparent;
-  padding: 0px;
+.btn-outline-white:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  color: var(--color-primary);
 }
 
 .footer-logo {

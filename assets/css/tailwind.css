@@ -105,44 +105,24 @@ body {
   @apply lg:px-6 px-4;
 }
 
-/* .button {
-  @apply flex items-center gap-2 lowercase py-4 px-16 rounded-full border;
+.btn {
+  @apply flex items-center gap-2 lowercase py-4 px-16 border transition-colors;
 }
 
-.button-primary {
-  @apply bg-primary text-white border-primary;
+.btn-primary {
+  @apply btn text-white bg-primary border-primary;
 }
 
-.button-outline {
-  @apply bg-transparent text-primary border-primary rounded-none;
+.btn-white {
+  @apply btn text-primary bg-white border-white;
 }
 
-.button-ghost {
-  @apply bg-transparent text-white;
+.btn-outline {
+  @apply btn text-primary bg-transparent border-primary hover:bg-primary hover:text-white;
 }
 
-.button-text {
-  @apply bg-transparent border-transparent p-0;
-} */
-
-.button {
-  @apply flex items-center gap-2 lowercase py-4 px-16 bg-white text-black rounded-full border border-white;
-}
-
-.button.ghost {
-  @apply bg-transparent text-white rounded-none;
-}
-
-.button.is-outline {
-  @apply bg-transparent text-primary border-primary rounded-none;
-}
-
-.button.primary {
-  @apply bg-primary text-secondary border-primary rounded-none;
-}
-
-.button.is-text {
-  @apply bg-transparent p-0 border-transparent;
+.btn-outline-white {
+  @apply btn text-white bg-transparent border-white hover:bg-white hover:text-primary;
 }
 
 .footer-logo {

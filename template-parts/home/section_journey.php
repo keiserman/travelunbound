@@ -9,7 +9,7 @@
             <div class="flex flex-col justify-between">
                 <div class="flex flex-col justify-start gap-2">
                     <h2 class="font-serif text-6xl">the time and the space to fully immerse yourself in your travel experience.</h2>
-                    <a href="/" class="button primary self-start">enquire</a>
+                    <a href="/" class="btn-outline self-start">enquire</a>
                 </div>
                 <div class="flex gap-2 flex-col pl-20">
                     <p class="font-semibold">Crafted for the modern traveller</p>

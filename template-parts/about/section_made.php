@@ -66,7 +66,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="flex"><a href="" class="button button-outline">View all</a></div>
+                        <div class="flex"><a href="" class="btn-outline">View all</a></div>
                     </div>
                 </div>
             </div>
