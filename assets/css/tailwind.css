@@ -105,6 +105,26 @@ body {
   @apply lg:px-6 px-4;
 }
 
+/* .button {
+  @apply flex items-center gap-2 lowercase py-4 px-16 rounded-full border;
+}
+
+.button-primary {
+  @apply bg-primary text-white border-primary;
+}
+
+.button-outline {
+  @apply bg-transparent text-primary border-primary rounded-none;
+}
+
+.button-ghost {
+  @apply bg-transparent text-white;
+}
+
+.button-text {
+  @apply bg-transparent border-transparent p-0;
+} */
+
 .button {
   @apply flex items-center gap-2 lowercase py-4 px-16 bg-white text-black rounded-full border border-white;
 }
@@ -126,7 +146,7 @@ body {
 }
 
 .footer-logo {
-  @apply h-24 object-contain;
+  @apply w-full max-w-52 object-contain;
 }
 
 .nav-menu {
@@ -138,22 +158,11 @@ body {
 }
 
 .nav-menu li {
-  @apply relative lg:font-sans font-serif text-5xl lg:text-base;
+  @apply relative lg:font-sans font-serif text-5xl lg:text-base hover:after:w-full after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-white after:transition-all;
 }
 
-.nav-menu li:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 1px;
-  background-color: white;
-  transition: width 0.2s;
-}
-
-.nav-menu li:hover:after {
-  width: 100%;
+.footer-link {
+  @apply relative hover:after:w-full after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-footer after:transition-all;
 }
 
 .experiences-card {
