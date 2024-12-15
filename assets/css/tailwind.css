@@ -17,7 +17,8 @@ Tags: responsive, blog, travel, minimalist
 
 @font-face {
   font-family: "OGG Roman";
-  src: url("./assets/fonts/Ogg-Regular.woff2") format("woff2"),
+  src:
+    url("./assets/fonts/Ogg-Regular.woff2") format("woff2"),
     url("./assets/fonts/Ogg-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
@@ -25,7 +26,8 @@ Tags: responsive, blog, travel, minimalist
 
 @font-face {
   font-family: "Neue Montreal";
-  src: url("./assets/fonts/NeueMontreal-Regular.woff2") format("woff2"),
+  src:
+    url("./assets/fonts/NeueMontreal-Regular.woff2") format("woff2"),
     url("./assets/fonts/NeueMontreal-Regular.woff") format("woff");
   font-weight: 700; /* Bold */
   font-style: normal;
@@ -66,15 +68,15 @@ body {
 }
 
 .heading-h1 {
-  @apply lg:text-8xl md:text-6xl text-4xl font-serif font-light;
+  @apply font-serif text-4xl font-light md:text-6xl lg:text-8xl;
 }
 
 .heading-h2 {
-  @apply text-7xl font-serif font-light;
+  @apply font-serif text-7xl font-light;
 }
 
 .heading-h3 {
-  @apply text-4xl font-serif font-light;
+  @apply font-serif text-4xl font-light;
 }
 
 .heading-h4 {
@@ -90,39 +92,39 @@ body {
 }
 
 .container {
-  @apply max-w-screen-2xl mx-auto;
+  @apply mx-auto max-w-screen-2xl;
 }
 
 .container-medium {
-  @apply max-w-screen-xl mx-auto;
+  @apply mx-auto max-w-screen-xl;
 }
 
 .container-small {
-  @apply max-w-screen-md mx-auto;
+  @apply mx-auto max-w-screen-md;
 }
 
 .padding-global {
-  @apply lg:px-6 px-4;
+  @apply px-4 lg:px-6;
 }
 
 .btn {
-  @apply flex items-center gap-2 lowercase py-4 px-16 border transition-colors;
+  @apply flex items-center gap-2 border px-16 py-4 lowercase transition-colors;
 }
 
 .btn-primary {
-  @apply btn text-white bg-primary border-primary;
+  @apply btn border-primary bg-primary text-white;
 }
 
 .btn-white {
-  @apply btn text-primary bg-white border-white;
+  @apply btn border-white bg-white text-primary;
 }
 
 .btn-outline {
-  @apply btn text-primary bg-transparent border-primary hover:bg-primary hover:text-white;
+  @apply btn border-primary bg-transparent text-primary hover:bg-primary hover:text-white;
 }
 
 .btn-outline-white {
-  @apply btn text-white bg-transparent border-white hover:bg-white hover:text-primary;
+  @apply btn border-white bg-transparent text-white hover:bg-white hover:text-primary;
 }
 
 .footer-logo {
@@ -130,7 +132,7 @@ body {
 }
 
 .nav-menu {
-  @apply clip-path-polygon lg:clip-path-none lg:flex lg:bg-transparent lg:relative lg:h-full lg:translate-x-0 lg:p-0 py-14 pl-28 pr-6 translate-x-full bg-primary h-screen gap-4 top-0 right-0 fixed items-center;
+  @apply clip-path-polygon lg:clip-path-none fixed right-0 top-0 h-screen translate-x-full items-center gap-4 bg-primary py-14 pl-28 pr-6 lg:relative lg:flex lg:h-full lg:translate-x-0 lg:bg-transparent lg:p-0;
 }
 
 .nav-menu ul {
@@ -138,19 +140,19 @@ body {
 }
 
 .nav-menu li {
-  @apply relative lg:font-sans font-serif text-5xl lg:text-base hover:after:w-full after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-white after:transition-all;
+  @apply relative font-serif text-5xl after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-white after:transition-all hover:after:w-full lg:font-sans lg:text-base;
 }
 
 .footer-link {
-  @apply relative hover:after:w-full after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-footer after:transition-all;
+  @apply relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-footer after:transition-all hover:after:w-full;
 }
 
 .contact-link {
-  @apply relative hover:after:w-full after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-primary after:transition-all;
+  @apply relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-primary after:transition-all hover:after:w-full;
 }
 
 .experiences-card {
-  @apply grid gap-4 max-w-6xl w-full;
+  @apply grid w-full max-w-6xl gap-4;
 }
 
 .goverlay {
