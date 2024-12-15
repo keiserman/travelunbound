@@ -2,15 +2,15 @@
     <div class="m-auto max-w-3xl text-lg mb-4">Our approach</div>
 
     <?php
-    $faq_query = new WP_Query(array(
-        'post_type' => 'faq',
+    $approach_query = new WP_Query(array(
+        'post_type' => 'approach',
         'posts_per_page' => -1, // Show all FAQs
     ));
 
-    if ($faq_query->have_posts()) {
+    if ($approach_query->have_posts()) {
         echo '<div class="grid">';
-        while ($faq_query->have_posts()) {
-            $faq_query->the_post();
+        while ($approach_query->have_posts()) {
+            $approach_query->the_post();
             echo '<div data-faq="faq" class="border-b py-10 relative cursor-pointer overflow-hidden">';
             echo '<h3 data-faq="title" class="heading-h3 m-auto max-w-3xl z-10 relative">' . get_the_title() . '</h3>';
             echo '<div data-faq="content" class="m-auto max-w-3xl h-0 flex items-end z-10 opacity-0 relative">' . get_the_content() . '</div>';

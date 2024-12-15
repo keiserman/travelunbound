@@ -33,7 +33,7 @@
                                 alt="<?php echo esc_attr(get_the_title($post)); ?>">
                         </a>
                         <div class="flex justify-between">
-                            <h4 class="heading-h4"><?php echo esc_html(get_the_title($post)); ?></h4>
+                            <h4 class="heading-h4">√√</h4>
                             <?php if (!empty($location)): ?>
                                 <p class="text-sm"><?php echo esc_html($location); ?></p>
                             <?php endif; ?>

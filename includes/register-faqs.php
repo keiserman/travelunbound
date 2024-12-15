@@ -26,7 +26,7 @@ function travel_unbound_register_faqs_cpt()
         'show_ui' => true,
         'show_in_menu' => true,
         'query_var' => true,
-        'rewrite' => array('slug' => 'faqs'),
+        'rewrite' => array('slug' => 'FAQs'),
         'capability_type' => 'post',
         'has_archive' => false,
         'hierarchical' => false,
