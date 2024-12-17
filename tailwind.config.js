@@ -13,6 +13,9 @@ module.exports = {
         sans: ["Neue Montreal", "sans-serif"],
         serif: ["OGG Roman", "serif"],
       },
+      maxWidth: {
+        "screen-2xl": "90rem",
+      },
     },
   },
   plugins: [],

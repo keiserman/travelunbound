@@ -29,7 +29,7 @@
                 <a href="#" class="open-lightbox overflow-hidden" data-index="<?php echo (int) $index; ?>">
                     <img class="w-full" src="<?php echo $image_url; ?>" alt="<?php echo $title_attr; ?>">
                 </a>
-                <div class="flex justify-between">
+                <div class="flex justify-between flex-wrap">
                     <h4 class="heading-h4"><?php echo esc_html($title); ?></h4>
                     <?php if (!empty($location)): ?>
                         <p class="text-sm"><?php echo esc_html($location); ?></p>
@@ -105,26 +105,33 @@
     </div>
 </section>
 
-<div id="lightboxModal" class="fixed inset-0 z-50 hidden bg-primary flex items-center justify-center">
+<div id="lightboxModal" class="fixed inset-0 z-50 hidden bg-primary items-center justify-center">
     <div class="relative w-full h-full">
 
-        <button id="closeLightboxBtn" class="absolute top-4 right-4 text-white text-2xl z-10">&times;</button>
+        <button id="closeLightboxBtn" class="absolute w-8 h-8 top-4 right-4 text-white text-2xl z-10">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path>
+            </svg>
+        </button>
 
         <div class="swiper w-full h-full">
             <div class="swiper-wrapper">
-                <?php
-
-                foreach ($posts as $i => $post) {
-                    $slide_title = get_the_title($post->ID);
-                    $slide_image_url = esc_url(get_the_post_thumbnail_url($post->ID, 'large'));
-                    $slide_location = get_post_meta($post->ID, '_experience_location', true);
-                ?>
+                <?php foreach ($posts as $i => $post) : ?>
+                    <?php
+                    $slide_title      = get_the_title($post->ID);
+                    $slide_image_url  = esc_url(get_the_post_thumbnail_url($post->ID, 'large'));
+                    $slide_location   = get_post_meta($post->ID, '_experience_location', true);
+                    $slide_content    = apply_filters('the_content', get_post_field('post_content', $post->ID));
+                    ?>
                     <div class="swiper-slide relative w-full h-full">
                         <img src="<?php echo $slide_image_url; ?>" alt="<?php echo esc_attr($slide_title); ?>" class="w-full h-full object-contain">
 
                         <div class="absolute bottom-4 left-4 text-white space-y-2">
                             <h4 class="text-lg font-bold"><?php echo esc_html($slide_title); ?></h4>
-                            <p class="text-base">This is the slide description.</p>
+                            <div class="text-base max-w-md">
+                                <?php echo $slide_content;
+                                ?>
+                            </div>
                         </div>
 
                         <?php if ($slide_location): ?>
@@ -133,17 +140,16 @@
                             </div>
                         <?php endif; ?>
                     </div>
-                <?php
-                }
-                ?>
+                <?php endforeach; ?>
             </div>
 
-            <div data-swiper="prev" class="absolute w-8 h-8 left-0 top-1/2 z-10 text-white">
+
+            <div data-swiper="prev" class="absolute w-8 h-8 left-4 top-1/2 z-10 text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256">
                     <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
                 </svg>
             </div>
-            <div data-swiper="next" class="absolute w-8 h-8 right-0 top-1/2 z-10 text-white">
+            <div data-swiper="next" class="absolute w-8 h-8 right-4 top-1/2 z-10 text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256">
                     <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
                 </svg>

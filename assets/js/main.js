@@ -68,11 +68,11 @@ function setupAboutFAQs() {
 }
 
 function setupMarqueeAnimation() {
-  const marquee = document.querySelector("[data-marquee='marquee'");
+  const marquee = document.querySelector("[data-marquee='marquee']");
 
   if (!marquee) return;
 
-  gsap.to(marquee.querySelectorAll("[data-marquee='wrapper'"), {
+  gsap.to(marquee.querySelectorAll("[data-marquee='wrapper']"), {
     x: "-100%",
     duration: 20,
     ease: "linear",
@@ -81,7 +81,16 @@ function setupMarqueeAnimation() {
 }
 
 function setupLightboxes() {
-  const swiper = new Swiper(".swiper", {
+  const swiperEl = document.querySelector(".swiper");
+  const modal = document.getElementById("lightboxModal");
+  const closeBtn = document.getElementById("closeLightboxBtn");
+  const triggers = document.querySelectorAll(".open-lightbox");
+
+  if (!swiperEl || !modal || !closeBtn || triggers.length === 0) {
+    return;
+  }
+
+  const swiper = new Swiper(swiperEl, {
     navigation: {
       nextEl: "[data-swiper='next']",
       prevEl: "[data-swiper='prev']",
@@ -89,21 +98,28 @@ function setupLightboxes() {
     loop: false,
   });
 
-  const modal = document.getElementById("lightboxModal");
-  const closeBtn = document.getElementById("closeLightboxBtn");
-
   function openLightbox(index) {
     modal.classList.remove("hidden");
-    swiper.slideTo(index);
     document.body.classList.add("overflow-hidden");
+
+    gsap.set(modal, { opacity: 0 });
+    gsap.to(modal, { opacity: 1, duration: 0.5 });
+
+    swiper.slideTo(index);
   }
 
   function closeLightbox() {
-    modal.classList.add("hidden");
-    document.body.classList.remove("overflow-hidden");
+    gsap.to(modal, {
+      opacity: 0,
+      duration: 0.5,
+      onComplete: () => {
+        modal.classList.add("hidden");
+        document.body.classList.remove("overflow-hidden");
+      },
+    });
   }
 
-  document.querySelectorAll(".open-lightbox").forEach((trigger) => {
+  triggers.forEach((trigger) => {
     trigger.addEventListener("click", (e) => {
       e.preventDefault();
       const index = parseInt(trigger.getAttribute("data-index"), 10);
@@ -252,13 +268,11 @@ function setupFadeAnimation() {
 function setupFAQ() {
   const faqs = document.querySelectorAll("[data-faq='faq']");
 
-  // Initialize each FAQ with its timeline
   faqs.forEach((faq) => {
     const content = faq.querySelector("[data-faq='content']");
     const image = faq.querySelector("[data-faq='image']");
     const title = faq.querySelector("[data-faq='title']");
 
-    // Attach a GSAP timeline to the FAQ element
     const tl = gsap.timeline({ paused: true });
     tl.to(content, {
       height: "30vh",
@@ -272,19 +286,15 @@ function setupFAQ() {
     tl.to(faq, { backgroundColor: "#DF6737", duration: 0.3 }, "<");
     faq._timeline = tl;
 
-    // Hover animation
     const tlHovered = gsap.timeline({ paused: true });
-    tlHovered.to(image, { opacity: 0.2, duration: 0.3 }); // Slightly different opacity for hover
+    tlHovered.to(image, { opacity: 0.2, duration: 0.3 });
     tlHovered.to(title, { color: "#FFFFFF", duration: 0.3 }, "<");
     tlHovered.to(faq, { backgroundColor: "#DF6737", duration: 0.3 }, "<");
-    faq._hoverTimeline = tlHovered; // Attach hover timeline to the FAQ element
-
-    // Click event
+    faq._hoverTimeline = tlHovered;
     faq.addEventListener("click", () => {
       toggleFAQ(faq, faqs);
     });
 
-    // Hover events
     faq.addEventListener("mouseenter", () => {
       if (!faq.classList.contains("active")) {
         tlHovered.play();
@@ -298,24 +308,20 @@ function setupFAQ() {
     });
   });
 
-  // Function to toggle FAQ
   function toggleFAQ(activeFAQ, allFAQs) {
     allFAQs.forEach((faq) => {
       if (faq === activeFAQ) {
         if (faq.classList.contains("active")) {
-          // If already active, close it
           faq.classList.remove("active");
           faq._timeline.reverse();
         } else {
-          // Otherwise, activate it
           faq.classList.add("active");
-          faq._hoverTimeline.pause(0); // Reset hover timeline
+          faq._hoverTimeline.pause(0);
           faq._timeline.play();
         }
       } else {
-        // Reset all other FAQs
         faq.classList.remove("active");
-        faq._hoverTimeline.pause(0); // Reset hover timeline
+        faq._hoverTimeline.pause(0);
         faq._timeline.reverse();
       }
     });
