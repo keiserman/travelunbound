@@ -9,12 +9,12 @@
                     <div class="text-sm lg:vertical-text lg:absolute bottom-0 -right-6"><?php echo esc_html(get_theme_mod('about_made_photo_credit')); ?></div>
                 </div>
                 <div class="flex flex-col justify-between">
-                    <div class="flex flex-col justify-start gap-2">
-                        <h2 class="text-[2rem] lg:text-[4rem] leading-none">our mission is to help you rediscover the joys and meaning of travel, creating enriching experiences without the stress, uncertainty and friction that usually come with it.</h2>
+                    <div class="w-[93%] flex flex-col justify-start gap-2">
+                        <h2 class="text-[2rem] lg:text-[4.5rem] leading-none">our mission is to help you rediscover the joys and meaning of travel, creating enriching experiences without the stress, uncertainty and friction that usually come with it.</h2>
                     </div>
-                    <div class="flex gap-2 flex-col lg:pl-20">
-                        <div class="font-semibold">Frequently Asked Questions</div>
-                        <p class="text-base mb-6">it's only natural to have some questions before you book your trip. we've answered the most commonly asked ones below. this way, you can understand more about who we are, what we do and what we stand for through the entire travel experience.</p>
+                    <div class="flex gap-2 flex-col lg:pl-20 lg:pt-20">
+                        <div class="font-semibold text-xl">Frequently Asked Questions</div>
+                        <p class="text-xl mb-6">it's only natural to have some questions before you book your trip. we've answered the most commonly asked ones below. this way, you can understand more about who we are, what we do and what we stand for through the entire travel experience.</p>
 
                         <div class="mb-10">
                             <?php

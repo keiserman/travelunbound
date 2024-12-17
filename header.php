@@ -23,7 +23,7 @@
                     ?>
                 </a>
             </div>
-            <div class="lg:absolute right-0 top-0 lg:py-4 lg:px-6">
+            <div class="absolute right-0 top-0 py-4 px-6 ">
                 <nav class="nav-menu" data-navbar="menu">
                     <?php
                     wp_nav_menu([
@@ -33,7 +33,7 @@
                     ]);
                     ?>
                 </nav>
-                <div class="flex flex-col gap-1.5 relative lg:hidden z-50 cursor-pointer" data-navbar="button">
+                <div class="flex flex-col gap-1.5 relative z-50 cursor-pointer" data-navbar="button">
                     <div class="w-6 h-0.5 bg-white"></div>
                     <div class="w-6 h-0.5 bg-white"></div>
                     <div class="w-6 h-0.5 bg-white"></div>

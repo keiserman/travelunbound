@@ -11,7 +11,7 @@
                     <div class="md:vertical-text md:text-right">photo credit: joe thomas</div>
                 </div>
                 <div class="flex flex-col gap-8">
-                    <h2 class="heading-h2">bespoke <span class="font-sans">travel design</span></h2>
+                    <h2 class="heading-h2">bespoke<br /><span class="font-sans">travel design</span></h2>
                     <p class="text-lg">From short weekend breaks to complex around-the-world itineraries, our highly personalised approach allows for a flexible service model that can be adapted to your needs:</p>
                     <ul class="text-lg list-disc list-inside">
                         <li>Hotel & Villa Bookings</li>

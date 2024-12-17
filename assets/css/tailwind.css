@@ -71,7 +71,7 @@ Tags: responsive, blog, travel, minimalist
 }
 
 body {
-  @apply text-primary;
+  @apply text-primary lowercase;
 }
 
 .heading-h1 {
@@ -143,7 +143,7 @@ body {
 }
 
 .nav-menu {
-  @apply clip-path-polygon lg:clip-path-none fixed right-0 top-0 h-screen translate-x-full items-center gap-4 bg-primary py-14 pl-28 pr-6 lg:relative lg:flex lg:h-full lg:translate-x-0 lg:bg-transparent lg:p-0;
+  @apply clip-path-polygon fixed right-0 top-0 h-screen translate-x-full items-center gap-4 bg-primary py-14 pl-28 pr-6 lg:relative lg:flex lg:h-full lg:translate-x-0 lg:bg-transparent lg:p-0;
 }
 
 .nav-menu ul {

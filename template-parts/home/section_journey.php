@@ -12,9 +12,9 @@
                         <h2 class="text-[3.06rem] md:text-[3.9rem] leading-none">we navigate the fast-changing landscape, cut through the chaos and remove stress and uncertainty from the process, so you can fully immerse yourself in the joy and excitement of your travel experience.</h2>
                         <a href="/" class="btn-outline self-start">enquire</a>
                     </div>
-                    <div class="flex gap-2 flex-col lg:pl-20">
-                        <p class="font-semibold">Crafted for the modern traveller</p>
-                        <p>we understand the hectic nature of modern life where multitasking is almost second mature; constant demands on our time and attention, the relentless struggle for work/life balance, competing priorities and an ever-growing to-do list. we save you time and work to your pace.</p>
+                    <div class="flex gap-2 flex-col lg:pl-20 lg:pt-20">
+                        <p class="text-xl font-semibold">Crafted for the modern traveller</p>
+                        <p class="text-xl">we understand the hectic nature of modern life where multitasking is almost second mature; constant demands on our time and attention, the relentless struggle for work/life balance, competing priorities and an ever-growing to-do list. we save you time and work to your pace.</p>
                     </div>
                 </div>
             </div>
