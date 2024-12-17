@@ -1,7 +1,7 @@
 <section>
     <div class="padding-global">
-        <div class="m-auto max-w-screen-2xl grid gap-2">
-            <h2 class="text-[3.06rem] md:text-[4rem] font-serif leading-none">in today’s connected world, the endless online chatter and constant state of flux can make planning your holiday feel overwhelming.</h2>
+        <div class="grid gap-2">
+            <h2 class="text-[3.06rem] md:text-[4.4rem] font-serif leading-none">in today’s connected world, the endless online chatter and constant state of flux can make planning your holiday feel overwhelming.</h2>
             <div class="grid lg:grid-cols-2 gap-4 items-stretch">
                 <div class="relative lg:order-none order-last">
                     <img src="<?php echo esc_url(get_theme_mod('journey_image')); ?>" alt="" class="aspect-[4/5] h-full object-cover">

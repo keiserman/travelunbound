@@ -81,60 +81,65 @@ function setupMarqueeAnimation() {
 }
 
 function setupLightboxes() {
-  const swiperEl = document.querySelector(".swiper");
-  const modal = document.getElementById("lightboxModal");
-  const closeBtn = document.getElementById("closeLightboxBtn");
-  const triggers = document.querySelectorAll(".open-lightbox");
+  const modals = document.querySelectorAll("[data-gallery-modal]");
 
-  if (!swiperEl || !modal || !closeBtn || triggers.length === 0) {
-    return;
-  }
+  if (!modals.length) return;
 
-  const swiper = new Swiper(swiperEl, {
-    navigation: {
-      nextEl: "[data-swiper='next']",
-      prevEl: "[data-swiper='prev']",
-    },
-    loop: false,
-  });
+  modals.forEach((modal) => {
+    const swiperEl = modal.querySelector(".swiper");
+    const closeBtn = modal.querySelector(".close-lightbox");
+    const targetId = "#" + modal.id;
 
-  function openLightbox(index) {
-    modal.classList.remove("hidden");
-    document.body.classList.add("overflow-hidden");
-
-    gsap.set(modal, { opacity: 0 });
-    gsap.to(modal, { opacity: 1, duration: 0.5 });
-
-    swiper.slideTo(index);
-  }
-
-  function closeLightbox() {
-    gsap.to(modal, {
-      opacity: 0,
-      duration: 0.5,
-      onComplete: () => {
-        modal.classList.add("hidden");
-        document.body.classList.remove("overflow-hidden");
+    // Initialize Swiper for this modal
+    const swiper = new Swiper(swiperEl, {
+      navigation: {
+        nextEl: '[data-swiper="next"]',
+        prevEl: '[data-swiper="prev"]',
       },
+      loop: false,
     });
-  }
 
-  triggers.forEach((trigger) => {
-    trigger.addEventListener("click", (e) => {
-      e.preventDefault();
-      const index = parseInt(trigger.getAttribute("data-index"), 10);
-      openLightbox(index);
+    function openLightbox(index) {
+      modal.classList.remove("hidden");
+      document.body.classList.add("overflow-hidden");
+      gsap.set(modal, { opacity: 0 });
+      gsap.to(modal, { opacity: 1, duration: 0.5 });
+      swiper.slideTo(index);
+    }
+
+    function closeLightbox() {
+      gsap.to(modal, {
+        opacity: 0,
+        duration: 0.5,
+        onComplete: () => {
+          modal.classList.add("hidden");
+          document.body.classList.remove("overflow-hidden");
+        },
+      });
+    }
+
+    const triggers = document.querySelectorAll(
+      `.open-lightbox[data-target="${targetId}"]`
+    );
+    triggers.forEach((trigger) => {
+      trigger.addEventListener("click", (e) => {
+        e.preventDefault();
+        const index = parseInt(trigger.getAttribute("data-index"), 10) || 0;
+        openLightbox(index);
+      });
     });
-  });
 
-  closeBtn.addEventListener("click", closeLightbox);
+    closeBtn.addEventListener("click", closeLightbox);
 
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) closeLightbox();
-  });
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeLightbox();
+    });
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeLightbox();
+    document.addEventListener("keydown", (e) => {
+      if (!modal.classList.contains("hidden") && e.key === "Escape") {
+        closeLightbox();
+      }
+    });
   });
 }
 

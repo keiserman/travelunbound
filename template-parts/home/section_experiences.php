@@ -24,20 +24,82 @@
             $title = get_the_title($post_id);
             $image_url = esc_url(get_the_post_thumbnail_url($post_id, 'large'));
             $title_attr = esc_attr($title);
+            $gallery = get_post_meta($post_id, '_experience_gallery', true);
+            $content = apply_filters('the_content', get_post_field('post_content', $post_id));
+
+            $modal_id = 'lightboxModal-' . $post_id;
+            $swiper_id = 'swiper-' . $post_id;
         ?>
             <div class="experiences-card">
-                <a href="#" class="open-lightbox overflow-hidden" data-index="<?php echo (int) $index; ?>">
+                <a href="#"
+                    class="open-lightbox overflow-hidden"
+                    data-target="#<?php echo $modal_id; ?>"
+                    data-index="0">
                     <img class="w-full" src="<?php echo $image_url; ?>" alt="<?php echo $title_attr; ?>">
                 </a>
-                <div class="flex justify-between flex-wrap">
+                <div class="flex justify-between">
                     <h4 class="heading-h4"><?php echo esc_html($title); ?></h4>
                     <?php if (!empty($location)): ?>
                         <p class="text-sm"><?php echo esc_html($location); ?></p>
                     <?php endif; ?>
                 </div>
             </div>
+
+            <div id="<?php echo $modal_id; ?>" class="lightbox-modal fixed inset-0 z-50 bg-primary hidden flex items-center justify-center" data-gallery-modal>
+                <button id="closeLightboxBtn" class="close-lightbox absolute w-8 h-8 top-4 right-4 text-white text-2xl z-10">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path>
+                    </svg>
+                </button>
+
+                <div class="absolute bottom-4 left-4 text-white space-y-2 z-10">
+                    <h4 class="text-lg font-bold"><?php echo esc_html($title); ?></h4>
+                    <div class="text-base max-w-md">
+                        <?php echo $content; ?>
+                    </div>
+                </div>
+
+                <?php if ($location): ?>
+                    <div class="absolute bottom-4 right-4 text-white text-sm opacity-80 z-10">
+                        <?php echo esc_html($location); ?>
+                    </div>
+                <?php endif; ?>
+
+                <div class="swiper w-full h-full">
+                    <div class="swiper-wrapper">
+                        <?php if (!empty($gallery) && is_array($gallery)): ?>
+                            <?php foreach ($gallery as $img_id):
+                            ?>
+                                <?php $img_url = wp_get_attachment_image_url($img_id, 'large'); ?>
+                                <?php if ($img_url): ?>
+                                    <div class="swiper-slide w-full h-full">
+                                        <img src="<?php echo esc_url($img_url); ?>" alt="<?php echo esc_attr($title); ?>" class="w-full h-full object-contain">
+                                    </div>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <div class="swiper-slide">
+                                <p>No images found in the gallery.</p>
+                            </div>
+                        <?php endif; ?>
+
+                    </div>
+                    <div data-swiper="prev" class="absolute w-8 h-8 left-4 top-1/2 z-10 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256">
+                            <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+                        </svg>
+                    </div>
+                    <div data-swiper="next" class="absolute w-8 h-8 right-4 top-1/2 z-10 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256">
+                            <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
         <?php
         }
+
         ?>
 
         <div class="md:grid flex flex-col grid-cols-2 justify-items-center items-center lg:gap-40 gap-24">
@@ -104,56 +166,3 @@
         </div>
     </div>
 </section>
-
-<div id="lightboxModal" class="fixed inset-0 z-50 hidden bg-primary items-center justify-center">
-    <div class="relative w-full h-full">
-
-        <button id="closeLightboxBtn" class="absolute w-8 h-8 top-4 right-4 text-white text-2xl z-10">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256">
-                <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path>
-            </svg>
-        </button>
-
-        <div class="swiper w-full h-full">
-            <div class="swiper-wrapper">
-                <?php foreach ($posts as $i => $post) : ?>
-                    <?php
-                    $slide_title      = get_the_title($post->ID);
-                    $slide_image_url  = esc_url(get_the_post_thumbnail_url($post->ID, 'large'));
-                    $slide_location   = get_post_meta($post->ID, '_experience_location', true);
-                    $slide_content    = apply_filters('the_content', get_post_field('post_content', $post->ID));
-                    ?>
-                    <div class="swiper-slide relative w-full h-full">
-                        <img src="<?php echo $slide_image_url; ?>" alt="<?php echo esc_attr($slide_title); ?>" class="w-full h-full object-contain">
-
-                        <div class="absolute bottom-4 left-4 text-white space-y-2">
-                            <h4 class="text-lg font-bold"><?php echo esc_html($slide_title); ?></h4>
-                            <div class="text-base max-w-md">
-                                <?php echo $slide_content;
-                                ?>
-                            </div>
-                        </div>
-
-                        <?php if ($slide_location): ?>
-                            <div class="absolute bottom-4 right-4 text-white text-sm opacity-80">
-                                <?php echo esc_html($slide_location); ?>
-                            </div>
-                        <?php endif; ?>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-
-
-            <div data-swiper="prev" class="absolute w-8 h-8 left-4 top-1/2 z-10 text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
-                </svg>
-            </div>
-            <div data-swiper="next" class="absolute w-8 h-8 right-4 top-1/2 z-10 text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
-                </svg>
-            </div>
-        </div>
-    </div>
-</div>

@@ -16,12 +16,12 @@ add_action('init', 'register_experiences_cpt');
 function experiences_add_gallery_meta_box()
 {
     add_meta_box(
-        'experience_gallery', // ID of the meta box
-        'Gallery', // Title of the meta box
-        'experiences_gallery_meta_box_callback', // Callback to display the field
-        'experiences', // Post type where it will appear
-        'normal', // Context (side, normal, advanced)
-        'default' // Priority
+        'experience_gallery',
+        'Gallery',
+        'experiences_gallery_meta_box_callback',
+        'experiences',
+        'normal',
+        'default'
     );
 }
 add_action('add_meta_boxes', 'experiences_add_gallery_meta_box');
@@ -29,10 +29,8 @@ add_action('add_meta_boxes', 'experiences_add_gallery_meta_box');
 // Callback function for the gallery meta box
 function experiences_gallery_meta_box_callback($post)
 {
-    // Enqueue WordPress media uploader scripts
     wp_enqueue_media();
 
-    // Retrieve saved gallery image IDs
     $gallery_ids = get_post_meta($post->ID, '_experience_gallery', true);
     $gallery_ids = is_array($gallery_ids) ? $gallery_ids : [];
 
@@ -56,7 +54,6 @@ function experiences_gallery_meta_box_callback($post)
             $('#add-gallery-images').on('click', function(e) {
                 e.preventDefault();
 
-                // Open the WordPress Media Uploader
                 if (!galleryUploader) {
                     galleryUploader = wp.media({
                         title: 'Select Gallery Images',
@@ -72,7 +69,7 @@ function experiences_gallery_meta_box_callback($post)
                 galleryUploader.on('select', function() {
                     let selection = galleryUploader.state().get('selection');
                     let container = $('#gallery-images-container ul');
-                    container.empty(); // Clear existing images
+                    container.empty();
 
                     selection.map(function(attachment) {
                         attachment = attachment.toJSON();
@@ -87,7 +84,6 @@ function experiences_gallery_meta_box_callback($post)
                 });
             });
 
-            // Remove images
             $(document).on('click', '.remove-image', function() {
                 $(this).closest('li').remove();
             });

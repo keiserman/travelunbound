@@ -79,7 +79,7 @@ body {
 }
 
 .heading-h2 {
-  @apply font-serif text-7xl font-light;
+  @apply font-serif text-4xl lg:text-7xl font-light;
 }
 
 .heading-h3 {
