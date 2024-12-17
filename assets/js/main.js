@@ -70,6 +70,8 @@ function setupAboutFAQs() {
 function setupMarqueeAnimation() {
   const marquee = document.querySelector("[data-marquee='marquee'");
 
+  if (!marquee) return;
+
   gsap.to(marquee.querySelectorAll("[data-marquee='wrapper'"), {
     x: "-100%",
     duration: 20,
@@ -79,8 +81,44 @@ function setupMarqueeAnimation() {
 }
 
 function setupLightboxes() {
-  const lightbox = GLightbox({
-    selector: "[data-glightbox]",
+  const swiper = new Swiper(".swiper", {
+    navigation: {
+      nextEl: "[data-swiper='next']",
+      prevEl: "[data-swiper='prev']",
+    },
+    loop: false,
+  });
+
+  const modal = document.getElementById("lightboxModal");
+  const closeBtn = document.getElementById("closeLightboxBtn");
+
+  function openLightbox(index) {
+    modal.classList.remove("hidden");
+    swiper.slideTo(index);
+    document.body.classList.add("overflow-hidden");
+  }
+
+  function closeLightbox() {
+    modal.classList.add("hidden");
+    document.body.classList.remove("overflow-hidden");
+  }
+
+  document.querySelectorAll(".open-lightbox").forEach((trigger) => {
+    trigger.addEventListener("click", (e) => {
+      e.preventDefault();
+      const index = parseInt(trigger.getAttribute("data-index"), 10);
+      openLightbox(index);
+    });
+  });
+
+  closeBtn.addEventListener("click", closeLightbox);
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeLightbox();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLightbox();
   });
 }
 

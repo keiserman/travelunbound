@@ -15,35 +15,41 @@ add_action('after_setup_theme', 'travel_unbound_setup');
 // Enqueue styles and scripts
 function enqueue_travel_unbound_assets()
 {
-    // Enqueque Glightbox CSS
-    wp_enqueue_style('glightbox', get_template_directory_uri() . '/assets/css/glightbox.min.css', [], '1.0.0');
-
     // Enqueue Tailwind CSS
     wp_enqueue_style('tailwind', get_template_directory_uri() . '/style.css', [], '1.0.0');
 
-    // Register and enqueue Glightbox core
-    wp_enqueue_script(
-        'glightbox',
-        get_template_directory_uri() . '/assets/js/glightbox.min.js',
+    // Enqueue Swiper CSS
+    wp_enqueue_style(
+        'swiper-css',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
         [],
+        null
+    );
+
+    // Enqueue Swiper JS
+    wp_enqueue_script(
+        'swiper-js',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+        [],
+        null,
         true
     );
 
-    // Register and enqueue GSAP core
+    // Enqueue GSAP Core
     wp_enqueue_script(
-        'gsap',
-        get_template_directory_uri() . '/assets/js/gsap.min.js',
+        'gsap-core',
+        'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js',
         [],
-        '3.12.5',
+        null,
         true
     );
 
-    // Register and enqueue GSAP ScrollTrigger plugin
+    // Enqueue GSAP ScrollTrigger Plugin
     wp_enqueue_script(
         'gsap-scrolltrigger',
-        get_template_directory_uri() . '/assets/js/ScrollTrigger.min.js',
-        ['gsap'],
-        '3.12.5',
+        'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js',
+        ['gsap-core'],
+        null,
         true
     );
 
@@ -51,7 +57,7 @@ function enqueue_travel_unbound_assets()
     wp_enqueue_script(
         'main-script',
         get_template_directory_uri() . '/assets/js/main.js',
-        ['gsap', 'gsap-scrolltrigger', 'glightbox'],
+        ['gsap-core', 'gsap-scrolltrigger'],
         '1.0.0',
         true
     );

@@ -61,6 +61,7 @@ Tags: responsive, blog, travel, minimalist
 
 :root {
   --color-primary: #254b9a;
+  --color-white: white;
 }
 
 body {
@@ -153,8 +154,4 @@ body {
 
 .experiences-card {
   @apply grid w-full max-w-6xl gap-4;
-}
-
-.goverlay {
-  @apply bg-primary;
 }
