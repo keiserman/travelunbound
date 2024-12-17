@@ -16,6 +16,9 @@ module.exports = {
       maxWidth: {
         "screen-2xl": "90rem",
       },
+      fontSize: {
+        "5xl": "2.5rem",
+      },
     },
   },
   plugins: [],

@@ -12,39 +12,98 @@ function register_experiences_cpt()
 }
 add_action('init', 'register_experiences_cpt');
 
-// Add meta box for location
-function experiences_add_meta_boxes()
+// Add meta box for gallery
+function experiences_add_gallery_meta_box()
 {
     add_meta_box(
-        'experience_location', // ID of the meta box
-        'Location', // Title of the meta box
-        'experiences_location_meta_box_callback', // Callback to display the field
+        'experience_gallery', // ID of the meta box
+        'Gallery', // Title of the meta box
+        'experiences_gallery_meta_box_callback', // Callback to display the field
         'experiences', // Post type where it will appear
         'normal', // Context (side, normal, advanced)
         'default' // Priority
     );
 }
-add_action('add_meta_boxes', 'experiences_add_meta_boxes');
+add_action('add_meta_boxes', 'experiences_add_gallery_meta_box');
 
-// Callback function for the meta box
-function experiences_location_meta_box_callback($post)
+// Callback function for the gallery meta box
+function experiences_gallery_meta_box_callback($post)
 {
-    // Get the current value of the meta field
-    $value = get_post_meta($post->ID, '_experience_location', true);
+    // Enqueue WordPress media uploader scripts
+    wp_enqueue_media();
+
+    // Retrieve saved gallery image IDs
+    $gallery_ids = get_post_meta($post->ID, '_experience_gallery', true);
+    $gallery_ids = is_array($gallery_ids) ? $gallery_ids : [];
+
 ?>
-    <label for="experience_location_field">Enter Location:</label>
-    <input type="text" name="experience_location_field" id="experience_location_field" value="<?php echo esc_attr($value); ?>" style="width:100%;">
+    <div id="gallery-images-container">
+        <ul>
+            <?php
+            foreach ($gallery_ids as $image_id) {
+                $img_url = wp_get_attachment_image_url($image_id, 'thumbnail');
+                echo '<li style="display:inline-block;margin:5px;"><img src="' . esc_url($img_url) . '" style="width:100px;height:100px;"><input type="hidden" name="experience_gallery_ids[]" value="' . esc_attr($image_id) . '"><button type="button" class="remove-image" style="display:block;">Remove</button></li>';
+            }
+            ?>
+        </ul>
+    </div>
+    <button type="button" id="add-gallery-images" class="button">Add Gallery Images</button>
+
+    <script>
+        jQuery(document).ready(function($) {
+            let galleryUploader;
+
+            $('#add-gallery-images').on('click', function(e) {
+                e.preventDefault();
+
+                // Open the WordPress Media Uploader
+                if (!galleryUploader) {
+                    galleryUploader = wp.media({
+                        title: 'Select Gallery Images',
+                        button: {
+                            text: 'Add to Gallery'
+                        },
+                        multiple: true
+                    });
+                }
+
+                galleryUploader.open();
+
+                galleryUploader.on('select', function() {
+                    let selection = galleryUploader.state().get('selection');
+                    let container = $('#gallery-images-container ul');
+                    container.empty(); // Clear existing images
+
+                    selection.map(function(attachment) {
+                        attachment = attachment.toJSON();
+                        container.append(`
+                            <li style="display:inline-block;margin:5px;">
+                                <img src="${attachment.sizes.thumbnail.url}" style="width:100px;height:100px;">
+                                <input type="hidden" name="experience_gallery_ids[]" value="${attachment.id}">
+                                <button type="button" class="remove-image" style="display:block;">Remove</button>
+                            </li>
+                        `);
+                    });
+                });
+            });
+
+            // Remove images
+            $(document).on('click', '.remove-image', function() {
+                $(this).closest('li').remove();
+            });
+        });
+    </script>
 <?php
 }
 
-// Save the location meta field
-function experiences_save_meta_box_data($post_id)
+// Save gallery meta field
+function experiences_save_gallery_meta_box($post_id)
 {
-    // Check if the location field is set
-    if (isset($_POST['experience_location_field'])) {
-        // Sanitize the input and save it to the database
-        $location = sanitize_text_field($_POST['experience_location_field']);
-        update_post_meta($post_id, '_experience_location', $location);
+    if (isset($_POST['experience_gallery_ids'])) {
+        $gallery_ids = array_map('intval', $_POST['experience_gallery_ids']);
+        update_post_meta($post_id, '_experience_gallery', $gallery_ids);
+    } else {
+        delete_post_meta($post_id, '_experience_gallery');
     }
 }
-add_action('save_post', 'experiences_save_meta_box_data');
+add_action('save_post', 'experiences_save_gallery_meta_box');

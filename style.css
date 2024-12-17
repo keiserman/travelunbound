@@ -637,6 +637,10 @@ video {
   bottom: 1rem;
 }
 
+.left-0 {
+  left: 0px;
+}
+
 .left-4 {
   left: 1rem;
 }
@@ -702,12 +706,12 @@ video {
   margin-right: auto;
 }
 
-.-ml-\[12\%\] {
-  margin-left: -12%;
+.-ml-\[20\%\] {
+  margin-left: -20%;
 }
 
-.-mr-\[12\%\] {
-  margin-right: -12%;
+.-mr-\[20\%\] {
+  margin-right: -20%;
 }
 
 .mb-10 {
@@ -855,6 +859,10 @@ video {
 
 .max-w-4xl {
   max-width: 56rem;
+}
+
+.max-w-6xl {
+  max-width: 72rem;
 }
 
 .max-w-lg {
@@ -1103,6 +1111,10 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
+.bg-opacity-80 {
+  --tw-bg-opacity: 0.8;
+}
+
 .object-contain {
   -o-object-fit: contain;
      object-fit: contain;
@@ -1247,14 +1259,16 @@ video {
   line-height: 2rem;
 }
 
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+.text-5xl {
+  font-size: 2.5rem;
 }
 
-.text-8xl {
-  font-size: 6rem;
-  line-height: 1;
+.text-\[3\.06rem\] {
+  font-size: 3.06rem;
+}
+
+.text-\[38px\] {
+  font-size: 38px;
 }
 
 .text-\[40px\] {
@@ -1281,8 +1295,18 @@ video {
   line-height: 1.75rem;
 }
 
-.text-\[38px\] {
-  font-size: 38px;
+.text-7xl {
+  font-size: 4.5rem;
+  line-height: 1;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.text-\[3\.375rem\] {
+  font-size: 3.375rem;
 }
 
 .font-bold {
@@ -1299,6 +1323,10 @@ video {
 
 .leading-none {
   line-height: 1;
+}
+
+.leading-tight {
+  line-height: 1.25;
 }
 
 .text-blue-500 {
@@ -1354,11 +1382,11 @@ video {
 }
 
 .clip-path-about-video {
-  clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 65% 100%, 0 100%);
 }
 
 .clip-path-about-image {
-  clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(35% 0, 100% 0, 100% 100%, 0 100%);
 }
 
 @font-face {
@@ -1392,6 +1420,12 @@ video {
   --color-white: white;
 }
 
+@media (min-width: 1024px) {
+  html {
+    font-size: 1vw !important;
+  }
+}
+
 body {
   color: var(--color-primary);
 }
@@ -1411,6 +1445,12 @@ body {
 }
 
 @media (min-width: 1024px) {
+  .heading-h1 {
+    font-size: 6vw;
+  }
+}
+
+@media (min-width: 1280px) {
   .heading-h1 {
     font-size: 6rem;
     line-height: 1;
@@ -1483,8 +1523,8 @@ body {
   border-width: 1px;
   padding-left: 4rem;
   padding-right: 4rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
   text-transform: lowercase;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1502,12 +1542,17 @@ body {
   border-width: 1px;
   padding-left: 4rem;
   padding-right: 4rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
   text-transform: lowercase;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+.btn-primary.is-text {
+  border-style: none;
+  padding: 0px;
 }
 
 .btn-white {
@@ -1522,12 +1567,17 @@ body {
   border-width: 1px;
   padding-left: 4rem;
   padding-right: 4rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
   text-transform: lowercase;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+.btn-white.is-text {
+  border-style: none;
+  padding: 0px;
 }
 
 .btn-outline {
@@ -1540,12 +1590,17 @@ body {
   border-width: 1px;
   padding-left: 4rem;
   padding-right: 4rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
   text-transform: lowercase;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+.btn-outline.is-text {
+  border-style: none;
+  padding: 0px;
 }
 
 .btn-outline:hover {
@@ -1566,18 +1621,28 @@ body {
   border-width: 1px;
   padding-left: 4rem;
   padding-right: 4rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
   text-transform: lowercase;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
 
+.btn-outline-white.is-text {
+  border-style: none;
+  padding: 0px;
+}
+
 .btn-outline-white:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
   color: var(--color-primary);
+}
+
+.btn.is-text {
+  border-style: none;
+  padding: 0px;
 }
 
 .footer-logo {
@@ -1627,8 +1692,7 @@ body {
 .nav-menu li {
   position: relative;
   font-family: OGG Roman, serif;
-  font-size: 3rem;
-  line-height: 1;
+  font-size: 2.5rem;
 }
 
 .nav-menu li::after {
@@ -1746,24 +1810,16 @@ body {
     grid-template-columns: max-content max-content 1fr;
   }
 
-  .md\:flex-row {
-    flex-direction: row;
-  }
-
-  .md\:items-end {
-    align-items: flex-end;
-  }
-
-  .md\:justify-end {
-    justify-content: flex-end;
-  }
-
-  .md\:pl-20 {
-    padding-left: 5rem;
+  .md\:text-\[3\.9rem\] {
+    font-size: 3.9rem;
   }
 
   .md\:text-\[49px\] {
     font-size: 49px;
+  }
+
+  .md\:text-\[4rem\] {
+    font-size: 4rem;
   }
 }
 
@@ -1788,6 +1844,18 @@ body {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .lg\:flex-row {
+    flex-direction: row;
+  }
+
+  .lg\:items-end {
+    align-items: flex-end;
+  }
+
+  .lg\:justify-end {
+    justify-content: flex-end;
+  }
+
   .lg\:justify-center {
     justify-content: center;
   }
@@ -1810,17 +1878,12 @@ body {
     padding-left: 5rem;
   }
 
-  .lg\:text-6xl {
-    font-size: 3.75rem;
-    line-height: 1;
+  .lg\:text-\[51px\] {
+    font-size: 51px;
   }
 
   .lg\:text-\[54px\] {
     font-size: 54px;
-  }
-
-  .lg\:text-\[51px\] {
-    font-size: 51px;
   }
 
   .lg\:vertical-text {
@@ -1829,25 +1892,21 @@ body {
 }
 
 @media (min-width: 1280px) {
-  .xl\:text-\[55px\] {
-    font-size: 55px;
-  }
-
   .xl\:text-\[54px\] {
     font-size: 54px;
+  }
+
+  .xl\:text-\[55px\] {
+    font-size: 55px;
   }
 }
 
 @media (min-width: 1536px) {
-  .\32xl\:text-\[65px\] {
-    font-size: 65px;
-  }
-
-  .\32xl\:text-\[60px\] {
-    font-size: 60px;
-  }
-
   .\32xl\:text-\[63px\] {
     font-size: 63px;
+  }
+
+  .\32xl\:text-\[65px\] {
+    font-size: 65px;
   }
 }

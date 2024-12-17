@@ -51,11 +51,11 @@ Tags: responsive, blog, travel, minimalist
   }
 
   .clip-path-about-video {
-    clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 65% 100%, 0 100%);
   }
 
   .clip-path-about-image {
-    clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(35% 0, 100% 0, 100% 100%, 0 100%);
   }
 }
 
@@ -64,12 +64,18 @@ Tags: responsive, blog, travel, minimalist
   --color-white: white;
 }
 
+@media (min-width: 1024px) {
+  html {
+    font-size: 1vw !important;
+  }
+}
+
 body {
   @apply text-primary;
 }
 
 .heading-h1 {
-  @apply font-serif text-4xl font-light md:text-6xl lg:text-8xl;
+  @apply font-serif text-4xl font-light md:text-6xl xl:text-8xl lg:text-[6vw];
 }
 
 .heading-h2 {
@@ -109,7 +115,7 @@ body {
 }
 
 .btn {
-  @apply flex items-center gap-2 border px-16 py-4 lowercase transition-colors;
+  @apply flex items-center gap-2 border px-16 py-3 lowercase transition-colors;
 }
 
 .btn-primary {
@@ -126,6 +132,10 @@ body {
 
 .btn-outline-white {
   @apply btn border-white bg-transparent text-white hover:bg-white hover:text-primary;
+}
+
+.btn.is-text {
+  @apply p-0 border-none;
 }
 
 .footer-logo {

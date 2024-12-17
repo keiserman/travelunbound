@@ -1,6 +1,6 @@
 <section>
     <div class="container padding-global py-40">
-        <h2 class="heading-h2 m-auto max-w-4xl text-8xl mb-12">
+        <h2 class="heading-h1 m-auto max-w-4xl mb-12">
             transformative<br>
             <span class="font-sans">travel experiences</span>
         </h2>
@@ -60,7 +60,7 @@
 
                     if (count($posts) > 3) {
                         echo '<div class="text-xl col-span-2 max-w-3xl py-32">';
-                        echo '<p>our in-the-know global network provides invaluable on-the-ground knowledge...</p>';
+                        echo '<p>our in-the-know global network provides invaluable on-the-ground knowledge, insider insight, and exclusive access, connecting you to the local culture authentically and meaningfully.</p>';
                         echo '</div>';
                     }
                 } elseif ($index === 3) {
@@ -70,7 +70,7 @@
                 } elseif ($index === 4) {
                     echo '<div class="flex flex-col items-end col-span-1">
                             <p class="text-xl pb-52 max-w-md">
-                                We give you the inside track on the hottest openings...
+                                We give you the inside track on the hottest openings, latest happenings and the under-the-radar hidden gems from around the globe.
                             </p>';
                     render_experience_card($post->ID, $index);
                     echo '</div>';
@@ -82,9 +82,9 @@
                     echo '<div class="flex flex-col items-end col-span-1">
                             <div class="flex flex-col items-start gap-8 pb-52">
                                 <p class="text-xl max-w-lg">
-                                    Experience destinations in a new light...
+                                    Experience destinations in a new light as we take you far from the tourist traps and show you the buzziest neighbourhoods, top tables, and best shops.
                                 </p>
-                                <a href="/" class="button is-text">view experiences
+                                <a href="/" class="btn is-text">view experiences
                                     <svg class="w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.5 36.8">
                                         <path fill="currentColor" d="M53.8 16.6 37.9.7c-1-1-2.6-1-3.5 0-1 1-1 2.6 0 3.5L46 15.8H0v5h46L34.4 32.4c-1 1-1 2.6 0 3.5 1 1 2.6 1 3.5 0L53.8 20c1-1 1-2.6 0-3.5Z"/>
                                     </svg>
