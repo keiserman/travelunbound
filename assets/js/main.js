@@ -193,31 +193,42 @@ function setupButtonHoverAnimation() {
 
 function setupNavbarScrollAnimation() {
   const navbar = document.querySelector("[data-navbar='navbar']");
-  if (!navbar) return;
+  const navbarContent = document.querySelector("[data-navbar='content']");
+  if (!navbar || !navbarContent) return;
 
-  gsap.to(navbar, {
-    backgroundColor: "black",
-    duration: 0.3,
-    scrollTrigger: {
-      trigger: "body",
-      start: "5% center",
-      end: "6% center",
-      scrub: 0.5,
-    },
-  });
+  const navbarLogoLight = navbar.querySelector(".navbar-logo-light");
+  const navbarLogoDark = navbar.querySelector(".navbar-logo-dark");
+  const navbarButton = navbar.querySelector("[data-navbar='open']");
+  const threshold = window.innerHeight * 0.5;
+
+  function toggleNavbarBackground() {
+    if (window.scrollY > threshold) {
+      navbarContent.style.backgroundColor = "white";
+      navbarContent.classList.remove("bg-gradient-to-b");
+      navbarButton.classList.add("text-primary");
+      navbarLogoLight.classList.remove("hidden");
+      navbarLogoDark.classList.add("hidden");
+    } else {
+      navbarContent.style.backgroundColor = "transparent";
+      navbarContent.classList.add("bg-gradient-to-b");
+      navbarButton.classList.remove("text-primary");
+      navbarLogoLight.classList.add("hidden");
+      navbarLogoDark.classList.remove("hidden");
+    }
+  }
+
+  window.addEventListener("scroll", toggleNavbarBackground);
 }
 
 function setupMenuAnimation() {
   const navbar = document.querySelector("[data-navbar='navbar']");
   if (!navbar) return;
 
-  const navbarButton = navbar.querySelector("[data-navbar='button']");
+  const navbarOpen = navbar.querySelector("[data-navbar='open']");
+  const navbarClose = navbar.querySelector("[data-navbar='close']");
   const navbarMenu = navbar.querySelector("[data-navbar='menu']");
-  if (!navbarButton || !navbarMenu) return;
-
-  const navbarButtonLine1 = navbarButton.querySelector("[data-navbar='line1']");
-  const navbarButtonLine2 = navbarButton.querySelector("[data-navbar='line2']");
-  const navbarButtonLine3 = navbarButton.querySelector("[data-navbar='line3']");
+  const navbarContent = navbar.querySelector("[data-navbar='content']");
+  if (!navbarOpen || !navbarClose || !navbarMenu) return;
 
   let tl = gsap.timeline({
     paused: true,
@@ -226,44 +237,15 @@ function setupMenuAnimation() {
 
   tl.fromTo(navbarMenu, { x: "100%" }, { x: "0%" });
   tl.to(
-    navbarButtonLine1,
+    navbarContent,
     {
-      y: "0.5rem",
-      rotate: "45deg",
+      y: "-100%",
     },
     "<"
   );
 
-  tl.to(
-    navbarButtonLine2,
-    {
-      scaleX: "0",
-    },
-    "<"
-  );
-
-  tl.to(
-    navbarButtonLine3,
-    {
-      y: "-0.5rem",
-      rotate: "-45deg",
-    },
-    "<"
-  );
-
-  let isMenuOpen = false;
-
-  navbarButton.addEventListener("click", () => {
-    isMenuOpen = !isMenuOpen;
-
-    if (isMenuOpen) {
-      tl.play();
-      navbarButton.setAttribute("aria-expanded", "true");
-    } else {
-      tl.reverse();
-      navbarButton.setAttribute("aria-expanded", "false");
-    }
-  });
+  navbarOpen.addEventListener("click", () => tl.play());
+  navbarClose.addEventListener("click", () => tl.reverse());
 }
 
 function setupBackgroundColorAnimation() {

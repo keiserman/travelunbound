@@ -16,6 +16,22 @@ function travel_unbound_setup()
 }
 add_action('after_setup_theme', 'travel_unbound_setup');
 
+function add_custom_logos_support($wp_customize)
+{
+    // Add a new setting for the dark logo
+    $wp_customize->add_setting('dark_logo', [
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ]);
+
+    // Add the control for the dark logo
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'dark_logo', [
+        'label' => __('Dark Mode Logo', 'travel-unbound'),
+        'section' => 'title_tagline', // Add it to the same section as the regular logo
+        'settings' => 'dark_logo',
+    ]));
+}
+add_action('customize_register', 'add_custom_logos_support');
 
 // Enqueue styles and scripts
 function enqueue_travel_unbound_assets()
