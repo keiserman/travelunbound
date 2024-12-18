@@ -770,6 +770,10 @@ video {
   margin-top: 11rem;
 }
 
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
 .line-clamp-2 {
   overflow: hidden;
   display: -webkit-box;
@@ -865,6 +869,10 @@ video {
   max-width: 56rem;
 }
 
+.max-w-56 {
+  max-width: 14rem;
+}
+
 .max-w-6xl {
   max-width: 72rem;
 }
@@ -883,10 +891,6 @@ video {
 
 .max-w-xl {
   max-width: 36rem;
-}
-
-.max-w-56 {
-  max-width: 14rem;
 }
 
 .shrink-0 {
@@ -940,6 +944,10 @@ video {
 
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.flex-row {
+  flex-direction: row;
 }
 
 .flex-col {
@@ -1210,6 +1218,21 @@ video {
   padding-bottom: 2rem;
 }
 
+.py-60 {
+  padding-top: 15rem;
+  padding-bottom: 15rem;
+}
+
+.py-52 {
+  padding-top: 13rem;
+  padding-bottom: 13rem;
+}
+
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
 .pb-14 {
   padding-bottom: 3.5rem;
 }
@@ -1252,6 +1275,14 @@ video {
 
 .pt-36 {
   padding-top: 9rem;
+}
+
+.pb-24 {
+  padding-bottom: 6rem;
+}
+
+.pb-20 {
+  padding-bottom: 5rem;
 }
 
 .text-center {
@@ -1309,6 +1340,16 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .font-bold {
@@ -1529,16 +1570,24 @@ body {
 .btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   border-width: 1px;
-  padding-left: 4rem;
-  padding-right: 4rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   text-transform: lowercase;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+@media (min-width: 640px) {
+  .btn {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
 }
 
 .btn-primary {
@@ -1550,16 +1599,24 @@ body {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   border-width: 1px;
-  padding-left: 4rem;
-  padding-right: 4rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   text-transform: lowercase;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+@media (min-width: 640px) {
+  .btn-primary {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
 }
 
 .btn-primary.is-text {
@@ -1576,16 +1633,24 @@ body {
   color: rgb(37 75 154 / var(--tw-text-opacity, 1));
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   border-width: 1px;
-  padding-left: 4rem;
-  padding-right: 4rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   text-transform: lowercase;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+@media (min-width: 640px) {
+  .btn-white {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
 }
 
 .btn-white.is-text {
@@ -1610,16 +1675,24 @@ body {
   color: rgb(37 75 154 / var(--tw-text-opacity, 1));
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   border-width: 1px;
-  padding-left: 4rem;
-  padding-right: 4rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   text-transform: lowercase;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+@media (min-width: 640px) {
+  .btn-outline {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
 }
 
 .btn-outline.is-text {
@@ -1642,16 +1715,24 @@ body {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   border-width: 1px;
-  padding-left: 4rem;
-  padding-right: 4rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   text-transform: lowercase;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+@media (min-width: 640px) {
+  .btn-outline-white {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
 }
 
 .btn-outline-white.is-text {
@@ -1818,19 +1899,48 @@ body {
 }
 
 @media (min-width: 640px) {
+  .sm\:grid {
+    display: grid;
+  }
+
+  .sm\:grow-0 {
+    flex-grow: 0;
+  }
+
   .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sm\:flex-row {
+    flex-direction: row;
+  }
+
+  .sm\:flex-col {
+    flex-direction: column;
   }
 
   .sm\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
   }
+
+  .sm\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .sm\:text-\[3\.06rem\] {
+    font-size: 3.06rem;
+  }
 }
 
 @media (min-width: 768px) {
   .md\:col-span-1 {
     grid-column: span 1 / span 1;
+  }
+
+  .md\:mb-12 {
+    margin-bottom: 3rem;
   }
 
   .md\:flex {
@@ -1841,12 +1951,43 @@ body {
     display: grid;
   }
 
+  .md\:w-14 {
+    width: 3.5rem;
+  }
+
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .md\:grid-cols-\[max-content_max-content_1fr\] {
     grid-template-columns: max-content max-content 1fr;
+  }
+
+  .md\:gap-24 {
+    gap: 6rem;
+  }
+
+  .md\:gap-2 {
+    gap: 0.5rem;
+  }
+
+  .md\:py-32 {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
+  .md\:py-72 {
+    padding-top: 18rem;
+    padding-bottom: 18rem;
+  }
+
+  .md\:py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .md\:pb-52 {
+    padding-bottom: 13rem;
   }
 
   .md\:text-right {
@@ -1859,6 +2000,29 @@ body {
 
   .md\:text-\[4\.4rem\] {
     font-size: 4.4rem;
+  }
+
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .md\:text-5xl {
+    font-size: 2.5rem;
+  }
+
+  .md\:text-\[3\.375rem\] {
+    font-size: 3.375rem;
+  }
+
+  .md\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  .md\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 
   .md\:vertical-text {

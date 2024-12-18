@@ -1,10 +1,10 @@
 <section>
     <div class="container padding-global py-40">
-        <h2 class="heading-h1 m-auto max-w-4xl mb-12">
+        <h2 class="heading-h1 m-auto max-w-4xl mb-6 md:mb-12">
             transformative<br>
             <span class="font-sans">travel experiences</span>
         </h2>
-        <p class="m-auto max-w-4xl text-2xl mb-28">
+        <p class="m-auto max-w-4xl text-lg md:text-2xl mb-28">
             no matter where inspiration takes you, we will create a unique journey that immerses you in the genuine spirit of each destination.
         </p>
 
@@ -37,7 +37,7 @@
                     data-index="0">
                     <img class="w-full" src="<?php echo $image_url; ?>" alt="<?php echo $title_attr; ?>">
                 </a>
-                <div class="flex justify-between">
+                <div class="flex md:gap-2 justify-between flex-wrap sm:flex-row flex-col">
                     <h4 class="heading-h4"><?php echo esc_html($title); ?></h4>
                     <?php if (!empty($location)): ?>
                         <p class="text-sm"><?php echo esc_html($location); ?></p>
@@ -102,7 +102,7 @@
 
         ?>
 
-        <div class="md:grid flex flex-col grid-cols-2 justify-items-center items-center lg:gap-40 gap-24">
+        <div class="md:grid flex flex-col grid-cols-2 justify-items-center items-center gap-12 lg:gap-40 md:gap-24">
             <?php
             foreach ($posts as $index => $post) {
                 setup_postdata($post);
@@ -121,7 +121,7 @@
                     echo '</div>';
 
                     if (count($posts) > 3) {
-                        echo '<div class="text-xl col-span-2 max-w-3xl py-32">';
+                        echo '<div class="text-lg md:text-xl col-span-2 max-w-3xl py-24 md:py-32">';
                         echo '<p>our in-the-know global network provides invaluable on-the-ground knowledge, insider insight, and exclusive access, connecting you to the local culture authentically and meaningfully.</p>';
                         echo '</div>';
                     }
@@ -131,7 +131,7 @@
                     echo '</div>';
                 } elseif ($index === 4) {
                     echo '<div class="flex flex-col items-end col-span-1">
-                            <p class="text-xl pb-52 max-w-md">
+                            <p class="text-lg md:text-xl pb-20 md:pb-52 max-w-md">
                                 We give you the inside track on the hottest openings, latest happenings and the under-the-radar hidden gems from around the globe.
                             </p>';
                     render_experience_card($post->ID, $index);
@@ -142,8 +142,8 @@
                     echo '</div>';
                 } elseif ($index === 6) {
                     echo '<div class="flex flex-col items-end col-span-1">
-                            <div class="flex flex-col items-start gap-8 pb-52">
-                                <p class="text-xl max-w-lg">
+                            <div class="flex flex-col items-start gap-8 pb-20 md:pb-52">
+                                <p class="text-lg md:text-xl max-w-lg">
                                     Experience destinations in a new light as we take you far from the tourist traps and show you the buzziest neighbourhoods, top tables, and best shops.
                                 </p>
                                 <a href="/" class="btn is-text">view experiences

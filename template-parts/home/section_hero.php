@@ -6,13 +6,13 @@
                 <?php echo esc_html(get_theme_mod('home_heading_span', 'modern traveller.')); ?>
             </span>
         </h1>
-        <div class="flex gap-4 lg:justify-end shrink-0">
-            <a href="/" class="btn-outline-white" data-button="button">Enquire
+        <div class="flex flex-wrap gap-4 lg:justify-end shrink-0">
+            <a href="/" class="btn-outline-white sm:grow-0 grow" data-button="button">Enquire
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 256 256" data-button="icon">
                     <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
                 </svg>
             </a>
-            <a href="/" class="btn-white rounded-full">Learn more</a>
+            <a href="/" class="btn-white rounded-full sm:grow-0 grow">Learn more</a>
         </div>
     </div>
     <?php

@@ -1,7 +1,7 @@
 <footer class="py-8 bg-white text-primary relative">
     <div class="padding-global">
         <div class="flex flex-col gap-24">
-            <div class="grid sm:grid-cols-2 md:grid-cols-[max-content_max-content_1fr] gap-24">
+            <div class="flex flex-col sm:grid sm:grid-cols-2 md:grid-cols-[max-content_max-content_1fr] gap-10 md:gap-24">
                 <div class="flex flex-col gap-4">
                     <div class="text-xl font-serif">find out more</div>
                     <?php

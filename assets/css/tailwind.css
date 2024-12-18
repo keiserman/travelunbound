@@ -108,7 +108,7 @@ body {
 }
 
 .btn {
-  @apply flex items-center gap-2 border px-16 py-3 lowercase transition-colors;
+  @apply flex items-center justify-center gap-2 border px-10 sm:px-16 py-3 lowercase transition-colors;
 }
 
 .btn-primary {
