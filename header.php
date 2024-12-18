@@ -10,7 +10,7 @@
 
 <body <?php body_class(); ?>>
 
-    <header class="bg-transparent text-white py-4 fixed top-0 w-full z-40" data-navbar="navbar">
+    <header class="bg-gradient-to-b from-black/60 to-transparent text-white py-4 fixed top-0 w-full z-40" data-navbar="navbar">
         <div class="padding-global flex gap-4 items-center lg:justify-normal justify-between">
             <div class="text-xl flex justify-center lg:grow lg:translate-x-6">
                 <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center">

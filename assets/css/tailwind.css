@@ -59,15 +59,8 @@ Tags: responsive, blog, travel, minimalist
   }
 }
 
-:root {
-  --color-primary: #254b9a;
-  --color-white: white;
-}
-
-@media (min-width: 1024px) {
-  html {
-    font-size: 1vw !important;
-  }
+html {
+  @apply lg:text-[1vw];
 }
 
 body {
@@ -123,7 +116,7 @@ body {
 }
 
 .btn-white {
-  @apply btn border-white bg-white text-primary;
+  @apply btn border-white bg-white text-primary hover:bg-primary hover:border-primary hover:text-white;
 }
 
 .btn-outline {
@@ -154,8 +147,13 @@ body {
   @apply relative font-serif text-5xl leading-none after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-white after:transition-all hover:after:w-full;
 }
 
+.footer-menu {
+  @apply flex flex-col items-start gap-1;
+}
+
+.footer-menu li,
 .footer-link {
-  @apply relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-footer after:transition-all hover:after:w-full;
+  @apply relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-primary after:transition-all hover:after:w-full;
 }
 
 .contact-link {

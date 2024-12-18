@@ -8,7 +8,7 @@ Template Name: Base Page
 
 <main>
     <section>
-        <div class="px-4 sm:px-8 flex relative h-screen items-center justify-center text-center text-white">
+        <div class="px-4 sm:px-8 flex relative h-[90vh] items-center justify-center text-center text-white">
             <div class="padding-global">
                 <h1 class="heading-h1 relative z-10">base <span class="font-sans">/page</span></h1>
             </div>

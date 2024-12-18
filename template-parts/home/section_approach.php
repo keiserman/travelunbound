@@ -1,5 +1,5 @@
 <section class="bg-white">
-    <div class="padding-global">
+    <div class="padding-global border-b">
         <div class="m-auto max-w-3xl text-lg mb-4">Our approach</div>
     </div>
 

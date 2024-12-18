@@ -1,5 +1,5 @@
 <section class="bg-black text-white relative">
-    <div class="padding-global h-[85vh] flex lg:flex-row flex-col gap-6 justify-end lg:items-end py-6 relative z-10">
+    <div class="padding-global h-screen flex lg:flex-row flex-col gap-6 justify-end lg:items-end py-6 relative z-10">
         <h1 data-animate="fade" class="heading-h1">
             <?php echo esc_html(get_theme_mod('home_heading_main', 'Enriching experiences for the')); ?>
             <span class="font-sans">

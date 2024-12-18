@@ -1,8 +1,8 @@
 <section>
     <div class="padding-global py-36">
-        <div class="container-medium grid gap-36">
+        <div class="m-auto max-w-screen-xl grid gap-36">
             <div class="m-auto max-w-3xl">
-                <h2 class="heading-h2 mb-12">about/<span class="font-sans">us</span></h2>
+                <h2 class="heading-h1 mb-12">about/<span class="font-sans">us</span></h2>
                 <div class="text-xl">With travel/unbound, you're not just traveling; you're opening the door to a world rich with discovery and wonder, guided by insiders who know what truly makes each destination unique. Trust us to transform your travels into a memorable and meaningful journey.</div>
             </div>
             <div class="grid md:grid-cols-2 gap-24 items-center">
@@ -12,8 +12,8 @@
                 </div>
                 <div class="flex flex-col gap-8">
                     <h2 class="heading-h2">bespoke<br /><span class="font-sans">travel design</span></h2>
-                    <p class="text-lg">From short weekend breaks to complex around-the-world itineraries, our highly personalised approach allows for a flexible service model that can be adapted to your needs:</p>
-                    <ul class="text-lg list-disc list-inside">
+                    <p class="text-xl">From short weekend breaks to complex around-the-world itineraries, our highly personalised approach allows for a flexible service model that can be adapted to your needs:</p>
+                    <ul class="text-xl list-[square] list-inside">
                         <li>Hotel & Villa Bookings</li>
                         <li>Complex Itinerary Planning / Design</li>
                         <li>In-Destination Experiences</li>

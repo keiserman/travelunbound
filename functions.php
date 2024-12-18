@@ -3,14 +3,19 @@
 // Theme setup
 function travel_unbound_setup()
 {
+    // Add support for various theme features
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
     add_theme_support('custom-logo');
+
+    // Register navigation menus
     register_nav_menus([
         'primary' => __('Primary Menu', 'travel-unbound'),
+        'footer' => __('Footer Menu', 'travel-unbound'),
     ]);
 }
 add_action('after_setup_theme', 'travel_unbound_setup');
+
 
 // Enqueue styles and scripts
 function enqueue_travel_unbound_assets()

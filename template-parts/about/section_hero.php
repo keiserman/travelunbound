@@ -1,5 +1,5 @@
 <section>
-    <video autoplay muted loop class="w-full h-screen object-cover bg-black">
+    <video autoplay muted loop class="w-full h-[90vh] object-cover bg-black">
         <source src="<?php echo esc_url(wp_get_attachment_url(get_theme_mod('about_hero_video'))); ?>" type="video/mp4">
     </video>
     <div class="padding-global">

@@ -1,14 +1,17 @@
-<footer class="py-8 bg-white text-footer relative">
+<footer class="py-8 bg-white text-primary relative">
     <div class="padding-global">
         <div class="flex flex-col gap-24">
             <div class="grid sm:grid-cols-2 md:grid-cols-[max-content_max-content_1fr] gap-24">
                 <div class="flex flex-col gap-4">
                     <div class="text-xl font-serif">find out more</div>
-                    <div class="flex flex-col items-start gap-1">
-                        <a href="" class="footer-link">about</a>
-                        <a href="" class="footer-link">experiences</a>
-                        <a href="" class="footer-link">contact</a>
-                    </div>
+                    <?php
+                    wp_nav_menu(array(
+                        'theme_location' => 'footer',
+                        'container' => 'nav',
+                        'menu_class' => 'footer-menu',
+                        'fallback_cb' => false,
+                    ));
+                    ?>
                 </div>
                 <div class="flex flex-col gap-4">
                     <div class="text-xl font-serif">stay in touch</div>
@@ -32,7 +35,7 @@
             </div>
         </div>
     </div>
-    <div class="absolute top-0 right-0 w-32 h-full clip-path-footer bg-footer"></div>
+    <div class="absolute top-0 right-0 w-32 h-full clip-path-footer bg-primary"></div>
 </footer>
 
 <?php wp_footer(); ?>

@@ -267,28 +267,21 @@ function setupMenuAnimation() {
 }
 
 function setupBackgroundColorAnimation() {
-  gsap.to(":root", {
-    "--color-primary": "#FFFFFF",
-    duration: 1,
-    scrollTrigger: {
-      trigger: "body",
-      start: "75% center",
-      end: "76% center",
-      scrub: 1,
-    },
-  });
+  const trigger = document.querySelector("[data-animate='scroll-bg']");
 
-  gsap.to("body", {
-    backgroundColor: "#DF6737",
-    color: "var(--color-primary)",
-    duration: 1,
-    scrollTrigger: {
-      trigger: "body",
-      start: "75% center",
-      end: "76% center",
-      scrub: 1,
-    },
-  });
+  if (trigger) {
+    gsap.to("body", {
+      backgroundColor: "#DF6737",
+      color: "white",
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: trigger,
+        start: "top 80%",
+        end: "none",
+        toggleActions: "play none none reverse",
+      },
+    });
+  }
 }
 
 function setupFadeAnimation() {
@@ -321,13 +314,21 @@ function setupFAQ() {
     });
     tl.to(image, { opacity: 0.2, duration: 0.3 }, "<");
     tl.to(title, { color: "#FFFFFF", duration: 0.3 }, "<");
-    tl.to(faq, { backgroundColor: "#DF6737", duration: 0.3 }, "<");
+    tl.to(
+      faq,
+      { backgroundColor: "#DF6737", borderColor: "#DF6737", duration: 0.3 },
+      "<"
+    );
     faq._timeline = tl;
 
     const tlHovered = gsap.timeline({ paused: true });
     tlHovered.to(image, { opacity: 0.2, duration: 0.3 });
     tlHovered.to(title, { color: "#FFFFFF", duration: 0.3 }, "<");
-    tlHovered.to(faq, { backgroundColor: "#DF6737", duration: 0.3 }, "<");
+    tlHovered.to(
+      faq,
+      { backgroundColor: "#DF6737", borderColor: "#DF6737", duration: 0.3 },
+      "<"
+    );
     faq._hoverTimeline = tlHovered;
     faq.addEventListener("click", () => {
       toggleFAQ(faq, faqs);

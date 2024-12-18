@@ -1,7 +1,7 @@
 <section class="bg-lightgray">
     <div class="padding-global py-24">
         <div class="container-small grid gap-6 mb-24">
-            <h2 class="heading-h2">our founders</h2>
+            <h2 class="heading-h1">our founders</h2>
             <p class="text-2xl">combining deep & broad industry expertise, a creative & personal approach, meticulous attention to detail, and a passion for discovery to create enriching & memorable experiences for the modern traveller.</p>
         </div>
         <div class="container grid md:grid-cols-2 gap-24">

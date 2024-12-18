@@ -1,5 +1,5 @@
 <section>
-    <div class="flex relative h-screen items-center justify-center text-center text-white">
+    <div class="flex relative h-[90vh] items-center justify-center text-center text-white">
         <div class="padding-global">
             <h1 class="heading-h1 relative z-10">your journey starts <span class="font-sans">here.</span></h1>
         </div>
@@ -13,18 +13,18 @@
         if ($hero_video_url): ?>
             <video class="absolute w-full h-full object-cover bg-black" autoplay muted loop>
                 <source src="<?php echo esc_url(
-                    $hero_video_url
-                ); ?>" type="video/mp4">
+                                    $hero_video_url
+                                ); ?>" type="video/mp4">
                 <?php if ($hero_image): ?>
                     <img src="<?php echo esc_url(
-                        $hero_image
-                    ); ?>" alt="Fallback Hero Background">
+                                    $hero_image
+                                ); ?>" alt="Fallback Hero Background">
                 <?php endif; ?>
             </video>
         <?php elseif ($hero_image): ?>
             <img src="<?php echo esc_url(
-                $hero_image
-            ); ?>" alt="Hero Background" class="absolute w-full h-full z-0 top-0 object-cover">
+                            $hero_image
+                        ); ?>" alt="Hero Background" class="absolute w-full h-full z-0 top-0 object-cover">
         <?php endif;
         ?>
     </div>

@@ -17,7 +17,7 @@
             <div class="text-xl mb-2">Or, you can contact us directly</div>
             <div class="text-xl mb-10">we will get back to you as soon as we can.</div>
             <div class="flex flex-col gap-4 pb-14 border-b border-lightgray">
-                <a href="" class="flex items-center gap-2 justify-between w-full bg-lightgray px-8 py-4 rounded-full">
+                <a href="" class="flex items-center gap-2 justify-between w-full bg-lightgray px-8 py-4 rounded-full hover:bg-primary hover:text-white transition">
                     whatsapp
                     <div class="flex items-center gap-2">
                         send us a text
@@ -26,7 +26,7 @@
                         </svg>
                     </div>
                 </a>
-                <a href="" class="flex items-center gap-2 justify-between w-full bg-lightgray px-8 py-4 rounded-full">
+                <a href="" class="flex items-center gap-2 justify-between w-full bg-lightgray px-8 py-4 rounded-full hover:bg-primary hover:text-white transition">
                     instagram
                     <div class="flex items-center gap-2">
                         send us a message
@@ -35,7 +35,7 @@
                         </svg>
                     </div>
                 </a>
-                <a href="" class="flex items-center gap-2 justify-between w-full bg-lightgray px-8 py-4 rounded-full">
+                <a href="" class="flex items-center gap-2 justify-between w-full bg-lightgray px-8 py-4 rounded-full hover:bg-primary hover:text-white transition">
                     email
                     <div class="flex items-center gap-2">
                         send us an email

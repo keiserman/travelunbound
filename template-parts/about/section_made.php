@@ -1,4 +1,4 @@
-<section>
+<section data-animate="scroll-bg">
     <div class="padding-global py-6">
         <div class="grid gap-2">
             <div class="text-lg mb-60">made for you</div>

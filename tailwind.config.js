@@ -4,10 +4,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "var(--color-primary)",
+        primary: "#254b9a",
         secondary: "#DF6737",
         lightgray: "#F2F3F7",
-        footer: "#254b9a",
       },
       fontFamily: {
         sans: ["Neue Montreal", "sans-serif"],
