@@ -4,12 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
   setupAboutFAQs();
   setupFadeAnimation();
   setupBackgroundColorAnimation();
-  initMenuAnimation();
+  setupMenuAnimation();
   setupButtonHoverAnimation();
   setupExperienceCardAnimations();
   setupLightboxes();
   setupMarqueeAnimation();
   setupReadMoreToggle();
+  setupNavbarScrollAnimation();
 });
 
 function setupReadMoreToggle() {
@@ -90,7 +91,6 @@ function setupLightboxes() {
     const closeBtn = modal.querySelector(".close-lightbox");
     const targetId = "#" + modal.id;
 
-    // Initialize Swiper for this modal
     const swiper = new Swiper(swiperEl, {
       navigation: {
         nextEl: '[data-swiper="next"]',
@@ -191,6 +191,22 @@ function setupButtonHoverAnimation() {
   });
 }
 
+function setupNavbarScrollAnimation() {
+  const navbar = document.querySelector("[data-navbar='navbar']");
+  if (!navbar) return;
+
+  gsap.to(navbar, {
+    backgroundColor: "black",
+    duration: 0.3,
+    scrollTrigger: {
+      trigger: "body",
+      start: "5% center",
+      end: "6% center",
+      scrub: 0.5,
+    },
+  });
+}
+
 function setupMenuAnimation() {
   const navbar = document.querySelector("[data-navbar='navbar']");
   if (!navbar) return;
@@ -199,18 +215,46 @@ function setupMenuAnimation() {
   const navbarMenu = navbar.querySelector("[data-navbar='menu']");
   if (!navbarButton || !navbarMenu) return;
 
+  const navbarButtonLine1 = navbarButton.querySelector("[data-navbar='line1']");
+  const navbarButtonLine2 = navbarButton.querySelector("[data-navbar='line2']");
+  const navbarButtonLine3 = navbarButton.querySelector("[data-navbar='line3']");
+
   let tl = gsap.timeline({
     paused: true,
     defaults: { duration: 0.2 },
   });
 
   tl.fromTo(navbarMenu, { x: "100%" }, { x: "0%" });
+  tl.to(
+    navbarButtonLine1,
+    {
+      y: "0.5rem",
+      rotate: "45deg",
+    },
+    "<"
+  );
+
+  tl.to(
+    navbarButtonLine2,
+    {
+      scaleX: "0",
+    },
+    "<"
+  );
+
+  tl.to(
+    navbarButtonLine3,
+    {
+      y: "-0.5rem",
+      rotate: "-45deg",
+    },
+    "<"
+  );
 
   let isMenuOpen = false;
 
   navbarButton.addEventListener("click", () => {
     isMenuOpen = !isMenuOpen;
-    console.log("Clicked!");
 
     if (isMenuOpen) {
       tl.play();
@@ -219,17 +263,6 @@ function setupMenuAnimation() {
       tl.reverse();
       navbarButton.setAttribute("aria-expanded", "false");
     }
-  });
-}
-
-function initMenuAnimation() {
-  const mm = gsap.matchMedia();
-
-  mm.add("(max-width: 991px)", () => {
-    setupMenuAnimation();
-    console.log("Media matches!");
-
-    return () => {};
   });
 }
 

@@ -143,15 +143,15 @@ body {
 }
 
 .nav-menu {
-  @apply clip-path-polygon fixed right-0 top-0 h-screen translate-x-full items-center gap-4 bg-primary py-14 pl-28 pr-6 lg:relative lg:flex lg:h-full lg:translate-x-0 lg:bg-transparent lg:p-0;
+  @apply clip-path-polygon fixed right-0 top-0 h-screen translate-x-full items-center gap-4 bg-primary py-14 w-full max-w-md pr-6;
 }
 
 .nav-menu ul {
-  @apply flex flex-col items-end text-right;
+  @apply flex flex-col gap-2 items-end text-right;
 }
 
 .nav-menu li {
-  @apply relative font-serif text-5xl after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-white after:transition-all hover:after:w-full lg:font-sans lg:text-base;
+  @apply relative font-serif text-5xl leading-none after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-white after:transition-all hover:after:w-full;
 }
 
 .footer-link {

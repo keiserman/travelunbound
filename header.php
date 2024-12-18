@@ -10,9 +10,9 @@
 
 <body <?php body_class(); ?>>
 
-    <header class="bg-transparent text-white py-4 absolute top-0 w-full z-40" data-navbar="navbar">
-        <div class="padding-global flex gap-4 items-center lg:justify-center justify-between">
-            <div class="text-xl">
+    <header class="bg-transparent text-white py-4 fixed top-0 w-full z-40" data-navbar="navbar">
+        <div class="padding-global flex gap-4 items-center lg:justify-normal justify-between">
+            <div class="text-xl flex justify-center lg:grow lg:translate-x-6">
                 <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center">
                     <?php
                     if (has_custom_logo()) {
@@ -23,7 +23,7 @@
                     ?>
                 </a>
             </div>
-            <div class="absolute right-0 top-0 py-4 px-6 ">
+            <div class="">
                 <nav class="nav-menu" data-navbar="menu">
                     <?php
                     wp_nav_menu([
@@ -34,9 +34,9 @@
                     ?>
                 </nav>
                 <div class="flex flex-col gap-1.5 relative z-50 cursor-pointer" data-navbar="button">
-                    <div class="w-6 h-0.5 bg-white"></div>
-                    <div class="w-6 h-0.5 bg-white"></div>
-                    <div class="w-6 h-0.5 bg-white"></div>
+                    <div data-navbar="line1" class="w-6 h-0.5 bg-white"></div>
+                    <div data-navbar="line2" class="w-6 h-0.5 bg-white"></div>
+                    <div data-navbar="line3" class="w-6 h-0.5 bg-white"></div>
                 </div>
             </div>
         </div>
