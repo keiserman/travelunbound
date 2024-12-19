@@ -9,7 +9,7 @@
             </div>
             <div class="flex justify-end w-full">
                 <div class="flex flex-col gap-2 max-w-lg">
-                    <p class="text-2xl">travel/unbound is an independent affiliate of 360 private travel, a virtuoso member and an endorsed travel agency by forbes travel guide.</p>
+                    <p class="text-lg md:text-2xl">travel/unbound is an independent affiliate of 360 private travel, a virtuoso member and an endorsed travel agency by forbes travel guide.</p>
                 </div>
             </div>
         </div>

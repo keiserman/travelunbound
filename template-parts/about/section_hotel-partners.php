@@ -39,8 +39,8 @@
         </div>
         <div class="flex justify-end w-full mb-44">
             <div class="flex flex-col gap-2 max-w-lg">
-                <div class="text-2xl font-bold lowercase">The Worlds Best Hotels</div>
-                <p class="text-2xl">elite partnerships with the world's leading luxury hotels groups provide privileged access to a wide range deals and experiences, exclusive benefits and vip status.</p>
+                <div class="text-lg md:text-2xl font-bold lowercase">The Worlds Best Hotels</div>
+                <p class="text-lg md:text-2xl">elite partnerships with the world's leading luxury hotels groups provide privileged access to a wide range deals and experiences, exclusive benefits and vip status.</p>
             </div>
         </div>
 

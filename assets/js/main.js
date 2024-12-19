@@ -258,7 +258,7 @@ function setupBackgroundColorAnimation() {
       duration: 0.5,
       scrollTrigger: {
         trigger: trigger,
-        start: "top 80%",
+        start: "20% center",
         end: "none",
         toggleActions: "play none none reverse",
       },
