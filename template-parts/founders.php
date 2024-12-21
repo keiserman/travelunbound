@@ -1,8 +1,6 @@
 <?php
 $team_query = new WP_Query([
     'post_type' => 'founder',
-    'orderby' => 'date',
-    'order' => 'ASC',
     'posts_per_page' => -1,
 ]);
 
