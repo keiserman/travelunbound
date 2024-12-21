@@ -16,13 +16,22 @@ function add_homepage_customizer_settings($wp_customize)
     ));
 
     // Hero Heading
-    $wp_customize->add_setting('hero_heading', array(
-        'default' => __('Welcome to Our Site', 'mytheme'),
+    $wp_customize->add_setting('home_heading_main', array(
         'sanitize_callback' => 'sanitize_text_field',
     ));
 
-    $wp_customize->add_control('hero_heading', array(
-        'label' => __('Hero Heading', 'mytheme'),
+    $wp_customize->add_control('home_heading_main', array(
+        'label' => __('Heading Main', 'mytheme'),
+        'section' => 'hero_section',
+        'type' => 'text',
+    ));
+
+    $wp_customize->add_setting('home_heading_span', array(
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('home_heading_span', array(
+        'label' => __('Heading Span', 'mytheme'),
         'section' => 'hero_section',
         'type' => 'text',
     ));

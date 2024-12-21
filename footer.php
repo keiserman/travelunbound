@@ -24,10 +24,8 @@
                 </div>
                 <div class="col-span-2 md:col-span-1 flex items-end justify-end grow"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/travel-unbound-footer-logo.png" alt="" class="w-full max-w-md pt-16 pr-6"></div>
             </div>
-            <div class="flex flex-wrap gap-16 col-span-5 pr-8">
-                <img class="footer-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/360-private-travel.png" alt="">
-                <img class="footer-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/forbes-travel-guide.png" alt="">
-                <img class="footer-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/virtuoso-member.png" alt="">
+            <div class="grid grid-cols-3 lg:grid-cols-5 flex-wrap gap-6 lg:gap-16 col-span-5 pr-[15vw]">
+                <?php get_template_part('template-parts/travel-partners'); ?>
             </div>
             <div class="flex flex-col text-right gap-2 pr-28">
                 <p><?php bloginfo('name'); ?> is an independent affiliate of 360 Private Travel.</p>

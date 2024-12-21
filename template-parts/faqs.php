@@ -17,7 +17,7 @@ if ($faq_query->have_posts()) :
                 </div>
             </div>
             <div faq-content class="text-xl h-0 opacity-0">
-                <p class="pb-4"><?php echo wp_strip_all_tags(get_the_content()); ?></p>
+                <p class="pb-4"><?php echo get_field("faq_content"); ?></p>
             </div>
         </div>
 <?php

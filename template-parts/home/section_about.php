@@ -5,7 +5,7 @@
         </h2>
 
         <div class="max-w-6xl m-auto mb-20">
-            <div class="grid grid-cols-2 aspect-video">
+            <div class="grid grid-cols-2 h-[40rem]">
                 <?php
                 $about_video_id = get_theme_mod('about_video');
                 $about_video_url = $about_video_id ? wp_get_attachment_url($about_video_id) : '';

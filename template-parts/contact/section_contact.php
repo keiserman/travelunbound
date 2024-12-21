@@ -45,12 +45,6 @@
                     </div>
                 </a>
             </div>
-
-            <div class="flex flex-col gap-2 pt-14">
-                <div class="flex gap-4 justify-between">whatsapp <a class="contact-link" href="">444.222.3331</a></div>
-                <div class="flex gap-4 justify-between">instagram <a class="contact-link" href="">@travel.unbound</a></div>
-                <div class="flex gap-4 justify-between">email <a class="contact-link" href="">info@unbound.ltd</a></div>
-            </div>
         </div>
     </div>
 </section>

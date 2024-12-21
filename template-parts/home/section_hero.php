@@ -1,10 +1,12 @@
 <section class="bg-black text-white relative">
-    <div class="padding-global h-screen flex lg:flex-row flex-col gap-6 justify-end lg:items-end py-6 relative z-10">
+    <div class="padding-global h-screen flex lg:justify-between lg:flex-row flex-col gap-6 justify-end lg:items-end py-6 relative z-10">
         <h1 data-animate="fade" class="heading-h1">
-            <?php echo esc_html(get_theme_mod('home_heading_main', 'Enriching experiences for the')); ?>
-            <span class="font-sans">
+            <div>
+                <?php echo esc_html(get_theme_mod('home_heading_main', 'Enriching experiences for the')); ?>
+            </div>
+            <div class="font-sans">
                 <?php echo esc_html(get_theme_mod('home_heading_span', 'modern traveller.')); ?>
-            </span>
+            </div>
         </h1>
         <div class="flex flex-wrap gap-4 lg:justify-end shrink-0">
             <a href="/" class="btn-outline-white sm:grow-0 grow" data-button="button">Enquire

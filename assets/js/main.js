@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
-  setupFAQ();
+  setupPillars();
   setupAboutFAQs();
   setupFadeAnimation();
   setupBackgroundColorAnimation();
@@ -14,14 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function setupReadMoreToggle() {
-  const bios = document.querySelectorAll("[data-bio='bio']");
+  const bios = document.querySelectorAll("[data-bio='wrapper']");
 
   bios.forEach((bio) => {
-    const text = bio.querySelector("[data-bio='text']");
+    const text = bio.querySelector("[data-bio='bio']");
     const button = bio.querySelector("[data-bio='button']");
 
     button.addEventListener("click", () => {
-      const isCollapsed = text.classList.toggle("line-clamp-2");
+      const isCollapsed = text.classList.toggle("hidden");
       button.textContent = isCollapsed ? "read more" : "read less";
     });
   });
@@ -252,7 +252,7 @@ function setupBackgroundColorAnimation() {
   const trigger = document.querySelector("[data-animate='scroll-bg']");
 
   if (trigger) {
-    gsap.to("body", {
+    gsap.to("main", {
       backgroundColor: "#DF6737",
       color: "white",
       duration: 0.5,
@@ -278,13 +278,13 @@ function setupFadeAnimation() {
   });
 }
 
-function setupFAQ() {
-  const faqs = document.querySelectorAll("[data-faq='faq']");
+function setupPillars() {
+  const faqs = document.querySelectorAll("[data-pillar='pillar']");
 
   faqs.forEach((faq) => {
-    const content = faq.querySelector("[data-faq='content']");
-    const image = faq.querySelector("[data-faq='image']");
-    const title = faq.querySelector("[data-faq='title']");
+    const content = faq.querySelector("[data-pillar='content']");
+    const image = faq.querySelector("[data-pillar='image']");
+    const title = faq.querySelector("[data-pillar='title']");
 
     const tl = gsap.timeline({ paused: true });
     tl.to(content, {
