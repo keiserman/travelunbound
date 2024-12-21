@@ -29,7 +29,7 @@
             </div>
             <div class="flex flex-col text-right gap-2 pr-28">
                 <p><?php bloginfo('name'); ?> is an independent affiliate of 360 Private Travel.</p>
-                <p class="pr-6">terms careers sitemap © 2024 unbound limited | Travel Industry Authority License 354498, IATA 332213 </p>
+                <p class="pr-6">© 2025 unbound limited. 19/f worldwide house, 19 des voeux road central, central, hong kong.</p>
             </div>
         </div>
     </div>

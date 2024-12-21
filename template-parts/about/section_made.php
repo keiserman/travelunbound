@@ -19,7 +19,7 @@
                         <div class="mb-10">
                             <?php get_template_part('template-parts/faqs'); ?>
                         </div>
-                        <div class="flex"><a href="" class="btn-outline-white">View all</a></div>
+                        <div class="flex"><a href="/faq" class="btn-outline-white">View all</a></div>
                     </div>
                 </div>
             </div>

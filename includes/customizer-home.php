@@ -58,6 +58,41 @@ function add_homepage_customizer_settings($wp_customize)
         'mime_type'  => 'video', // Restrict to video uploads
     )));
 
+    // **Experiences Section**
+    $wp_customize->add_section('experiences_section', array(
+        'title' => __('Experiences Section', 'mytheme'),
+        'description' => __('Settings for the experiences section on the homepage.'),
+        'panel' => 'homepage_panel',
+        'priority' => 20,
+    ));
+
+    // Add Button Link Setting
+    $wp_customize->add_setting('experiences_button_link', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    // Add Button Link Control
+    $wp_customize->add_control('experiences_button_link', array(
+        'label' => __('Button Link', 'mytheme'),
+        'section' => 'experiences_section',
+        'type' => 'url', // URL field type
+    ));
+
+    // Add Button Text Setting
+    $wp_customize->add_setting('experiences_button_text', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    // Add Button Text Control
+    $wp_customize->add_control('experiences_button_text', array(
+        'label' => __('Button Text', 'mytheme'),
+        'section' => 'experiences_section',
+        'type' => 'text', // Text field type
+    ));
+
+
     // **About Section**
     $wp_customize->add_section('about_section', array(
         'title' => __('About Section', 'mytheme'),

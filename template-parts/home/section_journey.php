@@ -13,7 +13,7 @@
                         <a href="/" class="btn-outline-white hover:text-secondary self-start">enquire</a>
                     </div>
                     <div class="flex gap-2 flex-col lg:pl-20 lg:pt-20">
-                        <p class="text-lg md:text-xl font-semibold">Crafted for the modern traveller</p>
+                        <p class="text-lg md:text-xl font-medium">Crafted for the modern traveller</p>
                         <p class="text-lg md:text-xl">we understand the hectic nature of modern life where multitasking is almost second mature; constant demands on our time and attention, the relentless struggle for work/life balance, competing priorities and an ever-growing to-do list. we save you time and work to your pace.</p>
                     </div>
                 </div>

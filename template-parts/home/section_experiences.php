@@ -121,7 +121,7 @@
                     echo '</div>';
 
                     if (count($posts) > 3) {
-                        echo '<div class="text-lg md:text-xl col-span-2 max-w-3xl py-24 md:py-32">';
+                        echo '<div class="text-lg md:text-xl col-span-2 max-w-3xl py-14 md:py-18">';
                         echo '<p>our in-the-know global network provides invaluable on-the-ground knowledge, insider insight, and exclusive access, connecting you to the local culture authentically and meaningfully.</p>';
                         echo '</div>';
                     }
