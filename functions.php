@@ -78,7 +78,7 @@ function enqueue_travel_unbound_assets()
     wp_enqueue_script(
         'main-script',
         get_template_directory_uri() . '/assets/js/main.js',
-        ['gsap-core', 'gsap-scrolltrigger'],
+        ['gsap-core', 'gsap-scrolltrigger', 'swiper-js'],
         '1.0.0',
         true
     );

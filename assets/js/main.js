@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupMenuAnimation();
   setupButtonHoverAnimation();
   setupExperienceCardAnimations();
-  setupLightboxes();
+  setupModals();
   setupMarqueeAnimation();
   setupReadMoreToggle();
   setupNavbarScrollAnimation();
@@ -81,33 +81,35 @@ function setupMarqueeAnimation() {
   });
 }
 
-function setupLightboxes() {
-  const modals = document.querySelectorAll("[data-gallery-modal]");
+function setupModals() {
+  const cards = document.querySelectorAll("[data-gallery='card']");
 
-  if (!modals.length) return;
+  if (!cards.length) return;
 
-  modals.forEach((modal) => {
-    const swiperEl = modal.querySelector(".swiper");
-    const closeBtn = modal.querySelector(".close-lightbox");
-    const targetId = "#" + modal.id;
+  cards.forEach((card) => {
+    const modal = card.querySelector("[data-gallery='modal']");
+    const modalClose = card.querySelector("[data-gallery='close']");
+    const modalOpen = card.querySelector("[data-gallery='open']");
+    const modalSwiper = card.querySelector("[data-gallery='swiper']");
+    const swiperNext = card.querySelector("[data-gallery='swiper-next']");
+    const swiperPrev = card.querySelector("[data-gallery='swiper-prev']");
 
-    const swiper = new Swiper(swiperEl, {
+    const swiper = new Swiper(modalSwiper, {
       navigation: {
-        nextEl: '[data-swiper="next"]',
-        prevEl: '[data-swiper="prev"]',
+        nextEl: swiperNext,
+        prevEl: swiperPrev,
       },
       loop: false,
     });
 
-    function openLightbox(index) {
+    modalOpen.addEventListener("click", () => {
       modal.classList.remove("hidden");
       document.body.classList.add("overflow-hidden");
       gsap.set(modal, { opacity: 0 });
       gsap.to(modal, { opacity: 1, duration: 0.5 });
-      swiper.slideTo(index);
-    }
+    });
 
-    function closeLightbox() {
+    modalClose.addEventListener("click", () => {
       gsap.to(modal, {
         opacity: 0,
         duration: 0.5,
@@ -116,29 +118,6 @@ function setupLightboxes() {
           document.body.classList.remove("overflow-hidden");
         },
       });
-    }
-
-    const triggers = document.querySelectorAll(
-      `.open-lightbox[data-target="${targetId}"]`
-    );
-    triggers.forEach((trigger) => {
-      trigger.addEventListener("click", (e) => {
-        e.preventDefault();
-        const index = parseInt(trigger.getAttribute("data-index"), 10) || 0;
-        openLightbox(index);
-      });
-    });
-
-    closeBtn.addEventListener("click", closeLightbox);
-
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) closeLightbox();
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (!modal.classList.contains("hidden") && e.key === "Escape") {
-        closeLightbox();
-      }
     });
   });
 }
