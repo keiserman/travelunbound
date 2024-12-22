@@ -14,7 +14,7 @@ function render_experience_card($post_id, $index = 0)
         <div data-gallery="open" class="overflow-hidden cursor-pointer">
             <img class="w-full" src="<?php echo $image; ?>" alt="<?php echo $title; ?>">
         </div>
-        <div class="flex md:gap-2 justify-between flex-wrap sm:flex-row flex-col">
+        <div class="flex md:gap-2 justify-between flex-wrap sm:flex-row flex-col pl-6">
             <h4 class="heading-h4 font-serif"><?php echo esc_html($title); ?>/<span class="font-sans"><?php echo esc_html($sans); ?></span></h4>
             <?php if (!empty($location)): ?>
                 <p class="text-sm"><?php echo esc_html($location); ?></p>
@@ -24,14 +24,14 @@ function render_experience_card($post_id, $index = 0)
         <div data-gallery="modal" class="fixed inset-0 z-50 bg-primary hidden items-center justify-center">
 
             <div class="absolute z-20 top-0 w-full p-4 flex justify-end sm:bg-none bg-gradient-to-b from-black/60 to-transparent">
-                <div data-gallery="close" class="w-8 h-8 text-white text-2xl">
+                <div data-gallery="close" class="w-8 h-8 text-white text-2xl cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256">
                         <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path>
                     </svg>
                 </div>
             </div>
 
-            <div class="absolute bottom-0 left-0 z-20 p-4 w-full flex flex-col sm:flex-row gap-4 sm:items-end justify-between sm:bg-none bg-gradient-to-t from-black/60 to-transparent">
+            <div class="absolute bottom-0 left-0 z-20 pb-12 sm:pb-4 pt-4 px-4 w-full flex flex-col sm:flex-row gap-4 sm:items-end justify-between sm:bg-none bg-gradient-to-t from-black/60 to-transparent">
                 <div class="text-white">
                     <h4 class="text-lg font-serif mb-2"><?php echo esc_html($title); ?>/<span class="font-sans"><?php echo esc_html($sans); ?></span></h4>
                     <div class="text-base max-w-md">
@@ -39,7 +39,7 @@ function render_experience_card($post_id, $index = 0)
                     </div>
                 </div>
                 <?php if ($location): ?>
-                    <div class="text-white text-sm opacity-80">
+                    <div class="text-white text-sm">
                         <?php echo esc_html($location); ?>
                     </div>
                 <?php endif; ?>
@@ -60,10 +60,18 @@ function render_experience_card($post_id, $index = 0)
                 <div class="swiper-wrapper">
                     <?php if (!empty($gallery) && is_array($gallery)): ?>
                         <?php foreach ($gallery as $img_id): ?>
-                            <?php $img_url = wp_get_attachment_image_url($img_id, 'large'); ?>
+                            <?php
+                            $img_url = wp_get_attachment_image_url($img_id, 'large');
+                            $img_caption = get_post($img_id)->post_excerpt;
+                            ?>
                             <?php if ($img_url): ?>
                                 <div class="swiper-slide w-full h-full">
                                     <img src="<?php echo esc_url($img_url); ?>" alt="<?php echo esc_attr($title); ?>" class="w-full h-full object-cover sm:object-contain">
+                                    <div class="sm:vertical-text absolute bottom-4 left-4 sm:right-4 sm:bottom-12 z-50 text-white text-sm">
+                                        <?php if (!empty($img_caption)): ?>
+                                            <?php echo esc_html($img_caption); ?>
+                                        <?php endif; ?>
+                                    </div>
                                 </div>
                             <?php endif; ?>
                         <?php endforeach; ?>
