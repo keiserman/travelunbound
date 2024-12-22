@@ -1,17 +1,5 @@
 <?php
 
-function register_experiences_cpt()
-{
-    $args = array(
-        'label' => 'Experiences',
-        'public' => true,
-        'menu_icon' => 'dashicons-location-alt', // Optional: Icon for the admin menu
-        'supports' => array('title', 'editor', 'thumbnail'), // Supports title and featured image
-    );
-    register_post_type('experiences', $args);
-}
-add_action('init', 'register_experiences_cpt');
-
 // Add meta box for gallery
 function experiences_add_gallery_meta_box()
 {
@@ -19,7 +7,7 @@ function experiences_add_gallery_meta_box()
         'experience_gallery',
         'Gallery',
         'experiences_gallery_meta_box_callback',
-        'experiences',
+        'experience', // Ensure the ACF-defined post type matches this slug
         'normal',
         'default'
     );
@@ -33,14 +21,17 @@ function experiences_gallery_meta_box_callback($post)
 
     $gallery_ids = get_post_meta($post->ID, '_experience_gallery', true);
     $gallery_ids = is_array($gallery_ids) ? $gallery_ids : [];
-
 ?>
     <div id="gallery-images-container">
         <ul>
             <?php
             foreach ($gallery_ids as $image_id) {
                 $img_url = wp_get_attachment_image_url($image_id, 'thumbnail');
-                echo '<li style="display:inline-block;margin:5px;"><img src="' . esc_url($img_url) . '" style="width:100px;height:100px;"><input type="hidden" name="experience_gallery_ids[]" value="' . esc_attr($image_id) . '"><button type="button" class="remove-image" style="display:block;">Remove</button></li>';
+                echo '<li style="display:inline-block;margin:5px;">
+                        <img src="' . esc_url($img_url) . '" style="width:100px;height:100px;">
+                        <input type="hidden" name="experience_gallery_ids[]" value="' . esc_attr($image_id) . '">
+                        <button type="button" class="remove-image" style="display:block;">Remove</button>
+                      </li>';
             }
             ?>
         </ul>

@@ -1,20 +1,21 @@
 <?php
 function render_experience_card($post_id, $index = 0)
 {
-    $location = get_post_meta($post_id, '_experience_location', true);
+    $sans = get_field('sans', $post_id);
+    $content = get_field('content', $post_id);
+    $image = get_field('image', $post_id);
+    $location = get_field('location', $post_id);
     $title = get_the_title($post_id);
-    $image_url = esc_url(get_the_post_thumbnail_url($post_id, 'large'));
-    $title_attr = esc_attr($title);
     $gallery = get_post_meta($post_id, '_experience_gallery', true);
-    $content = apply_filters('the_content', get_post_field('post_content', $post_id));
+
 ?>
 
     <div data-gallery="card" class="experiences-card">
         <div data-gallery="open" class="overflow-hidden cursor-pointer">
-            <img class="w-full" src="<?php echo $image_url; ?>" alt="<?php echo $title_attr; ?>">
+            <img class="w-full" src="<?php echo $image; ?>" alt="<?php echo $title; ?>">
         </div>
         <div class="flex md:gap-2 justify-between flex-wrap sm:flex-row flex-col">
-            <h4 class="heading-h4"><?php echo esc_html($title); ?></h4>
+            <h4 class="heading-h4 font-serif"><?php echo esc_html($title); ?>/<span class="font-sans"><?php echo esc_html($sans); ?></span></h4>
             <?php if (!empty($location)): ?>
                 <p class="text-sm"><?php echo esc_html($location); ?></p>
             <?php endif; ?>
@@ -32,7 +33,7 @@ function render_experience_card($post_id, $index = 0)
 
             <div class="absolute bottom-0 left-0 z-20 p-4 w-full flex flex-col sm:flex-row gap-4 sm:items-end justify-between sm:bg-none bg-gradient-to-t from-black/60 to-transparent">
                 <div class="text-white">
-                    <h4 class="text-lg font-medium"><?php echo esc_html($title); ?></h4>
+                    <h4 class="text-lg font-serif mb-2"><?php echo esc_html($title); ?>/<span class="font-sans"><?php echo esc_html($sans); ?></span></h4>
                     <div class="text-base max-w-md">
                         <?php echo $content; ?>
                     </div>

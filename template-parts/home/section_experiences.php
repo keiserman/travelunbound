@@ -10,7 +10,7 @@
 
         <?php
         $experience_query = new WP_Query([
-            'post_type'      => 'experiences',
+            'post_type'      => 'experience',
             'orderby'        => 'date',
             'order'          => 'ASC',
             'posts_per_page' => -1,

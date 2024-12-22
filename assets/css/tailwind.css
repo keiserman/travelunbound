@@ -172,3 +172,11 @@ body {
 .experiences-card {
   @apply grid w-full max-w-6xl gap-4;
 }
+
+.founder-card {
+  @apply flex flex-col items-start;
+}
+
+.founder-card:nth-child(2) {
+  @apply w-full md:w-11/12 place-self-end self-start;
+}

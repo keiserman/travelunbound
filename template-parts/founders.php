@@ -8,7 +8,7 @@ if ($team_query->have_posts()) : ?>
 
     <div class="grid md:grid-cols-2 gap-24">
         <?php while ($team_query->have_posts()) : $team_query->the_post(); ?>
-            <div class="flex flex-col items-start">
+            <div class="founder-card">
                 <?php
                 $image = get_field('image');
                 if (!empty($image)): ?>

@@ -9,7 +9,7 @@ if ($faq_query->have_posts()) :
         $faq_query->the_post();
 ?>
         <div faq class="border-b border-white overflow-hidden">
-            <div faq-trigger class="text-xl py-2 flex gap-4 justify-between items-center cursor-pointer">
+            <div faq-trigger class="text-xl py-4 flex gap-4 justify-between items-center cursor-pointer">
                 <?php the_title(); ?>
                 <div class="relative w-4 h-4 flex items-center">
                     <div class="w-4 h-0.5 bg-white"></div>
@@ -17,7 +17,9 @@ if ($faq_query->have_posts()) :
                 </div>
             </div>
             <div faq-content class="text-xl h-0 opacity-0">
-                <p class="pb-4"><?php echo get_field("content"); ?></p>
+                <div class="pb-8">
+                    <?php echo apply_filters('the_content', get_the_content()); ?>
+                </div>
             </div>
         </div>
 <?php
