@@ -7,7 +7,7 @@
         </h2>
 
         <div class="max-w-6xl m-auto mb-20">
-            <div class="grid grid-cols-2 h-[40rem]">
+            <div class="grid grid-cols-2 h-[50vw]">
                 <?php
                 $about_video_id = get_theme_mod('about_video');
                 $about_video_url = $about_video_id ? wp_get_attachment_url($about_video_id) : '';
@@ -26,7 +26,7 @@
         </div>
 
         <div class="m-auto max-w-3xl grid gap-8">
-            <h3 class="text-3xl md:text-5xl leading-tight font-serif">a fresh take on luxury travel, unlocking a world of remarkable and memorable journeys.</h3>
+            <h3 class="text-2xl md:text-5xl leading-tight font-serif">a fresh take on luxury travel, unlocking a world of remarkable and memorable journeys.</h3>
             <p class="text-lg md:text-2xl">with over 40 years of industry experience, we combine connections, insight, and creativity to redefine travel design with a personal and modern touch.</p>
             <p class="text-lg md:text-2xl mb-32">we invite you to rediscover the joys and meaning of travel, free from the anxiety and hassle that often accompany it.</p>
         </div>

@@ -17,13 +17,14 @@
             <a href="/" class="btn-white rounded-full sm:grow-0 grow">Learn more</a>
         </div>
     </div>
+
     <?php
     $hero_video_id = get_theme_mod('hero_video');
     $hero_video_url = $hero_video_id ? wp_get_attachment_url($hero_video_id) : '';
     $hero_image = get_theme_mod('hero_image');
 
     if ($hero_video_url) : ?>
-        <video autoplay muted loop class="absolute w-full h-full z-0 top-0 object-cover">
+        <video autoplay muted loop class="absolute w-full h-full z-0 top-0 object-cover" poster="<?php echo esc_url($hero_image); ?>">
             <source src="<?php echo esc_url($hero_video_url); ?>" type="video/mp4">
             <?php if ($hero_image) : ?>
                 <img src="<?php echo esc_url($hero_image); ?>" alt="Fallback Hero Background">
@@ -32,5 +33,4 @@
     <?php elseif ($hero_image) : ?>
         <img src="<?php echo esc_url($hero_image); ?>" alt="Hero Background" class="absolute w-full h-full z-0 top-0 object-cover">
     <?php endif; ?>
-
 </section>
