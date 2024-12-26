@@ -1,3 +1,10 @@
+<?php
+$whatsapp_link = esc_url(get_theme_mod("whatsapp_link"));
+$instagram_link = esc_url(get_theme_mod("instagram_link"));
+$linkedin_link = esc_url(get_theme_mod("linkedin_link"));
+$email_link = esc_url(get_theme_mod("email_link"));
+?>
+
 <footer class="py-8 bg-white text-primary relative">
     <div class="padding-global">
         <div class="flex flex-col gap-16 md:gap-24">
@@ -16,10 +23,24 @@
                 <div class="flex flex-col gap-4">
                     <div class="text-xl font-serif">stay in touch</div>
                     <div class="flex flex-col items-start gap-1">
-                        <a href="" class="footer-link">whatsapp</a>
-                        <a href="" class="footer-link">instagram</a>
-                        <a href="" class="footer-link">email</a>
-                        <a href="" class="footer-link">linkedin</a>
+                        <?php
+                        if (!empty($whatsapp_link)) : ?>
+                            <a href="<?php echo $whatsapp_link ?>" class="footer-link">whatsapp</a>
+                        <?php endif; ?>
+                        <?php
+                        if (!empty($instagram_link)) : ?>
+                            <a href="<?php echo $instagram_link ?>" class="footer-link">instagram</a>
+                        <?php endif; ?>
+
+                        <?php
+                        if (!empty($email_link)) : ?>
+                            <a href="<?php echo $email_link ?>" class="footer-link">email</a>
+                        <?php endif; ?>
+
+                        <?php
+                        if (!empty($linkedin_link)) : ?>
+                            <a href="<?php echo $linkedin_link ?>" class="footer-link">linkedin</a>
+                        <?php endif; ?>
                     </div>
                 </div>
                 <div class="flex items-end justify-end grow order-first sm:order-last col-span-2 md:col-span-1">

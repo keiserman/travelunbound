@@ -85,6 +85,62 @@ function enqueue_travel_unbound_assets()
 }
 add_action('wp_enqueue_scripts', 'enqueue_travel_unbound_assets');
 
+function add_general_customizer_settings($wp_customize)
+{
+    $wp_customize->add_section("social_links_section", [
+        "title" => __("Social Links", "mytheme"),
+        "description" => __(
+            "Add social media links."
+        ),
+    ]);
+
+    $wp_customize->add_setting("whatsapp_link", [
+        "default" => "",
+        "sanitize_callback" => "esc_url_raw",
+    ]);
+
+    $wp_customize->add_control("whatsapp_link", [
+        "label" => __("WhatsApp Link", "mytheme"),
+        "section" => "social_links_section",
+        "type" => "url",
+    ]);
+
+    $wp_customize->add_setting("instagram_link", [
+        "default" => "",
+        "sanitize_callback" => "esc_url_raw",
+    ]);
+
+    $wp_customize->add_control("instagram_link", [
+        "label" => __("Instagram Link", "mytheme"),
+        "section" => "social_links_section",
+        "type" => "url",
+    ]);
+
+    $wp_customize->add_setting("linkedin_link", [
+        "default" => "",
+        "sanitize_callback" => "esc_url_raw",
+    ]);
+
+    $wp_customize->add_control("linkedin_link", [
+        "label" => __("LinkedIn Link", "mytheme"),
+        "section" => "social_links_section",
+        "type" => "url",
+    ]);
+
+    $wp_customize->add_setting("email_link", [
+        "default" => "",
+        "sanitize_callback" => "esc_url_raw",
+    ]);
+
+    $wp_customize->add_control("email_link", [
+        "label" => __("Email Link", "mytheme"),
+        "section" => "social_links_section",
+        "type" => "url",
+    ]);
+}
+
+add_action("customize_register", "add_general_customizer_settings");
+
 // Add customizer options
 require get_template_directory() . '/includes/customizer-home.php';
 require get_template_directory() . '/includes/customizer-about.php';
@@ -92,5 +148,4 @@ require get_template_directory() . '/includes/customizer-contact.php';
 
 // Register custom post types
 require_once get_template_directory() . '/includes/register-experiences.php';
-
 require_once get_template_directory() . '/includes/render-experience-card.php';

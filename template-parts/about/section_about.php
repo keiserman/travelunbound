@@ -1,3 +1,8 @@
+<?php
+$about_about_image = esc_url(get_theme_mod("about_about_image"));
+$about_about_photo_credit = esc_html(get_theme_mod("about_about_photo_credit"));
+?>
+
 <section>
     <div class="padding-global py-24 lg:py-36">
         <div class="m-auto max-w-screen-xl grid gap-36">
@@ -7,11 +12,11 @@
             </div>
             <div class="grid md:grid-cols-2 gap-24 items-center">
                 <div class="md:flex gap-2">
-                    <img class="w-full aspect-[5/7] object-cover bg-gray-100" src="<?php echo esc_url(get_theme_mod('about_about_image')); ?>" alt="">
-                    <div class="md:vertical-text md:text-right">photo credit: joe thomas</div>
+                    <img class="w-full aspect-[5/7] object-cover bg-gray-100" src="<?php echo $about_about_image; ?>" alt="Photo Credit:<?php echo $about_about_photo_credit; ?>">
+                    <div class="md:vertical-text md:text-right">photo credit: <?php echo $about_about_photo_credit; ?></div>
                 </div>
                 <div class="flex flex-col gap-8">
-                    <h2 class="heading-h2">bespoke<br /><span class="font-sans">travel design</span></h2>
+                    <h2 class="heading-h2">bespoke<br><span class="font-sans">travel design</span></h2>
                     <p class="text-lg md:text-xl">From short weekend breaks to complex around-the-world itineraries, our highly personalised approach allows for a flexible service model that can be adapted to your needs:</p>
                     <ul class="text-lg md:text-xl list-[square] list-inside">
                         <li>Hotel & Villa Bookings</li>
