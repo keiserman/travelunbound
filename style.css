@@ -633,6 +633,10 @@ video {
   bottom: 0px;
 }
 
+.bottom-4 {
+  bottom: 1rem;
+}
+
 .left-0 {
   left: 0px;
 }
@@ -655,22 +659,6 @@ video {
 
 .top-1\/2 {
   top: 50%;
-}
-
-.bottom-6 {
-  bottom: 1.5rem;
-}
-
-.bottom-10 {
-  bottom: 2.5rem;
-}
-
-.bottom-12 {
-  bottom: 3rem;
-}
-
-.bottom-4 {
-  bottom: 1rem;
 }
 
 .z-0 {
@@ -1210,6 +1198,10 @@ video {
   padding-bottom: 2rem;
 }
 
+.pb-12 {
+  padding-bottom: 3rem;
+}
+
 .pb-14 {
   padding-bottom: 3.5rem;
 }
@@ -1250,16 +1242,12 @@ video {
   padding-top: 9rem;
 }
 
-.pt-40 {
-  padding-top: 10rem;
-}
-
 .pt-4 {
   padding-top: 1rem;
 }
 
-.pb-12 {
-  padding-bottom: 3rem;
+.pt-40 {
+  padding-top: 10rem;
 }
 
 .text-center {
@@ -1365,10 +1353,6 @@ video {
   opacity: 0;
 }
 
-.opacity-80 {
-  opacity: 0.8;
-}
-
 .shadow-md {
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
@@ -1386,10 +1370,6 @@ video {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
-}
-
-.vertical-text {
-  writing-mode: vertical-rl;
 }
 
 .clip-path-footer {
@@ -1895,12 +1875,12 @@ body {
 }
 
 @media (min-width: 640px) {
-  .sm\:right-4 {
-    right: 1rem;
-  }
-
   .sm\:bottom-12 {
     bottom: 3rem;
+  }
+
+  .sm\:right-4 {
+    right: 1rem;
   }
 
   .sm\:order-last {
@@ -1945,6 +1925,10 @@ body {
     padding-right: 2rem;
   }
 
+  .sm\:pb-4 {
+    padding-bottom: 1rem;
+  }
+
   .sm\:pr-28 {
     padding-right: 7rem;
   }
@@ -1955,10 +1939,6 @@ body {
 
   .sm\:pr-\[15vw\] {
     padding-right: 15vw;
-  }
-
-  .sm\:pb-4 {
-    padding-bottom: 1rem;
   }
 
   .sm\:text-right {
@@ -1980,14 +1960,6 @@ body {
 }
 
 @media (min-width: 768px) {
-  .md\:bottom-12 {
-    bottom: 3rem;
-  }
-
-  .md\:right-4 {
-    right: 1rem;
-  }
-
   .md\:col-span-1 {
     grid-column: span 1 / span 1;
   }
@@ -2060,10 +2032,6 @@ body {
 
   .md\:pt-16 {
     padding-top: 4rem;
-  }
-
-  .md\:pb-4 {
-    padding-bottom: 1rem;
   }
 
   .md\:text-right {

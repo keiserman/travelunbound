@@ -1,13 +1,15 @@
 <section class="border-b border-lightgray">
     <div class="padding-global py-44">
-        <div class="container-small">
-            <h2 class="heading-h2 mb-10">first thing <span class="font-sans">is first.</span>
+        <div class="container-small grid gap-12">
+            <h2 class="heading-h2">first thing <span class="font-sans">is first.</span>
             </h2>
-            <p class="text-xl mb-10">we do our best to create the perfect travel expenece for you through the nature modern life where multitasking is almost second mature; constant demands on our time and attention, the relentless struggle.</p>
+            <p class="text-xl">we do our best to create the perfect travel expenece for you through the nature modern life where multitasking is almost second mature; constant demands on our time and attention, the relentless struggle.</p>
             <ol class="pl-8 border-l-8 border-secondary list-decimal list-inside text-xl flex flex-col gap-2">
                 <li>fill out enquiry or message us below</li>
                 <li>we'll get back to you with xyz</li>
             </ol>
+
+            <?php the_content(); ?>
         </div>
     </div>
 </section>

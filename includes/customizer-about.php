@@ -19,13 +19,23 @@ function add_aboutpage_customizer_settings($wp_customize)
     ));
 
     $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'about_hero_video', array(
-        'label' => __('About Hero Video', 'mytheme'),
+        'label' => __('Video', 'mytheme'),
         'section' => 'about_hero_section',
         'mime_type' => 'video',
     )));
 
-    // About Section
+    // Hero Video Poster
+    $wp_customize->add_setting('about_hero_video_poster', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
 
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'about_hero_video_poster', array(
+        'label' => __('Video Poster (Fallback)', 'mytheme'),
+        'section' => 'about_hero_section',
+    )));
+
+    // About Section
     $wp_customize->add_section('about_about_section', array(
         'title' => __('About Section', 'mytheme'),
         'description' => __('Settings for the about section on the about page.'),
@@ -33,6 +43,7 @@ function add_aboutpage_customizer_settings($wp_customize)
         'priority' => 20,
     ));
 
+    // About Image
     $wp_customize->add_setting('about_about_image', array(
         'default' => '',
         'sanitize_callback' => 'esc_url_raw',

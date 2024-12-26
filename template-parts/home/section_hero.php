@@ -1,12 +1,15 @@
+<?php
+$home_hero_heading_main = esc_html(get_theme_mod('home_hero_heading_main'));
+$home_hero_heading_span = esc_html(get_theme_mod('home_hero_heading_span'));
+$home_hero_video = wp_get_attachment_url(get_theme_mod('home_hero_video'));
+$home_hero_video_poster = esc_url(get_theme_mod('home_hero_video_poster'));
+?>
+
 <section class="bg-black text-white relative">
     <div class="padding-global h-screen flex lg:justify-between lg:flex-row flex-col gap-6 justify-end lg:items-end py-6 relative z-10">
         <h1 data-animate="fade" class="heading-h1">
-            <div>
-                <?php echo esc_html(get_theme_mod('home_heading_main', 'Enriching experiences for the')); ?>
-            </div>
-            <div class="font-sans">
-                <?php echo esc_html(get_theme_mod('home_heading_span', 'modern traveller.')); ?>
-            </div>
+            <div><?php echo $home_hero_heading_main ?></div>
+            <div class="font-sans"><?php echo $home_hero_heading_span ?></div>
         </h1>
         <div class="flex flex-wrap gap-4 lg:justify-end shrink-0">
             <a href="/" class="btn-outline-white sm:grow-0 grow" data-button="button">Enquire
@@ -17,20 +20,7 @@
             <a href="/" class="btn-white rounded-full sm:grow-0 grow">Learn more</a>
         </div>
     </div>
-
-    <?php
-    $hero_video_id = get_theme_mod('hero_video');
-    $hero_video_url = $hero_video_id ? wp_get_attachment_url($hero_video_id) : '';
-    $hero_image = get_theme_mod('hero_image');
-
-    if ($hero_video_url) : ?>
-        <video autoplay muted loop class="absolute w-full h-full z-0 top-0 object-cover" poster="<?php echo esc_url($hero_image); ?>">
-            <source src="<?php echo esc_url($hero_video_url); ?>" type="video/mp4">
-            <?php if ($hero_image) : ?>
-                <img src="<?php echo esc_url($hero_image); ?>" alt="Fallback Hero Background">
-            <?php endif; ?>
-        </video>
-    <?php elseif ($hero_image) : ?>
-        <img src="<?php echo esc_url($hero_image); ?>" alt="Hero Background" class="absolute w-full h-full z-0 top-0 object-cover">
-    <?php endif; ?>
+    <video autoplay muted loop class="absolute w-full h-full z-0 top-0 object-cover" poster="<?php echo $home_hero_video_poster ?>">
+        <source src="<?php echo $home_hero_video ?>" type="video/mp4">
+    </video>
 </section>

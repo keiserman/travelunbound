@@ -1,3 +1,9 @@
+<?php
+$home_about_video = esc_url(wp_get_attachment_url(get_theme_mod('home_about_video')));
+$home_about_video_poster = esc_url(get_theme_mod('home_about_video_poster'));
+$home_about_image = esc_url(get_theme_mod('home_about_image'));
+?>
+
 <section class="bg-white">
     <div class="padding-global py-6">
         <div class="text-lg md:text-2xl max-w-2xl">
@@ -8,18 +14,14 @@
 
         <div class="max-w-6xl m-auto mb-20">
             <div class="grid grid-cols-2 h-[50vw]">
-                <?php
-                $about_video_id = get_theme_mod('about_video');
-                $about_video_url = $about_video_id ? wp_get_attachment_url($about_video_id) : '';
-                ?>
                 <div class="relative h-full clip-path-about-video -mr-[20%]">
-                    <video autoplay muted loop class="h-full w-full top-0 absolute object-cover">
-                        <source src="<?php echo esc_url($about_video_url); ?>" type="video/mp4">
+                    <video autoplay muted loop class="h-full w-full top-0 absolute object-cover" poster="<?php echo $home_about_video_poster ?>">
+                        <source src="<?php echo $home_about_video ?>" type="video/mp4">
                     </video>
                 </div>
 
                 <div class="relative h-full -ml-[20%] clip-path-about-image">
-                    <img src="<?php echo esc_url(get_theme_mod('about_image')); ?>" alt="" class="h-full w-full object-cover absolute">
+                    <img src="<?php echo $home_about_image ?>" alt="" class="h-full w-full object-cover absolute">
                 </div>
             </div>
             <div class="text-base text-right py-2">One & Only, Mandarina Mexico</div>

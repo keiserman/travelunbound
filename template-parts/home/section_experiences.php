@@ -1,3 +1,8 @@
+<?php
+$button_link = get_theme_mod('home_experiences_button_link');
+$button_text = get_theme_mod('home_experiences_button_text');
+?>
+
 <section>
     <div class="container padding-global py-40">
         <h2 class="heading-h1 m-auto max-w-4xl mb-6 md:mb-12">
@@ -63,9 +68,6 @@
                             </p>
 
                             <?php
-                            $button_link = get_theme_mod('experiences_button_link', '');
-                            $button_text = get_theme_mod('experiences_button_text', '');
-
                             if (!empty($button_link) && !empty($button_text)) : ?>
                                 <a href="<?php echo esc_url($button_link); ?>" class="btn is-text">
                                     <?php echo esc_html($button_text); ?>
@@ -88,7 +90,5 @@
 
             <?php wp_reset_postdata(); ?>
         </div>
-
-
     </div>
 </section>
