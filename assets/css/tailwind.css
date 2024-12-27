@@ -180,3 +180,12 @@ body {
 .founder-card:nth-child(2) {
   @apply w-full md:w-11/12 place-self-end self-start;
 }
+
+.bespoke-content ul {
+  @apply text-lg md:text-xl list-[square] list-inside;
+}
+
+.bespoke-content p,
+ul {
+  @apply mb-4 text-xl;
+}

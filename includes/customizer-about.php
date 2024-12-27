@@ -9,7 +9,6 @@ function add_about_customizer_settings($wp_customize)
     // Hero Section
     $wp_customize->add_section("about_hero_section", [
         "title" => __("Hero Section", "mytheme"),
-        "description" => __("Settings for the hero section on the about page."),
         "panel" => "about_panel",
         "priority" => 10,
     ]);
@@ -43,6 +42,39 @@ function add_about_customizer_settings($wp_customize)
         )
     );
 
+    $wp_customize->add_setting("about_hero_subtitle_main", [
+        "default" => "",
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("about_hero_subtitle_main", [
+        "label" => __("Subtitle Main", "mytheme"),
+        "section" => "about_hero_section",
+        "type" => "text",
+    ]);
+
+    $wp_customize->add_setting("about_hero_subtitle_span", [
+        "default" => "",
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("about_hero_subtitle_span", [
+        "label" => __("Subtitle Span", "mytheme"),
+        "section" => "about_hero_section",
+        "type" => "text",
+    ]);
+
+    $wp_customize->add_setting("about_hero_caption", [
+        "default" => "",
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("about_hero_caption", [
+        "label" => __("Caption", "mytheme"),
+        "section" => "about_hero_section",
+        "type" => "text",
+    ]);
+
     // About Section
     $wp_customize->add_section("about_about_section", [
         "title" => __("About Section", "mytheme"),
@@ -51,6 +83,39 @@ function add_about_customizer_settings($wp_customize)
         ),
         "panel" => "about_panel",
         "priority" => 20,
+    ]);
+
+    $wp_customize->add_setting("about_about_heading_main", [
+        "default" => "",
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("about_about_heading_main", [
+        "label" => __("Heading Main", "mytheme"),
+        "section" => "about_about_section",
+        "type" => "text",
+    ]);
+
+    $wp_customize->add_setting("about_about_heading_span", [
+        "default" => "",
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("about_about_heading_span", [
+        "label" => __("Heading Span", "mytheme"),
+        "section" => "about_about_section",
+        "type" => "text",
+    ]);
+
+    $wp_customize->add_setting("about_about_paragraph", [
+        "default" => "",
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("about_about_paragraph", [
+        "label" => __("Paragraph", "mytheme"),
+        "section" => "about_about_section",
+        "type" => "textarea",
     ]);
 
     $wp_customize->add_setting("about_about_image", [
@@ -76,12 +141,118 @@ function add_about_customizer_settings($wp_customize)
         "type" => "text",
     ]);
 
+    $wp_customize->add_setting("about_about_subheading_main", [
+        "default" => "",
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("about_about_subheading_main", [
+        "label" => __("Heading Main", "mytheme"),
+        "section" => "about_about_section",
+        "type" => "text",
+    ]);
+
+    $wp_customize->add_setting("about_about_subheading_span", [
+        "default" => "",
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("about_about_subheading_span", [
+        "label" => __("Heading Span", "mytheme"),
+        "section" => "about_about_section",
+        "type" => "text",
+    ]);
+
+    // Founders Section
+    $wp_customize->add_section("about_founders_section", [
+        "title" => __("Founders Section", "mytheme"),
+        "panel" => "about_panel",
+        "priority" => 30,
+    ]);
+
+    $wp_customize->add_setting("about_founders_heading_main", [
+        "default" => "",
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("about_founders_heading_main", [
+        "label" => __("Heading Main", "mytheme"),
+        "section" => "about_founders_section",
+        "type" => "text",
+    ]);
+
+    $wp_customize->add_setting("about_founders_heading_span", [
+        "default" => "",
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("about_founders_heading_span", [
+        "label" => __("Heading Span", "mytheme"),
+        "section" => "about_founders_section",
+        "type" => "text",
+    ]);
+
+    $wp_customize->add_setting("about_founders_paragraph", [
+        "default" => "",
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("about_founders_paragraph", [
+        "label" => __("Paragraph", "mytheme"),
+        "section" => "about_founders_section",
+        "type" => "textarea",
+    ]);
+
+    // Travel Partners Section
+    $wp_customize->add_section("about_tp_section", [
+        "title" => __("Travel Partners Section", "mytheme"),
+        "panel" => "about_panel",
+        "priority" => 30,
+    ]);
+
+    $wp_customize->add_setting("about_tp_paragraph", [
+        "default" => "",
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("about_tp_paragraph", [
+        "label" => __("Paragraph", "mytheme"),
+        "section" => "about_tp_section",
+        "type" => "textarea",
+    ]);
+
+    // Hotel Partners Section
+    $wp_customize->add_section("about_hp_section", [
+        "title" => __("Hotel Partners Section", "mytheme"),
+        "panel" => "about_panel",
+        "priority" => 30,
+    ]);
+
+    $wp_customize->add_setting("about_hp_heading", [
+        "default" => "",
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("about_hp_heading", [
+        "label" => __("Heading", "mytheme"),
+        "section" => "about_hp_section",
+        "type" => "text",
+    ]);
+
+    $wp_customize->add_setting("about_hp_paragraph", [
+        "default" => "",
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("about_hp_paragraph", [
+        "label" => __("Paragraph", "mytheme"),
+        "section" => "about_hp_section",
+        "type" => "textarea",
+    ]);
+
     // Mission Section
     $wp_customize->add_section("about_mission_section", [
         "title" => __("Mission Section", "mytheme"),
-        "description" => __(
-            "Settings for the mission section on the homepage."
-        ),
         "panel" => "about_panel",
         "priority" => 30,
     ]);

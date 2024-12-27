@@ -907,10 +907,6 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.transform {
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .cursor-pointer {
   cursor: pointer;
 }
@@ -1853,6 +1849,27 @@ body {
   .founder-card:nth-child(2) {
     width: 91.666667%;
   }
+}
+
+.bespoke-content ul {
+  list-style-position: inside;
+  list-style-type: square;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .bespoke-content ul {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+.bespoke-content p,
+ul {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .hover\:bg-primary:hover {

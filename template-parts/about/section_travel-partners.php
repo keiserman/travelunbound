@@ -1,3 +1,7 @@
+<?php
+$about_tp_paragraph = esc_html(get_theme_mod("about_tp_paragraph"));
+?>
+
 <section>
     <div class="padding-global py-6">
         <div class="text-xl">our travel partners</div>
@@ -7,7 +11,7 @@
             </div>
             <div class="flex justify-end w-full">
                 <div class="flex flex-col gap-2 max-w-lg">
-                    <p class="text-lg md:text-2xl">travel/unbound is an independent affiliate of 360 private travel, a virtuoso member and an endorsed travel agency by forbes travel guide.</p>
+                    <p class="text-lg md:text-2xl"><?php echo $about_tp_paragraph ?></p>
                 </div>
             </div>
         </div>
