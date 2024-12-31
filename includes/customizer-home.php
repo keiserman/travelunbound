@@ -9,7 +9,6 @@ function add_home_customizer_settings($wp_customize)
     $wp_customize->add_section("home_hero_section", [
         "title" => __("Hero Section", "mytheme"),
         "panel" => "home_panel",
-        "priority" => 10,
     ]);
 
     $wp_customize->add_setting("home_hero_heading_main", [
@@ -28,6 +27,26 @@ function add_home_customizer_settings($wp_customize)
 
     $wp_customize->add_control("home_hero_heading_span", [
         "label" => __("Heading Span", "mytheme"),
+        "section" => "home_hero_section",
+        "type" => "text",
+    ]);
+
+    $wp_customize->add_setting("home_hero_subheading_main", [
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("home_hero_subheading_main", [
+        "label" => __("Subheading Main", "mytheme"),
+        "section" => "home_hero_section",
+        "type" => "text",
+    ]);
+
+    $wp_customize->add_setting("home_hero_subheading_span", [
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("home_hero_subheading_span", [
+        "label" => __("Subheading Span", "mytheme"),
         "section" => "home_hero_section",
         "type" => "text",
     ]);
@@ -57,44 +76,10 @@ function add_home_customizer_settings($wp_customize)
         ])
     );
 
-    // Experiences Section
-    $wp_customize->add_section("home_experiences_section", [
-        "title" => __("Experiences Section", "mytheme"),
-        "description" => __(
-            "Settings for the experiences section on the homepage."
-        ),
-        "panel" => "home_panel",
-        "priority" => 20,
-    ]);
-
-    $wp_customize->add_setting("home_experiences_button_link", [
-        "default" => "",
-        "sanitize_callback" => "esc_url_raw",
-    ]);
-
-    $wp_customize->add_control("home_experiences_button_link", [
-        "label" => __("Button Link", "mytheme"),
-        "section" => "home_experiences_section",
-        "type" => "url",
-    ]);
-
-    $wp_customize->add_setting("home_experiences_button_text", [
-        "default" => "",
-        "sanitize_callback" => "sanitize_text_field",
-    ]);
-
-    $wp_customize->add_control("home_experiences_button_text", [
-        "label" => __("Button Text", "mytheme"),
-        "section" => "home_experiences_section",
-        "type" => "text",
-    ]);
-
     // About Section
     $wp_customize->add_section("home_about_section", [
         "title" => __("About Section", "mytheme"),
-        "description" => __("Settings for the hero section on the homepage."),
         "panel" => "home_panel",
-        "priority" => 20,
     ]);
 
     $wp_customize->add_setting("home_about_image", [
@@ -134,14 +119,128 @@ function add_home_customizer_settings($wp_customize)
         ])
     );
 
+    $wp_customize->add_setting("home_about_subheading", [
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("home_about_subheading", [
+        "label" => __("Subheading", "mytheme"),
+        "section" => "home_about_section",
+        "type" => "text",
+    ]);
+
+    $wp_customize->add_setting("home_about_paragraph", [
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("home_about_paragraph", [
+        "label" => __("Paragraph", "mytheme"),
+        "section" => "home_about_section",
+        "type" => "textarea",
+    ]);
+
+    $wp_customize->add_setting("home_about_paragraph2", [
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("home_about_paragraph2", [
+        "label" => __("Paragraph 2", "mytheme"),
+        "section" => "home_about_section",
+        "type" => "textarea",
+    ]);
+
+    // Experiences Section
+    $wp_customize->add_section("home_experiences_section", [
+        "title" => __("Experiences Section", "mytheme"),
+        "panel" => "home_panel",
+    ]);
+
+    $wp_customize->add_setting("home_experiences_heading_main", [
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("home_experiences_heading_main", [
+        "label" => __("Heading Main", "mytheme"),
+        "section" => "home_experiences_section",
+        "type" => "text",
+    ]);
+
+    $wp_customize->add_setting("home_experiences_heading_span", [
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("home_experiences_heading_span", [
+        "label" => __("Heading Span", "mytheme"),
+        "section" => "home_experiences_section",
+        "type" => "text",
+    ]);
+
+    $wp_customize->add_setting("home_experiences_paragraph", [
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("home_experiences_paragraph", [
+        "label" => __("Paragraph", "mytheme"),
+        "section" => "home_experiences_section",
+        "type" => "textarea",
+    ]);
+
+    $wp_customize->add_setting("home_experiences_paragraph2", [
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("home_experiences_paragraph2", [
+        "label" => __("Paragraph 2", "mytheme"),
+        "section" => "home_experiences_section",
+        "type" => "textarea",
+    ]);
+
+    $wp_customize->add_setting("home_experiences_paragraph3", [
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("home_experiences_paragraph3", [
+        "label" => __("Paragraph 3", "mytheme"),
+        "section" => "home_experiences_section",
+        "type" => "textarea",
+    ]);
+
+    $wp_customize->add_setting("home_experiences_paragraph4", [
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("home_experiences_paragraph4", [
+        "label" => __("Paragraph 4", "mytheme"),
+        "section" => "home_experiences_section",
+        "type" => "textarea",
+    ]);
+
+    $wp_customize->add_setting("home_experiences_button_link", [
+        "default" => "",
+        "sanitize_callback" => "esc_url_raw",
+    ]);
+
+    $wp_customize->add_control("home_experiences_button_link", [
+        "label" => __("Button Link", "mytheme"),
+        "section" => "home_experiences_section",
+        "type" => "url",
+    ]);
+
+    $wp_customize->add_setting("home_experiences_button_text", [
+        "default" => "",
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("home_experiences_button_text", [
+        "label" => __("Button Text", "mytheme"),
+        "section" => "home_experiences_section",
+        "type" => "text",
+    ]);
+
     // Journey Section
     $wp_customize->add_section("home_journey_section", [
         "title" => __("Journey Section", "mytheme"),
-        "description" => __(
-            "Settings for the journey section on the homepage."
-        ),
         "panel" => "home_panel",
-        "priority" => 30,
     ]);
 
     $wp_customize->add_setting("home_journey_image", [

@@ -162,7 +162,7 @@ body {
 
 .footer-menu li,
 .footer-link {
-  @apply relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-primary after:transition-all hover:after:w-full;
+  @apply text-xl relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-primary after:transition-all hover:after:w-full;
 }
 
 .contact-link {
