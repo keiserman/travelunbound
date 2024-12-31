@@ -6,6 +6,7 @@ function render_experience_card($post_id, $index = 0)
     $image = get_field('image', $post_id);
     $location = get_field('location', $post_id);
     $title = get_the_title($post_id);
+    $gallery_title = get_field('gallery_title', $post_id);
     $gallery = get_post_meta($post_id, '_experience_gallery', true);
 
 ?>
@@ -31,18 +32,13 @@ function render_experience_card($post_id, $index = 0)
                 </div>
             </div>
 
-            <div class="absolute bottom-0 left-0 z-20 pb-12 sm:pb-4 pt-4 px-4 w-full flex flex-col sm:flex-row gap-4 sm:items-end justify-between sm:bg-none bg-gradient-to-t from-black/60 to-transparent">
+            <div class="absolute bottom-0 left-0 z-20 p-4 w-full flex flex-col sm:flex-row gap-4 sm:items-end justify-between sm:bg-none bg-gradient-to-t from-black/60 to-transparent">
                 <div class="text-white">
-                    <h4 class="text-lg font-serif mb-2"><?php echo esc_html($title); ?>/<span class="font-sans"><?php echo esc_html($sans); ?></span></h4>
+                    <h4 class="text-lg font-serif mb-2"><?php echo esc_html($gallery_title); ?></span></h4>
                     <div class="text-base max-w-md">
                         <?php echo $content; ?>
                     </div>
                 </div>
-                <?php if ($location): ?>
-                    <div class="text-white text-sm">
-                        <?php echo esc_html($location); ?>
-                    </div>
-                <?php endif; ?>
             </div>
 
             <div data-gallery="swiper-prev" class="absolute w-8 h-8 left-4 top-1/2 z-10 text-white">
@@ -63,13 +59,21 @@ function render_experience_card($post_id, $index = 0)
                             <?php
                             $img_url = wp_get_attachment_image_url($img_id, 'large');
                             $img_caption = get_post($img_id)->post_excerpt;
+                            $img_description = get_post($img_id)->post_content;
                             ?>
                             <?php if ($img_url): ?>
                                 <div class="swiper-slide w-full h-full">
                                     <img src="<?php echo esc_url($img_url); ?>" alt="<?php echo esc_attr($title); ?>" class="w-full h-full object-cover sm:object-contain">
-                                    <div class="sm:vertical-text absolute bottom-4 left-4 sm:right-4 sm:bottom-12 z-50 text-white text-sm">
+                                    <div class="absolute p-4 text-white top-0 sm:top-auto  sm:bottom-0 sm:right-0 z-50 flex flex-col sm:items-end">
                                         <?php if (!empty($img_caption)): ?>
-                                            <?php echo esc_html($img_caption); ?>
+                                            <div class="sm:vertical-text text-sm">
+                                                <?php echo esc_html($img_caption); ?>
+                                            </div>
+                                        <?php endif; ?>
+                                        <?php if (!empty($img_description)): ?>
+                                            <div class="text-sm">
+                                                <?php echo esc_html($img_description); ?>
+                                            </div>
                                         <?php endif; ?>
                                     </div>
                                 </div>
