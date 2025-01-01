@@ -8,6 +8,7 @@ function render_experience_card($post_id, $index = 0)
     $title = get_the_title($post_id);
     $gallery_title = get_field('gallery_title', $post_id);
     $gallery = get_post_meta($post_id, '_experience_gallery', true);
+    $color = get_field('color', $post_id);
 
 ?>
 
@@ -22,7 +23,8 @@ function render_experience_card($post_id, $index = 0)
             <?php endif; ?>
         </div>
 
-        <div data-gallery="modal" class="fixed inset-0 z-50 bg-primary hidden items-center justify-center">
+        <div data-gallery="modal" style="background-color:<?php if (!empty($color)): echo $color;
+                                                            endif; ?>" class="fixed inset-0 z-50 bg-primary hidden items-center justify-center">
 
             <div class="absolute z-20 top-0 w-full p-4 flex justify-end sm:bg-none bg-gradient-to-b from-black/60 to-transparent">
                 <div data-gallery="close" class="w-8 h-8 text-white text-2xl cursor-pointer">
