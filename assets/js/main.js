@@ -264,6 +264,9 @@ function setupPillars() {
     const content = faq.querySelector("[data-pillar='content']");
     const image = faq.querySelector("[data-pillar='image']");
     const title = faq.querySelector("[data-pillar='title']");
+    const color = faq.getAttribute("data-pillar-color")
+      ? faq.getAttribute("data-pillar-color")
+      : "#DF6737";
 
     const tl = gsap.timeline({ paused: true });
     tl.to(content, {
@@ -277,7 +280,7 @@ function setupPillars() {
     tl.to(title, { color: "#FFFFFF", duration: 0.3 }, "<");
     tl.to(
       faq,
-      { backgroundColor: "#DF6737", borderColor: "#DF6737", duration: 0.3 },
+      { backgroundColor: color, borderColor: color, duration: 0.3 },
       "<"
     );
     faq._timeline = tl;
@@ -287,7 +290,7 @@ function setupPillars() {
     tlHovered.to(title, { color: "#FFFFFF", duration: 0.3 }, "<");
     tlHovered.to(
       faq,
-      { backgroundColor: "#DF6737", borderColor: "#DF6737", duration: 0.3 },
+      { backgroundColor: color, borderColor: color, duration: 0.3 },
       "<"
     );
     faq._hoverTimeline = tlHovered;

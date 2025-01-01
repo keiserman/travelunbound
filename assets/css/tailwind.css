@@ -192,5 +192,5 @@ ul {
 
 .contact-content ul,
 ol {
-  @apply pl-8 border-l-8 border-secondary list-decimal list-inside text-xl flex flex-col gap-2;
+  @apply pl-8 border-l-8 border-secondary list-decimal list-inside text-xl flex flex-col gap-2 mb-12;
 }

@@ -12,7 +12,7 @@
     if ($query->have_posts()) : ?>
         <div class="grid">
             <?php while ($query->have_posts()) : $query->the_post(); ?>
-                <div data-pillar="pillar" class="padding-global border-b  py-6 md:py-12 relative cursor-pointer overflow-hidden">
+                <div data-pillar="pillar" data-pillar-color="<?php echo get_field('color') ?>" class="padding-global border-b py-6 md:py-12 relative cursor-pointer overflow-hidden">
                     <h3 data-pillar="title" class="text-3xl sm:text-4xl md:text-[3.375rem] leading-none font-serif m-auto max-w-3xl z-10 relative"><?php echo esc_html(get_the_title()); ?>/<span class="font-sans"><?php echo get_field("sans"); ?></span></h3>
                     <div data-pillar="content" class="m-auto max-w-3xl h-0 flex items-end z-10 opacity-0 relative"><?php echo get_field("content"); ?></div>
                     <?php if ($image_url = get_field('image')): ?>

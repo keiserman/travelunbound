@@ -1860,6 +1860,7 @@ ul {
 
 .contact-content ul,
 ol {
+  margin-bottom: 3rem;
   display: flex;
   list-style-position: inside;
   list-style-type: decimal;
