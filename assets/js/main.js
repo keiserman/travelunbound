@@ -28,14 +28,14 @@ function setupReadMoreToggle() {
 }
 
 function setupAboutFAQs() {
-  const faqs = document.querySelectorAll("[faq]");
+  const pillars = document.querySelectorAll("[pillar]");
 
-  if (!faqs.length) return;
+  if (!pillars.length) return;
 
-  faqs.forEach((faq) => {
-    const trigger = faq.querySelector("[faq-trigger]");
-    const content = faq.querySelector("[faq-content]");
-    const iconLine = faq.querySelector("[faq-icon-line]");
+  pillars.forEach((pillar) => {
+    const trigger = pillar.querySelector("[pillar-trigger]");
+    const content = pillar.querySelector("[pillar-content]");
+    const iconLine = pillar.querySelector("[pillar-icon-line]");
 
     let tl = gsap.timeline({ paused: true });
 
@@ -258,14 +258,14 @@ function setupFadeAnimation() {
 }
 
 function setupPillars() {
-  const faqs = document.querySelectorAll("[data-pillar='pillar']");
+  const pillars = document.querySelectorAll("[data-pillar='pillar']");
 
-  faqs.forEach((faq) => {
-    const content = faq.querySelector("[data-pillar='content']");
-    const image = faq.querySelector("[data-pillar='image']");
-    const title = faq.querySelector("[data-pillar='title']");
-    const color = faq.getAttribute("data-pillar-color")
-      ? faq.getAttribute("data-pillar-color")
+  pillars.forEach((pillar) => {
+    const content = pillar.querySelector("[data-pillar='content']");
+    const image = pillar.querySelector("[data-pillar='image']");
+    const title = pillar.querySelector("[data-pillar='title']");
+    const color = pillar.getAttribute("data-pillar-color")
+      ? pillar.getAttribute("data-pillar-color")
       : "#DF6737";
 
     const tl = gsap.timeline({ paused: true });
@@ -279,53 +279,53 @@ function setupPillars() {
     tl.to(image, { opacity: 0.2, duration: 0.3 }, "<");
     tl.to(title, { color: "#FFFFFF", duration: 0.3 }, "<");
     tl.to(
-      faq,
+      pillar,
       { backgroundColor: color, borderColor: color, duration: 0.3 },
       "<"
     );
-    faq._timeline = tl;
+    pillar._timeline = tl;
 
     const tlHovered = gsap.timeline({ paused: true });
     tlHovered.to(image, { opacity: 0.2, duration: 0.3 });
     tlHovered.to(title, { color: "#FFFFFF", duration: 0.3 }, "<");
     tlHovered.to(
-      faq,
+      pillar,
       { backgroundColor: color, borderColor: color, duration: 0.3 },
       "<"
     );
-    faq._hoverTimeline = tlHovered;
-    faq.addEventListener("click", () => {
-      toggleFAQ(faq, faqs);
+    pillar._hoverTimeline = tlHovered;
+    pillar.addEventListener("click", () => {
+      toggleFAQ(pillar, pillars);
     });
 
-    faq.addEventListener("mouseenter", () => {
-      if (!faq.classList.contains("active")) {
+    pillar.addEventListener("mouseenter", () => {
+      if (!pillar.classList.contains("active")) {
         tlHovered.play();
       }
     });
 
-    faq.addEventListener("mouseleave", () => {
-      if (!faq.classList.contains("active")) {
+    pillar.addEventListener("mouseleave", () => {
+      if (!pillar.classList.contains("active")) {
         tlHovered.reverse();
       }
     });
   });
 
-  function toggleFAQ(activeFAQ, allFAQs) {
-    allFAQs.forEach((faq) => {
-      if (faq === activeFAQ) {
-        if (faq.classList.contains("active")) {
-          faq.classList.remove("active");
-          faq._timeline.reverse();
+  function toggleFAQ(activePillar, allPillars) {
+    allPillars.forEach((pillar) => {
+      if (pillar === activePillar) {
+        if (pillar.classList.contains("active")) {
+          pillar.classList.remove("active");
+          pillar._timeline.reverse();
         } else {
-          faq.classList.add("active");
-          faq._hoverTimeline.pause(0);
-          faq._timeline.play();
+          pillar.classList.add("active");
+          pillar._hoverTimeline.pause(0);
+          pillar._timeline.play();
         }
       } else {
-        faq.classList.remove("active");
-        faq._hoverTimeline.pause(0);
-        faq._timeline.reverse();
+        pillar.classList.remove("active");
+        pillar._hoverTimeline.pause(0);
+        pillar._timeline.reverse();
       }
     });
   }
