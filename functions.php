@@ -148,4 +148,7 @@ require get_template_directory() . '/includes/customizer-contact.php';
 
 // Register custom post types
 require_once get_template_directory() . '/includes/register-experiences.php';
+require_once get_template_directory() . '/includes/register-founders.php';
+
+// Render components
 require_once get_template_directory() . '/includes/render-experience-card.php';
