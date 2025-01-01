@@ -50,9 +50,20 @@ $email_link = esc_url(get_theme_mod("email_link"));
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 flex-wrap gap-10 lg:gap-16 col-span-5 sm:pr-[15vw]">
                 <?php get_template_part('template-parts/travel-partners'); ?>
             </div>
-            <div class="flex flex-col sm:text-right gap-2 sm:pr-28">
+            <div class="flex flex-col gap-6 sm:gap-2 sm:pr-28">
                 <p><?php bloginfo('name'); ?> is an independent affiliate of 360 Private Travel.</p>
-                <p class="sm:pr-6">© 2025 unbound limited. 19/f worldwide house, 19 des voeux road central, central, hong kong.</p>
+                <div class="flex flex-row flex-wrap gap-6 sm:gap-2 justify-between">
+                    <p>iata 96090400 / virtuoso 3736 / travel industry authority license 354498</p>
+                    <div class="sm:pr-6 flex flex-wrap gap-4">
+                        <?php
+                        wp_nav_menu(array(
+                            'theme_location' => 'footer-links',
+                            'container' => 'nav',
+                            'menu_class' => 'footer-sub',
+                            'fallback_cb' => false,
+                        ));
+                        ?>© 2025 unbound limited.</div>
+                </div>
             </div>
         </div>
     </div>

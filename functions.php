@@ -12,6 +12,7 @@ function travel_unbound_setup()
     register_nav_menus([
         'primary' => __('Primary Menu', 'travel-unbound'),
         'footer' => __('Footer Menu', 'travel-unbound'),
+        'footer-links' => __('Footer Links', 'travel-unbound'),
     ]);
 }
 add_action('after_setup_theme', 'travel_unbound_setup');

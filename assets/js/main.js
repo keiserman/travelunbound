@@ -232,7 +232,7 @@ function setupBackgroundColorAnimation() {
 
   if (trigger) {
     gsap.to("main", {
-      backgroundColor: "#DF6737",
+      backgroundColor: "#6A95CD",
       color: "white",
       duration: 0.5,
       scrollTrigger: {

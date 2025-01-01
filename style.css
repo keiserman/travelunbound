@@ -697,26 +697,6 @@ video {
   grid-column: span 5 / span 5;
 }
 
-.col-start-1 {
-  grid-column-start: 1;
-}
-
-.row-start-1 {
-  grid-row-start: 1;
-}
-
-.float-end {
-  float: inline-end;
-}
-
-.float-right {
-  float: right;
-}
-
-.float-left {
-  float: left;
-}
-
 .m-auto {
   margin: auto;
 }
@@ -788,10 +768,6 @@ video {
 
 .mt-44 {
   margin-top: 11rem;
-}
-
-.mt-20 {
-  margin-top: 5rem;
 }
 
 .flex {
@@ -874,10 +850,6 @@ video {
   width: 100%;
 }
 
-.w-20 {
-  width: 5rem;
-}
-
 .max-w-2xl {
   max-width: 42rem;
 }
@@ -957,6 +929,10 @@ video {
 
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.flex-row {
+  flex-direction: row;
 }
 
 .flex-col {
@@ -1063,10 +1039,6 @@ video {
   align-self: flex-start;
 }
 
-.self-end {
-  align-self: flex-end;
-}
-
 .self-stretch {
   align-self: stretch;
 }
@@ -1081,6 +1053,10 @@ video {
 
 .rounded-lg {
   border-radius: 0.5rem;
+}
+
+.border {
+  border-width: 1px;
 }
 
 .border-b {
@@ -1260,10 +1236,6 @@ video {
 
 .pt-40 {
   padding-top: 10rem;
-}
-
-.pt-20 {
-  padding-top: 5rem;
 }
 
 .text-center {
@@ -1910,6 +1882,16 @@ ol {
   line-height: 1.75rem;
 }
 
+.footer-sub {
+  margin-bottom: 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .hover\:bg-primary:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(37 75 154 / var(--tw-bg-opacity, 1));
@@ -1970,6 +1952,10 @@ ol {
     align-items: flex-end;
   }
 
+  .sm\:gap-2 {
+    gap: 0.5rem;
+  }
+
   .sm\:bg-none {
     background-image: none;
   }
@@ -1994,10 +1980,6 @@ ol {
 
   .sm\:pr-\[15vw\] {
     padding-right: 15vw;
-  }
-
-  .sm\:text-right {
-    text-align: right;
   }
 
   .sm\:text-4xl {
@@ -2106,8 +2088,8 @@ ol {
     font-size: 3.375rem;
   }
 
-  .md\:text-\[3\.9rem\] {
-    font-size: 3.9rem;
+  .md\:text-\[4\.25rem\] {
+    font-size: 4.25rem;
   }
 
   .md\:text-\[4\.4rem\] {
@@ -2117,14 +2099,6 @@ ol {
   .md\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
-  }
-
-  .md\:text-\[4\.25rem\] {
-    font-size: 4.25rem;
-  }
-
-  .md\:text-\[4\.25remrem\] {
-    color: 4.25remrem;
   }
 
   .md\:vertical-text {
@@ -2211,32 +2185,8 @@ ol {
     padding-top: 5rem;
   }
 
-  .lg\:text-\[4\.5rem\] {
-    font-size: 4.5rem;
-  }
-
-  .lg\:text-\[5rem\] {
-    font-size: 5rem;
-  }
-
-  .lg\:text-\[4\.4rem\] {
-    font-size: 4.4rem;
-  }
-
   .lg\:text-\[4\.25rem\] {
     font-size: 4.25rem;
-  }
-
-  .lg\:text-\[4\.39rem\] {
-    font-size: 4.39rem;
-  }
-
-  .lg\:text-\[4\.38rem\] {
-    font-size: 4.38rem;
-  }
-
-  .lg\:text-\[4\.37rem\] {
-    font-size: 4.37rem;
   }
 
   .lg\:text-\[4\.35rem\] {
