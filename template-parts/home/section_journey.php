@@ -14,7 +14,7 @@ $home_journey_photo_credit = esc_html(get_theme_mod('home_journey_photo_credit')
                 </div>
                 <div class="flex flex-col gap-4 justify-between">
                     <div class="flex flex-col justify-start gap-4">
-                        <h2 class="-mt-5 text-3xl sm:text-[3.06rem] md:text-[3.9rem] leading-none">we navigate the fast-changing landscape, cut through the chaos and remove stress and uncertainty from the process, so you can fully immerse yourself in the joy and excitement of your travel experience.</h2>
+                        <h2 class="-mt-5 text-3xl sm:text-[3.06rem] md:text-[4.25rem] leading-none">we navigate the fast-changing landscape, cut through the chaos and remove stress and uncertainty from the process, so you can fully immerse yourself in the joy and excitement of your travel experience.</h2>
                         <a href="/" class="btn-outline-white hover:text-secondary self-start">enquire</a>
                     </div>
                     <div class="flex gap-2 flex-col lg:pl-20 lg:pt-20">

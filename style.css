@@ -697,6 +697,26 @@ video {
   grid-column: span 5 / span 5;
 }
 
+.col-start-1 {
+  grid-column-start: 1;
+}
+
+.row-start-1 {
+  grid-row-start: 1;
+}
+
+.float-end {
+  float: inline-end;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
 .m-auto {
   margin: auto;
 }
@@ -768,6 +788,10 @@ video {
 
 .mt-44 {
   margin-top: 11rem;
+}
+
+.mt-20 {
+  margin-top: 5rem;
 }
 
 .flex {
@@ -848,6 +872,10 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-20 {
+  width: 5rem;
 }
 
 .max-w-2xl {
@@ -1033,6 +1061,10 @@ video {
 
 .self-start {
   align-self: flex-start;
+}
+
+.self-end {
+  align-self: flex-end;
 }
 
 .self-stretch {
@@ -1228,6 +1260,10 @@ video {
 
 .pt-40 {
   padding-top: 10rem;
+}
+
+.pt-20 {
+  padding-top: 5rem;
 }
 
 .text-center {
@@ -2083,6 +2119,14 @@ ol {
     line-height: 1.75rem;
   }
 
+  .md\:text-\[4\.25rem\] {
+    font-size: 4.25rem;
+  }
+
+  .md\:text-\[4\.25remrem\] {
+    color: 4.25remrem;
+  }
+
   .md\:vertical-text {
     writing-mode: vertical-rl;
   }
@@ -2173,6 +2217,30 @@ ol {
 
   .lg\:text-\[5rem\] {
     font-size: 5rem;
+  }
+
+  .lg\:text-\[4\.4rem\] {
+    font-size: 4.4rem;
+  }
+
+  .lg\:text-\[4\.25rem\] {
+    font-size: 4.25rem;
+  }
+
+  .lg\:text-\[4\.39rem\] {
+    font-size: 4.39rem;
+  }
+
+  .lg\:text-\[4\.38rem\] {
+    font-size: 4.38rem;
+  }
+
+  .lg\:text-\[4\.37rem\] {
+    font-size: 4.37rem;
+  }
+
+  .lg\:text-\[4\.35rem\] {
+    font-size: 4.35rem;
   }
 
   .lg\:vertical-text {
