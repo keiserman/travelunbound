@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npx tailwindcss -i ./assets/css/tailwind.css -o ./style.css --watch",
     "build:css": "npx tailwindcss -i ./assets/css/tailwind.css -o ./dist/travelunbound/style.css",
-    "build:theme": "rm -rf dist/ && mkdir -p dist/travelunbound && rsync -av --exclude=node_modules --exclude=.gitignore --exclude=README.md --exclude=assets/css/tailwind.css --exclude=src --exclude=.git --exclude=package.json --exclude=package-lock.json --exclude=tailwind.config.js ./ dist/travelunbound/ && npm run build:css",
+    "build:theme": "rm -rf dist/ && mkdir -p dist/travelunbound && rsync -av --exclude=node_modules --exclude=.gitignore --exclude=README.md --exclude=assets/css/tailwind.css --exclude=src --exclude=dist --exclude=.git --exclude=package.json --exclude=package-lock.json --exclude=tailwind.config.js ./ dist/travelunbound/ && npm run build:css",
     "build": "npm run build:theme"
   },
   "keywords": [],
