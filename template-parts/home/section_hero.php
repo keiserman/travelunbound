@@ -21,7 +21,8 @@ $home_hero_video_poster = esc_url(get_theme_mod('home_hero_video_poster'));
             </a>
             <a href="/" class="btn-white rounded-full sm:grow-0 grow">Learn more</a>
         </div>
-        <video autoplay muted loop class="absolute w-full h-full z-0 top-0 left-0 object-cover" poster="<?php echo $home_hero_video_poster ?>">
+
+        <video autoplay muted loop playsinline class="absolute w-full h-full z-0 top-0 left-0 object-cover" poster="<?php echo $home_hero_video_poster ?>">
             <source src="<?php echo $home_hero_video ?>" type="video/mp4">
         </video>
     </div>
