@@ -15,7 +15,7 @@ $home_about_paragraph2 = get_theme_mod('home_about_paragraph2');
         <div class="max-w-6xl m-auto mb-20">
             <div class="grid grid-cols-2 h-[50vw]">
                 <div class="relative h-full clip-path-about-video -mr-[20%]">
-                    <video autoplay muted loop class="h-full w-full top-0 absolute object-cover" poster="<?php echo $home_about_video_poster ?>">
+                    <video autoplay muted loop playsinline class="h-full w-full top-0 absolute object-cover" poster="<?php echo $home_about_video_poster ?>">
                         <source src="<?php echo $home_about_video ?>" type="video/mp4">
                     </video>
                 </div>

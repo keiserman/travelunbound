@@ -13,7 +13,7 @@ $contact_hero_caption = esc_html(get_theme_mod("contact_hero_caption"));
         <div class="padding-global">
             <h1 class="heading-h1 relative z-10"><?php echo $contact_hero_heading_main ?> <span class="font-sans"><?php echo $contact_hero_heading_span ?></span></h1>
         </div>
-        <video class="absolute w-full h-full object-cover bg-black" poster="<?php echo $contact_hero_video_poster; ?>" autoplay muted loop>
+        <video class="absolute w-full h-full object-cover bg-black" poster="<?php echo $contact_hero_video_poster; ?>" autoplay playsinline muted loop>
             <source src="<?php echo $contact_hero_video; ?>" type="video/mp4">
         </video>
     </div>

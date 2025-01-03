@@ -7,7 +7,7 @@ $about_hero_caption = esc_html(get_theme_mod("about_hero_caption"));
 ?>
 
 <section>
-    <video autoplay muted loop class="w-full h-[90vh] object-cover bg-black" poster="<?php echo $about_hero_video_poster; ?>">
+    <video autoplay muted loop playsinline class="w-full h-[90vh] object-cover bg-black" poster="<?php echo $about_hero_video_poster; ?>">
         <source src="<?php echo $about_hero_video; ?>" type="video/mp4">
     </video>
     <div class="padding-global">
