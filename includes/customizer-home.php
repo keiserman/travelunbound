@@ -57,10 +57,14 @@ function add_home_customizer_settings($wp_customize)
     ]);
 
     $wp_customize->add_control(
-        new WP_Customize_Image_Control($wp_customize, "home_hero_video_poster", [
-            "label" => __("Video Poster (Fallback)", "mytheme"),
-            "section" => "home_hero_section",
-        ])
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            "home_hero_video_poster",
+            [
+                "label" => __("Video Poster (Fallback)", "mytheme"),
+                "section" => "home_hero_section",
+            ]
+        )
     );
 
     $wp_customize->add_setting("home_hero_video", [
@@ -75,6 +79,52 @@ function add_home_customizer_settings($wp_customize)
             "mime_type" => "video",
         ])
     );
+
+    $wp_customize->add_setting("home_hero_button_link", [
+        "default" => "",
+        "sanitize_callback" => "absint",
+    ]);
+
+    $wp_customize->add_control("home_hero_button_link_control", [
+        "label" => __("Button Link", "mytheme"),
+        "section" => "home_hero_section",
+        "settings" => "home_hero_button_link",
+        "type" => "dropdown-pages",
+    ]);
+
+    $wp_customize->add_setting("home_hero_button_text", [
+        "default" => "",
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("home_hero_button_text", [
+        "label" => __("Button Text", "mytheme"),
+        "section" => "home_hero_section",
+        "type" => "text",
+    ]);
+
+    $wp_customize->add_setting("home_hero_button2_link", [
+        "default" => "",
+        "sanitize_callback" => "absint",
+    ]);
+
+    $wp_customize->add_control("home_hero_button2_link_control", [
+        "label" => __("Button2 Link", "mytheme"),
+        "section" => "home_hero_section",
+        "settings" => "home_hero_button2_link",
+        "type" => "dropdown-pages",
+    ]);
+
+    $wp_customize->add_setting("home_hero_button2_text", [
+        "default" => "",
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("home_hero_button2_text", [
+        "label" => __("Button2 Text", "mytheme"),
+        "section" => "home_hero_section",
+        "type" => "text",
+    ]);
 
     // About Section
     $wp_customize->add_section("home_about_section", [
@@ -113,10 +163,14 @@ function add_home_customizer_settings($wp_customize)
     ]);
 
     $wp_customize->add_control(
-        new WP_Customize_Image_Control($wp_customize, "home_about_video_poster", [
-            "label" => __("Video Poster (Fallback)", "mytheme"),
-            "section" => "home_about_section",
-        ])
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            "home_about_video_poster",
+            [
+                "label" => __("Video Poster (Fallback)", "mytheme"),
+                "section" => "home_about_section",
+            ]
+        )
     );
 
     $wp_customize->add_setting("home_about_subheading", [
@@ -217,13 +271,14 @@ function add_home_customizer_settings($wp_customize)
 
     $wp_customize->add_setting("home_experiences_button_link", [
         "default" => "",
-        "sanitize_callback" => "esc_url_raw",
+        "sanitize_callback" => "absint",
     ]);
 
-    $wp_customize->add_control("home_experiences_button_link", [
+    $wp_customize->add_control("home_experiences_button_link_control", [
         "label" => __("Button Link", "mytheme"),
         "section" => "home_experiences_section",
-        "type" => "url",
+        "settings" => "home_experiences_button_link",
+        "type" => "dropdown-pages",
     ]);
 
     $wp_customize->add_setting("home_experiences_button_text", [
@@ -262,6 +317,29 @@ function add_home_customizer_settings($wp_customize)
 
     $wp_customize->add_control("home_journey_photo_credit", [
         "label" => __("Photo Credit", "mytheme"),
+        "section" => "home_journey_section",
+        "type" => "text",
+    ]);
+
+    $wp_customize->add_setting("home_journey_button_link", [
+        "default" => "",
+        "sanitize_callback" => "absint",
+    ]);
+
+    $wp_customize->add_control("home_journey_button_link_control", [
+        "label" => __("Button Link", "mytheme"),
+        "section" => "home_journey_section",
+        "settings" => "home_journey_button_link",
+        "type" => "dropdown-pages",
+    ]);
+
+    $wp_customize->add_setting("home_journey_button_text", [
+        "default" => "",
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("home_journey_button_text", [
+        "label" => __("Button Text", "mytheme"),
         "section" => "home_journey_section",
         "type" => "text",
     ]);

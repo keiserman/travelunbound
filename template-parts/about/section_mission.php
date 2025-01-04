@@ -1,6 +1,8 @@
 <?php
 $about_mission_image = esc_url(get_theme_mod("about_mission_image"));
 $about_mission_photo_credit = esc_html(get_theme_mod("about_mission_photo_credit"));
+$about_mission_button_text = get_theme_mod("about_mission_button_text");
+$about_mission_button_link = esc_url(get_permalink(get_theme_mod("about_mission_button_link")));
 ?>
 
 <section data-animate="scroll-bg">
@@ -24,7 +26,16 @@ $about_mission_photo_credit = esc_html(get_theme_mod("about_mission_photo_credit
                         <div class="mb-10">
                             <?php get_template_part("template-parts/faqs"); ?>
                         </div>
-                        <div class="flex"><a href="/faq" class="btn-outline-white">View all</a></div>
+                        <div class="flex">
+                            <?php if (
+                                !empty($about_mission_button_link) &&
+                                !empty($about_mission_button_text)
+                            ): ?>
+                                <a href="<?php echo $about_mission_button_link; ?>" class="btn-outline-white">
+                                    <?php echo esc_html($about_mission_button_text); ?>
+                                </a>
+                            <?php endif; ?>
+                        </div>
                     </div>
                 </div>
             </div>

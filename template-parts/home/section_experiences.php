@@ -1,6 +1,6 @@
 <?php
-$button_link = get_theme_mod("home_experiences_button_link");
-$button_text = get_theme_mod("home_experiences_button_text");
+$home_experiences_button_link = esc_url(get_permalink(get_theme_mod("home_experiences_button_link")));
+$home_experiences_button_text = get_theme_mod("home_experiences_button_text");
 $home_experiences_heading_main = esc_html(get_theme_mod("home_experiences_heading_main"));
 $home_experiences_heading_span = esc_html(get_theme_mod("home_experiences_heading_span"));
 $home_experiences_paragraph = esc_html(get_theme_mod("home_experiences_paragraph"));
@@ -72,13 +72,11 @@ $home_experiences_paragraph4 = esc_html(get_theme_mod("home_experiences_paragrap
                             </p>
 
                             <?php if (
-                                !empty($button_link) &&
-                                !empty($button_text)
+                                !empty($home_experiences_button_link) &&
+                                !empty($home_experiences_button_text)
                             ): ?>
-                                <a href="<?php echo esc_url(
-                                                $button_link
-                                            ); ?>" class="btn is-text">
-                                    <?php echo esc_html($button_text); ?>
+                                <a href="<?php echo $home_experiences_button_link; ?>" class="btn is-text">
+                                    <?php echo esc_html($home_experiences_button_text); ?>
                                     <svg class="w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.5 36.8">
                                         <path fill="currentColor" d="M53.8 16.6 37.9.7c-1-1-2.6-1-3.5 0-1 1-1 2.6 0 3.5L46 15.8H0v5h46L34.4 32.4c-1 1-1 2.6 0 3.5 1 1 2.6 1 3.5 0L53.8 20c1-1 1-2.6 0-3.5Z" />
                                     </svg>

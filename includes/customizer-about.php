@@ -279,6 +279,29 @@ function add_about_customizer_settings($wp_customize)
         "section" => "about_mission_section",
         "type" => "text",
     ]);
+
+    $wp_customize->add_setting("about_mission_button_link", [
+        "default" => "",
+        "sanitize_callback" => "absint",
+    ]);
+
+    $wp_customize->add_control("about_mission_button_link_control", [
+        "label" => __("Button Link", "mytheme"),
+        "section" => "about_mission_section",
+        "settings" => "about_mission_button_link",
+        "type" => "dropdown-pages",
+    ]);
+
+    $wp_customize->add_setting("about_mission_button_text", [
+        "default" => "",
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("about_mission_button_text", [
+        "label" => __("Button Text", "mytheme"),
+        "section" => "about_mission_section",
+        "type" => "text",
+    ]);
 }
 
 add_action("customize_register", "add_about_customizer_settings");
