@@ -28,14 +28,14 @@ function setupReadMoreToggle() {
 }
 
 function setupAboutFAQs() {
-  const pillars = document.querySelectorAll("[pillar]");
+  const faqs = document.querySelectorAll("[faq]");
 
-  if (!pillars.length) return;
+  if (!faqs.length) return;
 
-  pillars.forEach((pillar) => {
-    const trigger = pillar.querySelector("[pillar-trigger]");
-    const content = pillar.querySelector("[pillar-content]");
-    const iconLine = pillar.querySelector("[pillar-icon-line]");
+  faqs.forEach((faq) => {
+    const trigger = faq.querySelector("[faq-trigger]");
+    const content = faq.querySelector("[faq-content]");
+    const iconLine = faq.querySelector("[faq-icon-line]");
 
     let tl = gsap.timeline({ paused: true });
 
