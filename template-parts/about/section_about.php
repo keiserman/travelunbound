@@ -17,8 +17,8 @@ $about_about_subheading_span = esc_html(get_theme_mod("about_about_subheading_sp
             </div>
             <div class="grid md:grid-cols-2 gap-24 items-center">
                 <div class="md:flex gap-2">
-                    <img class="w-full aspect-[5/7] object-cover bg-gray-100" src="<?php echo $about_about_image; ?>" alt="Photo Credit:<?php echo $about_about_photo_credit; ?>">
-                    <div class="md:vertical-text md:text-right">photo credit: <?php echo $about_about_photo_credit; ?></div>
+                    <img class="w-full aspect-[5/7] object-cover bg-gray-100" src="<?php echo $about_about_image; ?>" alt="<?php echo $about_about_photo_credit; ?>">
+                    <div class="md:vertical-text md:text-right"><?php echo $about_about_photo_credit; ?></div>
                 </div>
                 <div class="flex flex-col gap-8">
                     <h2 class="heading-h2"><?php echo $about_about_subheading_main ?><br><span class="font-sans"><?php echo $about_about_subheading_span ?></span></h2>

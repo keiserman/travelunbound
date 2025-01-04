@@ -302,6 +302,35 @@ function add_about_customizer_settings($wp_customize)
         "section" => "about_mission_section",
         "type" => "text",
     ]);
+
+    // CTA Section
+    $wp_customize->add_section("about_cta_section", [
+        "title" => __("CTA Section", "mytheme"),
+        "panel" => "about_panel",
+    ]);
+
+    $wp_customize->add_setting("about_cta_link", [
+        "default" => "",
+        "sanitize_callback" => "absint",
+    ]);
+
+    $wp_customize->add_control("about_cta_link_control", [
+        "label" => __("CTA Link", "mytheme"),
+        "section" => "about_cta_section",
+        "settings" => "about_cta_link",
+        "type" => "dropdown-pages",
+    ]);
+
+    $wp_customize->add_setting("about_cta_text", [
+        "default" => "",
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("about_cta_text", [
+        "label" => __("CTA Text", "mytheme"),
+        "section" => "about_cta_section",
+        "type" => "text",
+    ]);
 }
 
 add_action("customize_register", "add_about_customizer_settings");
