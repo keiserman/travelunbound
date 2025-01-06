@@ -208,3 +208,7 @@ ol {
 .footer-sub {
   @apply flex flex-row flex-wrap gap-2 text-base mb-0;
 }
+
+.social-buttons {
+  @apply flex flex-wrap items-center gap-2 justify-between w-full bg-lightgray px-8 py-4 rounded-full hover:bg-primary hover:text-white transition;
+}
