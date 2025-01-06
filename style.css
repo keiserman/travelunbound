@@ -2067,6 +2067,10 @@ ol {
     place-self: start;
   }
 
+  .md\:bg-none {
+    background-image: none;
+  }
+
   .md\:py-12 {
     padding-top: 3rem;
     padding-bottom: 3rem;
@@ -2208,6 +2212,10 @@ ol {
 
   .lg\:gap-6 {
     gap: 1.5rem;
+  }
+
+  .lg\:bg-none {
+    background-image: none;
   }
 
   .lg\:py-36 {

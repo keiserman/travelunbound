@@ -27,7 +27,7 @@ function render_experience_card($post_id, $index = 0)
         <div data-gallery="modal" style="background-color:<?php if (!empty($color)): echo $color;
                                                             endif; ?>" class="fixed inset-0 z-50 bg-primary hidden items-center justify-center">
 
-            <div class="absolute z-20 top-0 w-full p-4 flex justify-end sm:bg-none bg-gradient-to-b from-black/60 to-transparent">
+            <div class="absolute z-20 top-0 right-0 p-4">
                 <div data-gallery="close" class="w-8 h-8 text-white text-2xl cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256">
                         <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path>
@@ -67,7 +67,7 @@ function render_experience_card($post_id, $index = 0)
                             <?php if ($img_url): ?>
                                 <div class="swiper-slide w-full h-full">
                                     <img src="<?php echo esc_url($img_url); ?>" alt="<?php echo esc_attr($title); ?>" class="w-full h-full object-cover sm:object-contain">
-                                    <div class="absolute p-4 text-white top-0 sm:top-auto  sm:bottom-0 sm:right-0 z-50 flex flex-col sm:items-end">
+                                    <div class="absolute p-4 text-white top-0 w-full sm:top-auto  sm:bottom-0 sm:right-0 z-50 flex flex-col sm:items-end sm:bg-none bg-gradient-to-b from-black/60 to-transparent">
                                         <?php if (!empty($img_caption)): ?>
                                             <div class="sm:vertical-text text-sm">
                                                 <?php echo esc_html($img_caption); ?>
