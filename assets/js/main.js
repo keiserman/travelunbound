@@ -73,9 +73,12 @@ function setupMarqueeAnimation() {
 
   if (!marquee) return;
 
+  const speed = 200;
+  const duration = marquee.scrollWidth / speed;
+
   gsap.to(marquee.querySelectorAll("[data-marquee='wrapper']"), {
     x: "-100%",
-    duration: 20,
+    duration,
     ease: "linear",
     repeat: -1,
   });

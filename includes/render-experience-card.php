@@ -7,6 +7,7 @@ function render_experience_card($post_id, $index = 0)
     $location = get_field('location', $post_id);
     $title = get_the_title($post_id);
     $gallery_title = get_field('gallery_title', $post_id);
+    $gallery_title_span = get_field('gallery_title_span', $post_id);
     $gallery = get_post_meta($post_id, '_experience_gallery', true);
     $color = get_field('color', $post_id);
 
@@ -36,7 +37,7 @@ function render_experience_card($post_id, $index = 0)
 
             <div class="absolute bottom-0 left-0 z-20 p-4 w-full flex flex-col sm:flex-row gap-4 sm:items-end justify-between sm:bg-none bg-gradient-to-t from-black/60 to-transparent">
                 <div class="text-white">
-                    <h4 class="text-lg font-serif mb-2"><?php echo esc_html($gallery_title); ?></span></h4>
+                    <h4 class="text-lg font-serif mb-2"><?php echo esc_html($gallery_title); ?>/<span class="font-sans"><?php echo esc_html($gallery_title_span); ?></span></h4>
                     <div class="text-base max-w-md">
                         <?php echo $content; ?>
                     </div>
