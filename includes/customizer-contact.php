@@ -95,6 +95,22 @@ function add_contact_customizer_settings($wp_customize)
         )
     );
 
+    $wp_customize->add_setting("contact_hero_mobile_image", [
+        "default" => "",
+        "sanitize_callback" => "esc_url_raw",
+    ]);
+
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            "contact_hero_mobile_image",
+            [
+                "label" => __("Hero Mobile Image", "mytheme"),
+                "section" => "contact_hero_section",
+            ]
+        )
+    );
+
     // Contact Section
     $wp_customize->add_section("contact_contact_section", [
         "title" => __("Contact Section", "mytheme"),

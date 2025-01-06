@@ -2157,6 +2157,14 @@ ol {
     margin-bottom: 2rem;
   }
 
+  .lg\:block {
+    display: block;
+  }
+
+  .lg\:hidden {
+    display: none;
+  }
+
   .lg\:h-full {
     height: 100%;
   }
