@@ -201,6 +201,10 @@ ol {
   @apply pl-8 border-l-8 border-secondary list-decimal list-inside text-xl flex flex-col gap-2 mb-12;
 }
 
+.contact-content p {
+  @apply text-xl mb-4;
+}
+
 .footer-sub {
   @apply flex flex-row flex-wrap gap-2 text-base mb-0;
 }

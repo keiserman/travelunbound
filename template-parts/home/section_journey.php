@@ -10,7 +10,7 @@ $home_journey_button_link = esc_url(get_permalink(get_theme_mod("home_journey_bu
         <div class="grid gap-5">
             <h2 class="text-3xl sm:text-[3.06rem] md:text-[4.4rem] font-serif leading-none">in today's connected world, the endless online chatter and constant state of flux can make planning your holiday feel overwhelming.</h2>
             <div class="grid lg:grid-cols-2 gap-6 items-stretch">
-                <div class="relative lg:order-none order-last">
+                <div class="relative lg:order-none order-first">
                     <img src="<?php echo $home_journey_image ?>" alt="<?php echo $home_journey_photo_credit ?>" class="aspect-[4/5] lg:h-full w-full object-cover">
                     <div class="text-sm lg:vertical-text lg:absolute lg:bottom-0 lg:-right-6"><?php echo $home_journey_photo_credit ?></div>
                 </div>

@@ -303,6 +303,28 @@ function add_about_customizer_settings($wp_customize)
         "type" => "text",
     ]);
 
+    $wp_customize->add_setting("about_mission_faq_title", [
+        "default" => "",
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("about_mission_faq_title", [
+        "label" => __("FAQ Title", "mytheme"),
+        "section" => "about_mission_section",
+        "type" => "text",
+    ]);
+
+    $wp_customize->add_setting("about_mission_faq_text", [
+        "default" => "",
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("about_mission_faq_text", [
+        "label" => __("FAQ Text", "mytheme"),
+        "section" => "about_mission_section",
+        "type" => "textarea",
+    ]);
+
     // CTA Section
     $wp_customize->add_section("about_cta_section", [
         "title" => __("CTA Section", "mytheme"),

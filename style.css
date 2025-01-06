@@ -822,6 +822,10 @@ video {
   height: 100vh;
 }
 
+.h-6 {
+  height: 1.5rem;
+}
+
 .w-32 {
   width: 8rem;
 }
@@ -844,6 +848,10 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-6 {
+  width: 1.5rem;
 }
 
 .max-w-2xl {
@@ -1880,6 +1888,12 @@ ol {
   line-height: 1.75rem;
 }
 
+.contact-content p {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .footer-sub {
   margin-bottom: 0px;
   display: flex;
@@ -2119,6 +2133,10 @@ ol {
 
   .lg\:order-none {
     order: 0;
+  }
+
+  .lg\:order-last {
+    order: 9999;
   }
 
   .lg\:mb-12 {
