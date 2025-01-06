@@ -76,26 +76,32 @@ body {
   @apply text-primary lowercase;
 }
 
+h1,
 .heading-h1 {
   @apply font-serif text-4xl font-light md:text-6xl xl:text-8xl lg:text-[6vw];
 }
 
+h2,
 .heading-h2 {
   @apply font-serif text-4xl lg:text-7xl font-light;
 }
 
+h3,
 .heading-h3 {
   @apply font-serif text-4xl font-light;
 }
 
+h4,
 .heading-h4 {
   @apply text-2xl;
 }
 
+h5,
 .heading-h5 {
   @apply text-xl;
 }
 
+h6,
 .heading-h6 {
   @apply text-lg;
 }
