@@ -18,7 +18,7 @@ $about_mission_faq_text = get_theme_mod("about_mission_faq_text");
                 <div class="text-sm lg:vertical-text lg:absolute lg:bottom-0 lg:-right-6"><?php echo esc_html($about_mission_photo_credit); ?></div>
             </div>
             <div class="w-[93%] flex flex-col justify-start gap-2 lg:mb-8">
-                <h2 class="-mt-5 text-[2rem] lg:text-[4.25rem] leading-none">Our mission is to help you rediscover the joys and meaning of travel, creating enriching experiences without the stress, uncertainty and friction that usually come with it.</h2>
+                <h2 class="-mt-5 font-sans text-[2rem] lg:text-[4.25rem] leading-none">Our mission is to help you rediscover the joys and meaning of travel, creating enriching experiences without the stress, uncertainty and friction that usually come with it.</h2>
             </div>
             <div class="flex gap-2 flex-col lg:pl-20 lg:pt-20 order-last lg:order-none">
                 <?php if (!empty($about_mission_faq_title)): ?>

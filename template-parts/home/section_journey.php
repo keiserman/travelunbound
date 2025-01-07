@@ -13,7 +13,7 @@ $home_journey_button_link = esc_url(get_permalink(get_theme_mod("home_journey_bu
                 <img src="<?php echo $home_journey_image ?>" alt="<?php echo $home_journey_photo_credit ?>" class="aspect-[4/5] lg:h-full w-full object-cover">
                 <div class="text-sm lg:vertical-text lg:absolute lg:bottom-0 lg:-right-6"><?php echo $home_journey_photo_credit ?></div>
             </div>
-            <h2 class="-mt-5 text-3xl sm:text-[3.06rem] md:text-[4.25rem] leading-none">we navigate the fast-changing landscape, cut through the chaos and remove stress and uncertainty from the process, so you can fully immerse yourself in the joy and excitement of your travel experience.</h2>
+            <h2 class="-mt-5 font-sans text-3xl sm:text-[3.06rem] md:text-[4.25rem] leading-none">we navigate the fast-changing landscape, cut through the chaos and remove stress and uncertainty from the process, so you can fully immerse yourself in the joy and excitement of your travel experience.</h2>
             <?php if (
                 !empty($home_journey_button_link) &&
                 !empty($home_journey_button_text)
