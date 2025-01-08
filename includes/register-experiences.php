@@ -13,6 +13,7 @@ function experiences_add_gallery_meta_box()
 }
 add_action('add_meta_boxes', 'experiences_add_gallery_meta_box');
 
+
 function experiences_gallery_meta_box_callback($post)
 {
     wp_enqueue_media();
@@ -20,16 +21,49 @@ function experiences_gallery_meta_box_callback($post)
 
     $gallery_ids = get_post_meta($post->ID, '_experience_gallery', true);
     $gallery_ids = is_array($gallery_ids) ? $gallery_ids : [];
+    $object_fit_values = get_post_meta($post->ID, '_experience_gallery_object_fit', true);
+    $object_fit_values = is_array($object_fit_values) ? $object_fit_values : [];
 ?>
+    <style>
+        #gallery-images-container ul {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+            padding: 0;
+        }
+
+        .gallery-image-wrapper {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .gallery-img {
+            width: 100%;
+        }
+
+        #gallery-images-container ul li select,
+        #gallery-images-container ul li button {
+            width: 100%;
+        }
+    </style>
+
     <div id="gallery-images-container">
         <ul>
             <?php
-            foreach ($gallery_ids as $image_id) {
+            foreach ($gallery_ids as $index => $image_id) {
                 $img_url = wp_get_attachment_image_url($image_id, 'thumbnail');
-                echo '<li style="display:inline-block; margin:5px;">
-                        <img src="' . esc_url($img_url) . '" style="width:100px; height:100px;">
+                $object_fit = isset($object_fit_values[$index]) ? esc_attr($object_fit_values[$index]) : 'contain';
+                echo '<li class="gallery-image-wrapper">
+                        <img class="gallery-img" src="' . esc_url($img_url) . '">
+                        <select name="experience_gallery_object_fit[]">
+                            <option value="contain" ' . selected($object_fit, 'contain', false) . '>Contain</option>
+                            <option value="cover" ' . selected($object_fit, 'cover', false) . '>Cover</option>
+                        </select>
+                        <button type="button" class="remove-image button">Remove</button>
                         <input type="hidden" name="experience_gallery_ids[]" value="' . esc_attr($image_id) . '">
-                        <button type="button" class="remove-image" style="display:block;">Remove</button>
                       </li>';
             }
             ?>
@@ -49,6 +83,9 @@ function experiences_gallery_meta_box_callback($post)
                         $(this)
                             .find('input[type="hidden"]')
                             .attr('name', 'experience_gallery_ids[' + index + ']');
+                        $(this)
+                            .find('select')
+                            .attr('name', 'experience_gallery_object_fit[' + index + ']');
                     });
                 }
             });
@@ -71,8 +108,6 @@ function experiences_gallery_meta_box_callback($post)
                 galleryUploader.on('select', function() {
                     let selection = galleryUploader.state().get('selection');
 
-                    $container.empty();
-
                     selection.map(function(attachment) {
                         attachment = attachment.toJSON();
                         let thumbUrl = attachment.sizes && attachment.sizes.thumbnail ?
@@ -80,45 +115,42 @@ function experiences_gallery_meta_box_callback($post)
                             attachment.url;
 
                         $container.append(`
-                            <li style="display:inline-block; margin:5px;">
-                                <img src="${thumbUrl}" style="width:100px; height:100px;">
+                            <li class="gallery-image-wrapper">
+                                <img class="gallery-img" src="${thumbUrl}">
+                                <select name="experience_gallery_object_fit[]">
+                                    <option value="contain">Contain</option>
+                                    <option value="cover">Cover</option>
+                                </select>
+                                <button type="button" class="remove-image button">Remove</button>
                                 <input type="hidden" name="experience_gallery_ids[]" value="${attachment.id}">
-                                <button type="button" class="remove-image" style="display:block;">Remove</button>
                             </li>
                         `);
                     });
 
                     $container.sortable('refresh');
-
-                    $container.find('li').each(function(index) {
-                        $(this)
-                            .find('input[type="hidden"]')
-                            .attr('name', 'experience_gallery_ids[' + index + ']');
-                    });
                 });
             });
 
             $(document).on('click', '.remove-image', function() {
                 $(this).closest('li').remove();
-
-                $container.find('li').each(function(index) {
-                    $(this)
-                        .find('input[type="hidden"]')
-                        .attr('name', 'experience_gallery_ids[' + index + ']');
-                });
             });
         });
     </script>
 <?php
 }
 
+
 function experiences_save_gallery_meta_box($post_id)
 {
     if (isset($_POST['experience_gallery_ids'])) {
         $gallery_ids = array_map('intval', $_POST['experience_gallery_ids']);
         update_post_meta($post_id, '_experience_gallery', $gallery_ids);
+
+        $object_fit_values = isset($_POST['experience_gallery_object_fit']) ? $_POST['experience_gallery_object_fit'] : [];
+        update_post_meta($post_id, '_experience_gallery_object_fit', $object_fit_values);
     } else {
         delete_post_meta($post_id, '_experience_gallery');
+        delete_post_meta($post_id, '_experience_gallery_object_fit');
     }
 }
 add_action('save_post', 'experiences_save_gallery_meta_box');

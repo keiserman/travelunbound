@@ -57,23 +57,31 @@ function render_experience_card($post_id, $index = 0)
 
             <div data-gallery="swiper" class="w-full h-full">
                 <div class="swiper-wrapper">
-                    <?php if (!empty($gallery) && is_array($gallery)): ?>
-                        <?php foreach ($gallery as $img_id): ?>
-                            <?php
+                    <?php
+                    $gallery = get_post_meta(get_the_ID(), '_experience_gallery', true);
+                    $object_fit_values = get_post_meta(get_the_ID(), '_experience_gallery_object_fit', true);
+
+                    if (!empty($gallery) && is_array($gallery)) : ?>
+                        <?php foreach ($gallery as $index => $img_id) :
                             $img_url = wp_get_attachment_image_url($img_id, 'large');
                             $img_caption = get_post($img_id)->post_excerpt;
                             $img_description = get_post($img_id)->post_content;
-                            ?>
-                            <?php if ($img_url): ?>
+                            $object_fit = isset($object_fit_values[$index]) ? $object_fit_values[$index] : 'contain';
+                        ?>
+                            <?php if ($img_url) : ?>
                                 <div class="swiper-slide w-full h-full">
-                                    <img src="<?php echo esc_url($img_url); ?>" alt="<?php echo esc_attr($title); ?>" class="w-full h-full object-cover sm:object-contain">
-                                    <div class="absolute p-4 text-white top-0 w-full sm:top-auto  sm:bottom-0 sm:right-0 z-50 flex flex-col sm:items-end sm:bg-none bg-gradient-to-b from-black/60 to-transparent">
-                                        <?php if (!empty($img_caption)): ?>
+                                    <img
+                                        src="<?php echo esc_url($img_url); ?>"
+                                        alt="<?php echo esc_attr($title); ?>"
+                                        class="w-full h-full <?php echo $object_fit === 'cover' ? 'object-scale-down md:object-cover' : 'object-cover md:object-contain'; ?>">
+
+                                    <div class="absolute p-4 text-white top-0 w-full sm:top-auto sm:bottom-0 sm:right-0 z-50 flex flex-col sm:items-end sm:bg-none bg-gradient-to-b from-black/60 to-transparent">
+                                        <?php if (!empty($img_caption)) : ?>
                                             <div class="sm:vertical-text text-sm">
                                                 <?php echo esc_html($img_caption); ?>
                                             </div>
                                         <?php endif; ?>
-                                        <?php if (!empty($img_description)): ?>
+                                        <?php if (!empty($img_description)) : ?>
                                             <div class="text-sm">
                                                 <?php echo esc_html($img_description); ?>
                                             </div>
@@ -82,13 +90,14 @@ function render_experience_card($post_id, $index = 0)
                                 </div>
                             <?php endif; ?>
                         <?php endforeach; ?>
-                    <?php else: ?>
+                    <?php else : ?>
                         <div class="swiper-slide">
                             <p>No images found in the gallery.</p>
                         </div>
                     <?php endif; ?>
                 </div>
             </div>
+
 
         </div>
     </div>
