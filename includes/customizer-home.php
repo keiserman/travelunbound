@@ -344,6 +344,28 @@ function add_home_customizer_settings($wp_customize)
         "type" => "text",
     ]);
 
+    $wp_customize->add_setting("home_journey_heading", [
+        "default" => "",
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("home_journey_heading", [
+        "label" => __("Heading", "mytheme"),
+        "section" => "home_journey_section",
+        "type" => "text",
+    ]);
+
+    $wp_customize->add_setting("home_journey_paragraph", [
+        "default" => "",
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("home_journey_paragraph", [
+        "label" => __("Paragraph", "mytheme"),
+        "section" => "home_journey_section",
+        "type" => "text",
+    ]);
+
     // CTA Section
     $wp_customize->add_section("home_cta_section", [
         "title" => __("CTA Section", "mytheme"),
