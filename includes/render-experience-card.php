@@ -73,7 +73,7 @@ function render_experience_card($post_id, $index = 0)
                                     <img
                                         src="<?php echo esc_url($img_url); ?>"
                                         alt="<?php echo esc_attr($title); ?>"
-                                        class="w-full h-full <?php echo $object_fit === 'cover' ? 'object-scale-down md:object-cover' : 'object-cover md:object-contain'; ?>">
+                                        class="w-full h-full md:object-contain <?php echo $object_fit === 'cover' ? 'object-scale-down' : 'object-cover'; ?>">
 
                                     <div class="absolute p-4 text-white top-0 w-full sm:top-auto sm:bottom-0 sm:right-0 z-50 flex flex-col sm:items-end sm:bg-none bg-gradient-to-b from-black/60 to-transparent">
                                         <?php if (!empty($img_caption)) : ?>
