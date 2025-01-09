@@ -70,10 +70,10 @@ function setupAboutFAQs() {
 
 function setupMarqueeAnimation() {
   const marquee = document.querySelector("[data-marquee='marquee']");
-  const wrapper = marquee.querySelector("[data-marquee='wrapper']");
+  const wrapper = marquee?.querySelector("[data-marquee='wrapper']");
   const logos = document.querySelectorAll(".hotel-partner-image");
 
-  if (!marquee || !logos.length) return;
+  if (!wrapper || !logos.length) return;
 
   const baseSpeed = 5;
 
