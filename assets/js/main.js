@@ -70,11 +70,12 @@ function setupAboutFAQs() {
 
 function setupMarqueeAnimation() {
   const marquee = document.querySelector("[data-marquee='marquee']");
+  const logos = document.querySelectorAll(".hotel-partner-image");
 
-  if (!marquee) return;
+  if (!marquee || !logos.length) return;
 
-  const speed = 200;
-  const duration = marquee.scrollWidth / speed;
+  const speed = 500;
+  const duration = speed / logos.length;
 
   gsap.to(marquee.querySelectorAll("[data-marquee='wrapper']"), {
     x: "-100%",

@@ -722,6 +722,10 @@ video {
   margin-bottom: 3rem;
 }
 
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -754,16 +758,8 @@ video {
   margin-bottom: 2.25rem;
 }
 
-.mr-32 {
-  margin-right: 8rem;
-}
-
 .mt-44 {
   margin-top: 11rem;
-}
-
-.mb-16 {
-  margin-bottom: 4rem;
 }
 
 .flex {
@@ -792,10 +788,6 @@ video {
 
 .h-0\.5 {
   height: 0.125rem;
-}
-
-.h-20 {
-  height: 5rem;
 }
 
 .h-4 {
@@ -993,10 +985,6 @@ video {
 
 .gap-12 {
   gap: 3rem;
-}
-
-.gap-16 {
-  gap: 4rem;
 }
 
 .gap-2 {
@@ -1925,6 +1913,11 @@ ol {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
+.hotel-partner-image {
+  margin-right: 8rem;
+  height: 5rem;
+}
+
 .hover\:text-secondary:hover {
   --tw-text-opacity: 1;
   color: rgb(223 103 55 / var(--tw-text-opacity, 1));
@@ -1988,8 +1981,8 @@ ol {
     padding-right: 2rem;
   }
 
-  .sm\:pr-16 {
-    padding-right: 4rem;
+  .sm\:pr-24 {
+    padding-right: 6rem;
   }
 
   .sm\:pr-28 {
@@ -2002,10 +1995,6 @@ ol {
 
   .sm\:pr-\[15vw\] {
     padding-right: 15vw;
-  }
-
-  .sm\:pr-24 {
-    padding-right: 6rem;
   }
 
   .sm\:text-4xl {
@@ -2031,16 +2020,12 @@ ol {
     margin-bottom: 3rem;
   }
 
-  .md\:mb-60 {
-    margin-bottom: 15rem;
-  }
-
   .md\:mb-24 {
     margin-bottom: 6rem;
   }
 
-  .md\:mb-0 {
-    margin-bottom: 0px;
+  .md\:mb-60 {
+    margin-bottom: 15rem;
   }
 
   .md\:flex {

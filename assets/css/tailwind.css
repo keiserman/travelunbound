@@ -212,3 +212,7 @@ ol {
 .social-buttons {
   @apply flex flex-wrap items-center gap-2 justify-between w-full bg-lightgray px-8 py-4 rounded-full hover:bg-primary hover:text-white transition;
 }
+
+.hotel-partner-image {
+  @apply h-20 mr-32;
+}
