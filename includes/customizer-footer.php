@@ -43,6 +43,17 @@ function add_footer_customizer_settings($wp_customize)
         "section" => "footer_section",
         "type" => "text",
     ]);
+
+    $wp_customize->add_setting("footer_shortcode", [
+        "default" => "",
+        "sanitize_callback" => "wp_kses_post",
+    ]);
+
+    $wp_customize->add_control("footer_shortcode", [
+        "label" => __("Footer Shortcode", "mytheme"),
+        "section" => "footer_section",
+        "type" => "text",
+    ]);
 }
 
 add_action("customize_register", "add_footer_customizer_settings");

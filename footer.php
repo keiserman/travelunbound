@@ -6,11 +6,12 @@ $email_link = esc_url(get_theme_mod("email_link"));
 $footer_text = esc_html(get_theme_mod("footer_text"));
 $footer_subtext = esc_html(get_theme_mod("footer_subtext"));
 $footer_logo = esc_url(get_theme_mod("footer_logo"));
+$footer_shortcode = get_theme_mod("footer_shortcode");
 ?>
 
 <footer class="py-8 bg-white text-primary relative">
     <div class="padding-global">
-        <div class="flex flex-col gap-16 md:gap-24">
+        <div class="flex flex-col gap-16 md:gap-18">
             <div class="grid grid-cols-2 md:grid-cols-[max-content_max-content_1fr] gap-10 md:gap-24">
                 <div class="flex flex-col gap-4">
                     <div class="text-xl font-serif">find out more</div>
@@ -49,6 +50,11 @@ $footer_logo = esc_url(get_theme_mod("footer_logo"));
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 flex-wrap gap-10 lg:gap-16 col-span-5 sm:pr-[15vw]">
                 <?php get_template_part('template-parts/travel-partners'); ?>
             </div>
+            <?php if (!empty($footer_shortcode)) : ?>
+                <div class="flex items-center justify-end gap-4 sm:pr-16">
+                    <?php echo do_shortcode($footer_shortcode); ?>
+                </div>
+            <?php endif; ?>
             <div class="flex flex-col gap-6 sm:gap-2 sm:pr-28">
                 <?php if (!empty($footer_text)) : ?>
                     <p><?php echo $footer_text ?></p>

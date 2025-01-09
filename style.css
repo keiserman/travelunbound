@@ -1235,6 +1235,14 @@ video {
   padding-top: 10rem;
 }
 
+.pr-8 {
+  padding-right: 2rem;
+}
+
+.pr-16 {
+  padding-right: 4rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1998,6 +2006,10 @@ ol {
 
   .sm\:pr-\[15vw\] {
     padding-right: 15vw;
+  }
+
+  .sm\:pr-16 {
+    padding-right: 4rem;
   }
 
   .sm\:text-4xl {
