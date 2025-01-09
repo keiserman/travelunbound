@@ -135,6 +135,7 @@ add_action("customize_register", "add_general_customizer_settings");
 require get_template_directory() . '/includes/customizer-home.php';
 require get_template_directory() . '/includes/customizer-about.php';
 require get_template_directory() . '/includes/customizer-contact.php';
+require get_template_directory() . '/includes/customizer-footer.php';
 
 // Register custom post types
 require_once get_template_directory() . '/includes/register-experiences.php';
