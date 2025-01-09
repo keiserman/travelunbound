@@ -70,16 +70,18 @@ function setupAboutFAQs() {
 
 function setupMarqueeAnimation() {
   const marquee = document.querySelector("[data-marquee='marquee']");
+  const wrapper = marquee.querySelector("[data-marquee='wrapper']");
   const logos = document.querySelectorAll(".hotel-partner-image");
 
   if (!marquee || !logos.length) return;
 
-  const speed = 500;
-  const duration = speed / logos.length;
+  const baseSpeed = 5;
 
-  gsap.to(marquee.querySelectorAll("[data-marquee='wrapper']"), {
-    x: "-100%",
-    duration,
+  const duration = baseSpeed * logos.length;
+
+  gsap.to(wrapper, {
+    xPercent: -100,
+    duration: duration,
     ease: "linear",
     repeat: -1,
   });
