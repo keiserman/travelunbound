@@ -5,8 +5,8 @@ $home_about_image = esc_url(get_theme_mod('home_about_image'));
 $home_about_subheading = esc_html(get_theme_mod('home_about_subheading'));
 $home_about_paragraph = get_theme_mod('home_about_paragraph');
 $home_about_paragraph2 = get_theme_mod('home_about_paragraph2');
-$home_about_caption = get_theme_mod('home_about_caption');
-$home_about_location = get_theme_mod('home_about_location');
+$home_about_caption_left = get_theme_mod('home_about_caption_left');
+$home_about_caption_right = get_theme_mod('home_about_caption_right');
 ?>
 
 <section class="bg-white">
@@ -27,8 +27,8 @@ $home_about_location = get_theme_mod('home_about_location');
                 </div>
             </div>
             <div class="flex md:gap-2 justify-between flex-wrap sm:flex-row flex-col py-2">
-                <p class="text-base"><?php echo esc_html($home_about_caption); ?></p>
-                <p class="text-base"><?php echo esc_html($home_about_location); ?></p>
+                <p class="text-base"><?php echo esc_html($home_about_caption_left); ?></p>
+                <p class="text-base"><?php echo esc_html($home_about_caption_right); ?></p>
             </div>
         </div>
 

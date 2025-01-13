@@ -173,22 +173,22 @@ function add_home_customizer_settings($wp_customize)
         )
     );
 
-    $wp_customize->add_setting("home_about_caption", [
+    $wp_customize->add_setting("home_about_caption_left", [
         "sanitize_callback" => "sanitize_text_field",
     ]);
 
-    $wp_customize->add_control("home_about_caption", [
-        "label" => __("Caption", "mytheme"),
+    $wp_customize->add_control("home_about_caption_left", [
+        "label" => __("Caption Left", "mytheme"),
         "section" => "home_about_section",
         "type" => "text",
     ]);
 
-    $wp_customize->add_setting("home_about_location", [
+    $wp_customize->add_setting("home_about_caption_right", [
         "sanitize_callback" => "sanitize_text_field",
     ]);
 
-    $wp_customize->add_control("home_about_location", [
-        "label" => __("Location", "mytheme"),
+    $wp_customize->add_control("home_about_caption_right", [
+        "label" => __("Caption Right", "mytheme"),
         "section" => "home_about_section",
         "type" => "text",
     ]);
