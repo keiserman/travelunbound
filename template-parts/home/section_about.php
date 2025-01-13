@@ -26,7 +26,7 @@ $home_about_location = get_theme_mod('home_about_location');
                     <img src="<?php echo $home_about_image ?>" alt="" class="h-full w-full object-cover absolute">
                 </div>
             </div>
-            <div class="flex md:gap-2 justify-between flex-wrap sm:flex-row flex-col pl-6 py-2">
+            <div class="flex md:gap-2 justify-between flex-wrap sm:flex-row flex-col py-2">
                 <p class="text-base"><?php echo esc_html($home_about_caption); ?></p>
                 <p class="text-base"><?php echo esc_html($home_about_location); ?></p>
             </div>
