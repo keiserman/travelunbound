@@ -173,6 +173,36 @@ function add_home_customizer_settings($wp_customize)
         )
     );
 
+    $wp_customize->add_setting("home_about_caption_main", [
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("home_about_caption_main", [
+        "label" => __("Caption", "mytheme"),
+        "section" => "home_about_section",
+        "type" => "text",
+    ]);
+
+    $wp_customize->add_setting("home_about_caption_span", [
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("home_about_caption_span", [
+        "label" => __("Caption Span", "mytheme"),
+        "section" => "home_about_section",
+        "type" => "text",
+    ]);
+
+    $wp_customize->add_setting("home_about_location", [
+        "sanitize_callback" => "sanitize_text_field",
+    ]);
+
+    $wp_customize->add_control("home_about_location", [
+        "label" => __("Location", "mytheme"),
+        "section" => "home_about_section",
+        "type" => "text",
+    ]);
+
     $wp_customize->add_setting("home_about_subheading", [
         "sanitize_callback" => "sanitize_text_field",
     ]);
