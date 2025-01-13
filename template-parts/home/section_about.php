@@ -5,8 +5,7 @@ $home_about_image = esc_url(get_theme_mod('home_about_image'));
 $home_about_subheading = esc_html(get_theme_mod('home_about_subheading'));
 $home_about_paragraph = get_theme_mod('home_about_paragraph');
 $home_about_paragraph2 = get_theme_mod('home_about_paragraph2');
-$home_about_caption_main = get_theme_mod('home_about_caption_main');
-$home_about_caption_span = get_theme_mod('home_about_caption_span');
+$home_about_caption = get_theme_mod('home_about_caption');
 $home_about_location = get_theme_mod('home_about_location');
 ?>
 
@@ -28,12 +27,8 @@ $home_about_location = get_theme_mod('home_about_location');
                 </div>
             </div>
             <div class="flex md:gap-2 justify-between flex-wrap sm:flex-row flex-col pl-6 py-2">
-                <?php if (!empty($home_about_caption_main) && !empty($home_about_caption_span)): ?>
-                    <h4 class="heading-h4 font-serif"><?php echo esc_html($home_about_caption_main); ?>/<span class="font-sans"><?php echo esc_html($home_about_caption_span); ?></span></h4>
-                <?php endif; ?>
-                <?php if (!empty($home_about_location)): ?>
-                    <p class="text-base"><?php echo esc_html($home_about_location); ?></p>
-                <?php endif; ?>
+                <p class="text-base"><?php echo esc_html($home_about_caption); ?></p>
+                <p class="text-base"><?php echo esc_html($home_about_location); ?></p>
             </div>
         </div>
 
